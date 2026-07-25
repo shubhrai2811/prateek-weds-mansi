@@ -39,19 +39,16 @@ button:focus-visible{outline:2px solid var(--maroon);outline-offset:4px}
 a{color:var(--maroon)}
 h1,h2,h3{font-weight:500}
 section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.sc{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:13px}
+.sc{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:14px}
 .hi{font-family:var(--deva);font-weight:400}
-.whisper{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
+.whisper{font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft)}
 .oneliner,.muh3,.whisper,.inv-line{text-wrap:balance}
-.btn{display:inline-block;background:var(--maroon);color:var(--ivory);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:15px 28px;text-decoration:none;border-radius:2px}
+.btn{display:inline-block;background:var(--maroon);color:var(--ivory);font-weight:600;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:15px 28px;text-decoration:none;border-radius:2px}
 .hairline{width:120px;height:1px;background:var(--gold);border:0}
 /* ---------- Scene 0 · title sequence ---------- */
-.hero{min-height:100vh;min-height:100svh;justify-content:flex-start;padding-top:10vh;gap:18px;position:relative}
-.invoc{font-size:18px;color:var(--bronze)}
-.mono{position:relative;width:96px;height:74px}
-.mono svg{position:absolute;top:0;left:0;width:100%}
-.pm{position:absolute;bottom:0;left:0;right:0;font-weight:600;font-size:40px;line-height:1;color:var(--maroon);letter-spacing:.04em}
-.std{color:var(--bronze)}
+.hero{min-height:100vh;min-height:100svh;justify-content:flex-start;padding-top:12vh;gap:20px;position:relative}
+.invoc{font-size:19px;color:var(--bronze)}
+.std{color:var(--bronze);margin-top:10px}
 .names{line-height:1.02;font-weight:500}
 .mask{overflow:hidden}
 .mask span{display:block}
@@ -64,11 +61,11 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .rn.today::after{content:'';position:absolute;left:50%;bottom:-8px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--gold)}
 .ri{width:18px;height:18px;color:var(--gold)}
 .shine{width:160px;height:1px;background:linear-gradient(90deg,rgba(201,162,39,.15),var(--gold),rgba(201,162,39,.15))}
-.rail-month{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:14px;color:var(--ink)}
-.rail-venue{font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:13px;color:var(--bronze)}
+.rail-month{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:15px;color:var(--ink)}
+.rail-venue{font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:14px;color:var(--bronze)}
 .chip{border:1px solid var(--gold);background:var(--ivory);padding:14px 22px;margin-top:6px;max-width:100%;overflow-wrap:anywhere}
-.chip .hi{font-size:18px;color:var(--bronze)}
-.chip b{font-weight:500;font-size:19px;color:var(--maroon);font-family:'Cormorant Garamond','Noto Serif Devanagari','Mangal',Georgia,serif}
+.chip .hi{font-size:19px;color:var(--bronze)}
+.chip b{font-weight:500;font-size:20px;color:var(--maroon);font-family:'Cormorant Garamond','Noto Serif Devanagari','Mangal',Georgia,serif}
 .cue{position:relative;width:1px;height:40px;background:var(--gold);margin-top:auto;margin-bottom:24px}
 .cue::after{content:'';position:absolute;left:-1.5px;top:0;width:4px;height:4px;border-radius:50%;background:var(--gold)}
 /* ---------- Scene 1 · proclamation ---------- */
@@ -76,9 +73,9 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .proc::before{content:'';position:absolute;inset:16px;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.45);outline-offset:-5px;pointer-events:none}
 .foil{font-family:var(--deva);font-weight:400;font-size:clamp(44px,9vw,72px);line-height:1.4;color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(135deg,#A67C00,#E8C767 45%,#9C7414)}
 .proc .echo{color:var(--ivory);letter-spacing:.16em;margin:10px 0 34px}
-.fam{font-size:20px;color:var(--ivory-soft)}
-.inv-line{font-size:19px;color:var(--ivory-soft);max-width:30ch;margin:0 auto}
-.inv-names{font-size:26px;line-height:1.4;color:var(--ivory);margin:10px 0;font-weight:500}
+.fam{font-size:21px;color:var(--ivory-soft)}
+.inv-line{font-size:20px;color:var(--ivory-soft);max-width:30ch;margin:0 auto}
+.inv-names{font-size:28px;line-height:1.4;color:var(--ivory);margin:10px 0;font-weight:500}
 .inv-names i{font-weight:400;font-size:24px;color:var(--champagne)}
 /* ---------- Scene 2 · overture ---------- */
 .overture{gap:16px;position:relative;padding-bottom:0}
@@ -89,10 +86,10 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .cd-col{display:flex;flex-direction:column;align-items:center}
 .cd-col b{font-weight:500;font-size:28px;line-height:1.1;min-width:2ch;color:var(--ink);transform-origin:50% 100%}
 .cd-col:first-child b{font-size:48px;min-width:3ch}
-.cd-col i{font-style:normal;font-weight:600;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
+.cd-col i{font-style:normal;font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
 .cd-rule{width:1px;height:44px;background:var(--champagne);align-self:center}
-.icslink,.daylink{font-size:13px;letter-spacing:.04em}
-.muhurat{font-style:italic;font-weight:400;font-size:16px;color:var(--ink-soft)}
+.icslink,.daylink{font-size:15px;letter-spacing:.04em}
+.muhurat{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 .sect-thread{display:block;width:2px;height:90px;color:var(--gold);margin-top:28px}
 .tpath{stroke:currentColor;stroke-width:2;fill:none;stroke-dasharray:1;stroke-dashoffset:calc((1 - var(--progress,1)) * 1px)}
 /* ---------- Scenes 3–5 · the three acts (sticky cover-cuts) ---------- */
@@ -121,17 +118,17 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .node{position:absolute;bottom:-14px;left:50%;width:32px;height:32px;margin-left:-16px;--genda:transparent}
 .node-heart{position:absolute;bottom:-4px;left:50%;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:var(--genda);box-shadow:inset 0 0 0 1px #A85F06;opacity:0}
 .act.bloomed .node-heart{opacity:1;transition:opacity .2s ease .4s}
-.card{max-width:640px;width:100%;border:1px solid var(--gold);position:relative;padding:28px;margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.card{max-width:640px;width:100%;border:1px solid var(--gold);position:relative;padding:32px 28px;margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .card::before{content:'';position:absolute;inset:6px;border:1px solid rgba(201,162,39,.45);pointer-events:none}
 .act-shaadi .card::before{border-color:rgba(250,246,236,.25)}
 .eyebrow{display:flex;align-items:center;gap:10px;min-height:24px;line-height:1.3}
-.eyebrow .hi{font-size:18px;color:var(--bronze)}
+.eyebrow .hi{font-size:19px;color:var(--bronze)}
 .eyebrow .sc{letter-spacing:.16em;color:var(--ink-soft)}
 .act-shaadi .eyebrow .hi,.act-shaadi .eyebrow .sc{color:var(--champagne)}
 .datetreat{display:flex;align-items:center;gap:18px}
 .bignum{font-size:clamp(6rem,28vw,11rem);line-height:.9;color:var(--maroon);font-weight:500}
 .act-shaadi .bignum{font-size:clamp(5rem,22vw,9rem);color:var(--champagne)}
-.datemeta{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.datemeta{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase}
 .tickline{position:relative;width:160px;height:1px;background:currentColor;margin:4px 0}
 .act-sangeet .tickline,.act-shaadi .tickline{color:var(--gold)}
 .act-haldi .tickline{color:var(--bronze)}
@@ -139,10 +136,10 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .med{width:56px;height:56px;color:var(--maroon)}
 .act-haldi .med{color:var(--bronze)}
 .act-shaadi .med{color:var(--gold)}
-.accent{font-size:22px;color:var(--bronze)}
-.ev{font-size:32px;line-height:1.15;font-weight:500}
-.oneliner{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
-.oneliner .hi{font-size:18px;font-style:normal}
+.accent{font-size:23px;color:var(--bronze)}
+.ev{font-size:34px;line-height:1.15;font-weight:500}
+.oneliner{font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft)}
+.oneliner .hi{font-size:19px;font-style:normal}
 .act-shaadi .oneliner{color:rgba(239,227,200,.9)}
 .evrow{display:flex;align-items:center;gap:12px}
 .evrow .med{width:40px;height:40px}
@@ -150,34 +147,27 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .loop3{display:block;color:var(--gold);width:18px;height:26px}
 .loop3 .tpath{stroke-width:1.25}
 .foil3{font-size:clamp(2.75rem,13vw,4.5rem);line-height:1.3}
-.echo3{font-size:13px;letter-spacing:.16em;font-weight:600;text-transform:uppercase;color:var(--ivory)}
+.echo3{font-size:14px;letter-spacing:.16em;font-weight:600;text-transform:uppercase;color:var(--ivory)}
 .dateunit{display:flex;flex-direction:column;gap:4px;align-items:center}
 .dateunit .sc{letter-spacing:.16em;color:var(--ivory-soft)}
-.muh3{font-style:italic;font-weight:400;font-size:16px;color:var(--champagne)}
+.muh3{font-style:italic;font-weight:400;font-size:17px;color:var(--champagne)}
 .calrow{display:flex;flex-direction:column;gap:2px;align-items:center}
-.calrow i{font-style:italic;font-weight:400;font-size:13px;color:var(--ink-soft)}
+.calrow i{font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft)}
 .daylink{color:var(--maroon)}.daylink:hover{color:var(--bronze)}
 .act-shaadi .daylink{color:var(--ivory-soft)}.act-shaadi .daylink:hover{color:var(--champagne)}
-/* photo slots — champagne LQIP grounds, production <picture> sets, line-art fallbacks */
+/* photo slot (venue wayfinding thumb only) */
 .slot{position:relative;width:100%;max-width:584px;background:var(--champagne);overflow:hidden;margin-top:8px}
-.plate{aspect-ratio:3/2;max-height:197px}
-.slot picture,.clipbox picture{position:absolute;inset:0;display:block}
-.slot img,.clipbox img{width:100%;height:100%;object-fit:cover}
-.slot img[data-src]{visibility:hidden}
+.slot picture{position:absolute;inset:0;display:block}
+.slot img{width:100%;height:100%;object-fit:cover}
 html.js .slot img:not(.ld){opacity:0}
 .slot img.ld{opacity:1;transition:opacity .9s ease}
-.plate:not(.no-photo)::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 72%,rgba(38,4,8,.35));pointer-events:none}
 .fb{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px}
 .no-photo .fb{display:flex}
 .no-photo picture{display:none}
-.fb-deep{background:var(--maroon-deep);color:var(--gold)}
-.fb-keyline{box-shadow:inset 0 0 0 1px var(--gold)}
-.fb-ivory{background:var(--ivory);color:var(--bronze);box-shadow:inset 0 0 0 1px var(--bronze)}
-.fb svg{width:64px;height:64px}
 /* viewport tiers */
-@media (max-height:800px){.plate{max-height:min(197px,32vh);max-height:min(197px,32svh)}.gutter{height:8vh;height:8svh}}
-@media (max-height:744px){.bignum,.act-shaadi .bignum{font-size:clamp(4.5rem,20vw,9rem)}.foil3{font-size:clamp(2.5rem,11vw,4.5rem)}.gutter{height:5vh;height:5svh}.med{width:36px;height:36px}.evrow .med{width:32px;height:32px}.card{padding:12px;gap:4px}.plate{max-height:21vh;max-height:21svh}}
-@media (max-height:700px){.hero{padding-top:5vh;gap:10px}.mono{width:80px;height:62px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
+@media (max-height:800px){.gutter{height:8vh;height:8svh}}
+@media (max-height:744px){.bignum,.act-shaadi .bignum{font-size:clamp(4.5rem,20vw,9rem)}.foil3{font-size:clamp(2.5rem,11vw,4.5rem)}.gutter{height:5vh;height:5svh}.med{width:36px;height:36px}.evrow .med{width:32px;height:32px}.card{padding:14px;gap:6px}}
+@media (max-height:700px){.hero{padding-top:6vh;gap:12px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
 @media (max-width:400px){.proc::before{inset:12px}}
 @media (max-width:430px){.rail-venue{letter-spacing:.08em}.rail-month{letter-spacing:.22em}}
 /* ---------- Scene 6 · the couple, गठबंधन ---------- */
@@ -185,37 +175,31 @@ html.js .slot img:not(.ld){opacity:0}
 .knotwrap{display:flex;flex-direction:column;align-items:center;gap:8px}
 .knot{width:38px;height:33px}
 .knot path{stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round}
-.gath{font-size:18px;color:var(--bronze)}
-.gath-echo{font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft)}
-.arch{position:relative;width:min(86vw,480px);aspect-ratio:4/5;margin:20px 0 8px}
-.clipbox{position:absolute;inset:0;clip-path:url(#jharokha);background:var(--champagne);overflow:hidden}
-.arch:not(.no-photo) .clipbox::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 72%,rgba(38,4,8,.35));pointer-events:none}
-.fb-arch{background:var(--champagne);color:var(--bronze)}
-.fb-arch .fbpm{font-weight:600;font-size:96px;line-height:1;color:var(--bronze)}
-.fb-arch svg{width:28px;height:36px;--genda:#E8890C}
+.gath{font-size:19px;color:var(--bronze)}
+.gath-echo{font-style:italic;font-weight:400;font-size:15px;color:var(--ink-soft)}
+.arch{position:relative;width:min(80vw,420px);aspect-ratio:4/5;margin:20px 0 8px}
+.clipbox{position:absolute;inset:0;clip-path:url(#jharokha);background:linear-gradient(180deg,var(--ivory-soft),var(--champagne));overflow:hidden}
+.arch-art{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:15% 24px 24px}
+.arch-sprig{width:88px;height:113px;color:var(--bronze)}
 .archline{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.sheer{display:none;position:absolute;inset:0;overflow:hidden;pointer-events:none}
-html.js .sheer{display:block}
-.sheer i{position:absolute;top:0;bottom:0;width:51%;background:linear-gradient(180deg,rgba(250,246,236,.96),rgba(250,246,236,.8))}
-.sheer i:first-child{left:0}.sheer i:last-child{right:0}
-.couple .hi2{font-size:24px;color:var(--maroon)}
+.couple .hi2{font-size:26px;color:var(--maroon)}
 .lockup{display:flex;flex-direction:column;gap:2px;color:var(--bronze)}
 .lockup span{white-space:nowrap}
 /* ---------- Scene 7 · the venue (one compact block) ---------- */
 .venue{gap:10px}
 .venue h2{font-weight:500;font-size:28px;color:var(--maroon)}
-.venue address{font-style:normal;font-size:17px}
+.venue address{font-style:normal;font-size:18px}
 .wayfind{display:flex;align-items:center;gap:16px;margin-top:10px;max-width:360px;text-align:left}
 .wayfind .slot{width:96px;height:96px;flex:none;border-radius:8px;box-shadow:0 0 0 1px var(--gold);margin:0}
 .wayfind .fb{background:var(--champagne);color:var(--bronze)}
-.wayfind p{font-style:italic;font-weight:400;font-size:16px;color:var(--ink-soft)}
+.wayfind p{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 /* ---------- Scene 8 · the closing (type-on-maroon, S6 contingency) + blessing ---------- */
 .close{background:var(--maroon-deep);color:var(--champagne);padding:110px 24px 72px}
 .close-plate{display:flex;flex-direction:column;align-items:center;gap:16px;padding-bottom:56px}
 .sprigrow{display:flex;gap:28px;color:var(--gold)}
 .sprigrow svg{width:34px;height:44px}
 .close-hi{font-size:clamp(28px,6vw,36px);line-height:1.5;color:var(--champagne)}
-.close-echo{font-style:italic;font-weight:400;font-size:17px;color:rgba(239,227,200,.9)}
+.close-echo{font-style:italic;font-weight:400;font-size:18px;color:rgba(239,227,200,.95)}
 .close-rail{display:flex;align-items:center;gap:14px;color:var(--champagne);font-size:32px;line-height:1;margin-top:10px}
 .close-rail svg{width:18px;height:18px;color:var(--gold);--genda:transparent}
 .close-date{color:var(--ivory);letter-spacing:.16em}
@@ -224,9 +208,9 @@ html.js .sheer{display:block}
 .sprig-btn:focus-visible{outline:2px solid var(--champagne)}
 .sprig-btn svg{width:48px;height:62px}
 .bless .hi{font-size:24px;color:var(--champagne)}
-.bless .await{font-style:italic;font-weight:400;font-size:16px;color:rgba(239,227,200,.85)}
+.bless .await{font-style:italic;font-weight:400;font-size:17px;color:rgba(239,227,200,.92)}
 .bless .formal{color:var(--champagne)}
-.credit{font-style:italic;font-weight:400;font-size:12px;color:rgba(239,227,200,.8)}
+.credit{font-style:italic;font-weight:400;font-size:13px;color:rgba(239,227,200,.9)}
 /* ---------- petals (fixed clipped layer) ---------- */
 #petals{position:fixed;inset:0;pointer-events:none;overflow:clip;z-index:80}
 .petal{position:fixed;top:-28px;left:var(--x,50vw);width:18px;height:18px}
@@ -237,28 +221,22 @@ html.js .sheer{display:block}
 /* ---------- motion (html.js gated; decoration under no-preference) ---------- */
 @media (prefers-reduced-motion:no-preference){
  html.js .t0,html.js .t2{opacity:0}
- html.js .pm{opacity:0}
- html.js .bud{transform:scale(0);transform-box:fill-box;transform-origin:center}
- html.js .arcpath,html.js .divpath{stroke-dasharray:1;stroke-dashoffset:1}
+ html.js .divpath{stroke-dasharray:1;stroke-dashoffset:1}
  html.js .mask span{transform:translateY(110%)}
  html.js.intro-go .t0{animation:rise .6s cubic-bezier(.22,1,.36,1) forwards}
- html.js.intro-go .arcpath{animation:draw .9s ease forwards}
- html.js.intro-go .pm{animation:fadein .5s ease .4s forwards}
- html.js.intro-go .bud{animation:pop .15s cubic-bezier(.34,1.56,.64,1) .85s forwards}
  html.js.intro-go .mask span{animation:maskup .6s cubic-bezier(.22,1,.36,1) forwards}
- html.js.intro-go .m1 span{animation-delay:.7s}html.js.intro-go .m2 span{animation-delay:.78s}html.js.intro-go .m3 span{animation-delay:.86s}
- html.js.intro-go .divpath{animation:draw .5s ease 1s forwards}
- html.js.intro-go .t2a{animation:rise .6s ease 1.4s forwards}html.js.intro-go .t2b{animation:rise .6s ease 1.48s forwards}html.js.intro-go .t2c{animation:rise .6s ease 1.56s forwards}
- html.js.intro-go .shine{background:linear-gradient(90deg,rgba(201,162,39,.2),#F3DE9C 50%,rgba(201,162,39,.2));background-size:220% 100%;animation:lightpass .6s ease 1.9s 1 both}
+ html.js.intro-go .m1 span{animation-delay:.35s}html.js.intro-go .m2 span{animation-delay:.43s}html.js.intro-go .m3 span{animation-delay:.51s}
+ html.js.intro-go .divpath{animation:draw .5s ease .7s forwards}
+ html.js.intro-go .t2a{animation:rise .6s ease .25s forwards}html.js.intro-go .t2b{animation:rise .6s ease .82s forwards}html.js.intro-go .t2c{animation:rise .6s ease .9s forwards}
+ html.js.intro-go .shine{background:linear-gradient(90deg,rgba(201,162,39,.2),#F3DE9C 50%,rgba(201,162,39,.2));background-size:220% 100%;animation:lightpass .6s ease 1.8s 1 both}
  /* §12.A2 — rail numerals settle like calendar leaves: −45° bottom hinge, absolute delays, 24→25→26 */
  html.js .rn{opacity:0}
- html.js.intro-go .rn{animation:leaf .42s cubic-bezier(.22,1,.36,1) 1.4s both}
- html.js.intro-go .rn[data-day="25"]{animation-delay:1.52s}
- html.js.intro-go .rn[data-day="26"]{animation-delay:1.64s}
- html.js.intro-skip .t0,html.js.intro-skip .t2,html.js.intro-skip .pm,html.js.intro-skip .rn{opacity:1}
+ html.js.intro-go .rn{animation:leaf .42s cubic-bezier(.22,1,.36,1) 1.1s both}
+ html.js.intro-go .rn[data-day="25"]{animation-delay:1.22s}
+ html.js.intro-go .rn[data-day="26"]{animation-delay:1.34s}
+ html.js.intro-skip .t0,html.js.intro-skip .t2,html.js.intro-skip .rn{opacity:1}
  html.js.intro-skip .mask span{transform:none}
- html.js.intro-skip .arcpath,html.js.intro-skip .divpath{stroke-dashoffset:0}
- html.js.intro-skip .bud{transform:scale(1)}
+ html.js.intro-skip .divpath{stroke-dashoffset:0}
  /* §12.A3 — countdown flip-populate: same leaf grammar, once, in view (data-reveal gate); 30s updates stay silent */
  html.js .overture.in-view .cd-col b{animation:leaf .42s cubic-bezier(.22,1,.36,1) backwards}
  html.js .overture.in-view .cd-col:nth-child(3) b{animation-delay:.09s}
@@ -275,11 +253,6 @@ html.js .sheer{display:block}
  html.js .act.bloomed .node{animation:bloom .4s cubic-bezier(.34,1.56,.64,1) forwards}
  html.js .knot path{stroke-dasharray:1;stroke-dashoffset:1}
  html.js .couple.in-view .knot path{stroke-dashoffset:0;transition:stroke-dashoffset .5s ease .2s}
- html.js .clipbox img{transform:scale(1.05)}
- html.js .couple.in-view .clipbox img{transform:scale(1);transition:transform 1.2s ease-out}
- html.js .sheer i{transition:transform .9s cubic-bezier(.22,1,.36,1) .15s}
- html.js .couple.in-view .sheer i:first-child{transform:translateX(-104%)}
- html.js .couple.in-view .sheer i:last-child{transform:translateX(104%)}
  .petal{animation:fall var(--dur,3.2s) linear var(--delay,0s) forwards}
  /* SDA enhancement — same draw/dim moved onto rail view-timelines (floor: the rAF scrub) */
  @supports ((animation-timeline: --r1) and (timeline-scope: --r1)){
@@ -299,18 +272,15 @@ html.js .sheer{display:block}
  .tpath,.knot path{stroke-dashoffset:0!important;animation:none!important}
  [data-reveal]>*,.mask > *{opacity:1!important;transform:none!important}
  .rn,.cd-col b{animation:none!important;opacity:1!important;transform:none!important}
- .sheer{display:none!important}
- .slot img,.clipbox img{opacity:1!important;transition:none!important;animation:none!important;transform:none!important}
+ .slot img{opacity:1!important;transition:none!important;animation:none!important;transform:none!important}
  .scrim{opacity:0!important;animation:none!important}
  .node{transform:none!important;animation:none!important}
  .node-heart{opacity:1!important}
 }
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes fadein{to{opacity:1}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes tdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes dimup{from{opacity:0}to{opacity:.12}}
-@keyframes pop{to{transform:scale(1)}}
 @keyframes maskup{to{transform:translateY(0)}}
 @keyframes leaf{from{opacity:0;transform:rotateX(-45deg) translateY(10px)}to{opacity:1;transform:none}}
 @keyframes lightpass{from{background-position:200% 0}to{background-position:-100% 0}}
@@ -318,8 +288,8 @@ html.js .sheer{display:block}
 @keyframes cuefall{0%{transform:translateY(0);opacity:1}80%{transform:translateY(36px);opacity:0}100%{opacity:0}}
 @keyframes bloom{from{transform:scale(0) rotate(-20deg)}to{transform:scale(1) rotate(0)}}
 @keyframes fall{to{transform:translate(var(--drift,0px),108vh) rotate(var(--spin,140deg));opacity:.85}}
-@media (min-width:1024px){section{padding-left:120px;padding-right:120px}.mono{width:120px;height:92px}.pm{font-size:48px}.invoc{font-size:20px}.accent{font-size:24px}.ev{font-size:40px}.evrow .ev{font-size:28px}.cd-col b{font-size:40px}.cd-col:first-child b{font-size:64px}.rail-month{font-size:14px}}
-@media (min-width:1024px) and (max-height:820px){.foil3{font-size:clamp(2.5rem,3.4vw,3.25rem)}.bignum{font-size:clamp(5rem,14vw,9rem)}.act-shaadi .bignum{font-size:clamp(4.5rem,11vw,7.5rem)}.plate{max-height:22vh}}
+@media (min-width:1024px){section{padding-left:120px;padding-right:120px}.invoc{font-size:22px}.accent{font-size:26px}.ev{font-size:40px}.evrow .ev{font-size:30px}.cd-col b{font-size:40px}.cd-col:first-child b{font-size:64px}.rail-month{font-size:16px}.rail-venue{font-size:14px}}
+@media (min-width:1024px) and (max-height:820px){.foil3{font-size:clamp(2.5rem,3.4vw,3.25rem)}.bignum{font-size:clamp(5rem,14vw,9rem)}.act-shaadi .bignum{font-size:clamp(4.5rem,11vw,7.5rem)}}
 </style>
 <script>
 document.documentElement.classList.add('js');
@@ -344,9 +314,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
   <symbol id="medDhol" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path pathLength="1" d="M15 18 H49"/><path pathLength="1" d="M15 46 H49"/><ellipse pathLength="1" cx="15" cy="32" rx="6.5" ry="14"/><ellipse pathLength="1" cx="49" cy="32" rx="6.5" ry="14"/><path pathLength="1" d="M18 21 L46 43 M18 43 L46 21 M32 18.5 V45.5"/></g></symbol>
   <symbol id="medHaldi" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path pathLength="1" d="M14 38 H50"/><path pathLength="1" d="M16 38 C18 50 26 54 32 54 C38 54 46 50 48 38"/><circle pathLength="1" cx="32" cy="23" r="9"/><circle pathLength="1" cx="32" cy="23" r="4"/><path pathLength="1" d="M32 10 V13.5 M41.5 15 L39 17.5 M45 23 H41.5 M22.5 15 L25 17.5 M19 23 H22.5"/><path pathLength="1" d="M52 16 C58 10 60 20 54 22 C50 23.3 49 18.5 52 16 Z"/></g></symbol>
   <symbol id="medKalash" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M24 34 C22 44 26 50 32 50 C38 50 42 44 40 34"/><path pathLength="1" d="M25 30 H39 M26 34 H38 M27 30 L26 34 M37 30 L38 34"/><circle pathLength="1" cx="32" cy="25" r="4.5"/><path pathLength="1" d="M26 28 C23 24 22 22 24 19 M38 28 C41 24 42 22 40 19 M29 27 C28 23 29 21 31 19 M35 27 C36 23 35 21 33 19"/><path pathLength="1" d="M6 50 C8 54.5 14 54.5 16 50 Z M11 47 C9.5 44.5 11 42.5 11 41 C12.5 43 12.5 45 11 47 Z"/><path pathLength="1" d="M48 50 C50 54.5 56 54.5 58 50 Z M53 47 C51.5 44.5 53 42.5 53 41 C54.5 43 54.5 45 53 47 Z"/></g></symbol>
-  <symbol id="fbShehnai" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 50 L38 26 M18 54 L42 30 M14 50 C12 52 12 54.5 14 55.5 C15.5 56.3 17 55.5 18 54"/><path d="M38 26 C39 20 45 15 52 17 C54 24 49 31 42 30 Z"/><circle cx="23" cy="45" r="1.1"/><circle cx="28" cy="40" r="1.1"/><circle cx="33" cy="35" r="1.1"/><path d="M47 9 V3.5 L51 5 M36 14 V9.5 L39.5 11 M57 27 V21.5 L61 23"/><circle cx="45.4" cy="9.6" r="1.7"/><circle cx="34.4" cy="14.6" r="1.7"/><circle cx="55.4" cy="27.6" r="1.7"/></g></symbol>
-  <symbol id="fbMehndi" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 58 C19 55 16 49 16 41 L16 24 C16 21.5 20 21.5 20 24 L20 34 M20 24 L20 15 C20 12.5 24 12.5 24 15 L24 32 M24 13 L24 9 C24 6.5 28 6.5 28 9 L28 32 M28 11 C28 8.5 32 8.5 32 11 L32 32 M32 17 C32 14.5 36 14.5 36 17 L36 35 C39 31 42 30 44 32 C46 34 44 37 41 41 C38 45 37 49 37 52 C37 55.5 33 58 29 58 Z"/><path d="M28 40 C31 42 31 46 28 48 C25 46 25 42 28 40 Z"/><circle cx="28" cy="52.5" r="1"/><circle cx="23" cy="44" r="1"/><circle cx="33" cy="44" r="1"/></g></symbol>
-  <symbol id="fbVarmala" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="34" r="14" stroke-dasharray="3 2.5"/><circle cx="40" cy="34" r="14" stroke-dasharray="3 2.5"/></g><use href="#marigold" x="18" y="13" width="12" height="12"/><use href="#marigold" x="34" y="42" width="12" height="12"/></symbol>
   <symbol id="gateway" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 54 V26 C12 14 22 8 32 8 C42 8 52 14 52 26 V54 M20 54 V30 C20 20 26 16 32 16 C38 16 44 20 44 30 V54 M8 54 H56 M32 8 V3 M32 3 L36 5.5 L32 8"/></g></symbol>
  </defs>
 </svg>
@@ -354,13 +321,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
 <!-- SCENE 0 · TITLE SEQUENCE -->
 <section class="hero">
  <p class="invoc hi t0" lang="hi">॥ श्री गणेशाय नमः ॥</p>
- <div class="mono">
-  <svg viewBox="0 0 96 60" aria-hidden="true">
-   <path class="arcpath" pathLength="1" d="M6 58 A44 44 0 0 1 90 58" fill="none" stroke="var(--gold)" stroke-width="1.25"/>
-   <use class="bud" href="#marigold" x="42" y="7" width="12" height="12" color="var(--gold)"/>
-  </svg>
-  <div class="pm">P·M</div>
- </div>
  <p class="sc std t2 t2a">Save the Date</p>
  <h1 class="names">
   <span class="mask m1"><span class="name">Prateek</span></span>
@@ -410,7 +370,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
 </section>
 
 <!-- SCENES 3–5 · THE THREE ACTS (sticky cover-cuts; card text never reveal-gated) -->
-<div class="acts" data-promote>
+<div class="acts">
  <section class="act act-sangeet" data-bloom>
   <div class="scrim" aria-hidden="true"></div>
   <div class="gutter"><svg class="tseg" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
@@ -424,13 +384,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <h2 class="ev">Sangeet</h2>
    <p class="oneliner">An evening of music, dance and unabashed joy.</p>
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261124/20261125&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Sangeet to your calendar ↗</a><i>all-day hold — timings to follow</i></p>
-   <figure class="slot plate" style="background:#EFE3C8 url(data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCw7ywYYJosOmXpq/JiuQfsAPcsl3tIRagfjcdjBDlEARDiOW6xop+TRwI1+HWwrMqVCWGvjZGjP/hIv6yy+EbCudWZHusqKTDwu0Kiij2P+EkSoGEtfYTiexafCYQa/GSLCD7wN8p7mEYRZRfTfKZg6RZGG/uS12R4GZhqPngA) center/cover">
-    <picture>
-     <source type="image/avif" data-srcset="assets/photos/s3-sangeet-480.avif 480w, assets/photos/s3-sangeet-600.avif 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <source type="image/webp" data-srcset="assets/photos/s3-sangeet-480.webp 480w, assets/photos/s3-sangeet-600.webp 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <img data-src="assets/photos/s3-sangeet-600.jpg" data-srcset="assets/photos/s3-sangeet-480.jpg 480w, assets/photos/s3-sangeet-600.jpg 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)" alt="Prateek and Mansi laughing together — a duotone still for the Sangeet" width="600" height="400" decoding="async" style="object-position:50% 32%" onload="this.classList.add('ld')" onerror="this.closest('.slot').classList.add('no-photo');this.remove();">
-    </picture>
-    <div class="fb fb-deep" aria-hidden="true"><svg><use href="#fbShehnai"/></svg></div></figure>
   </div>
  </section>
  <div class="rail-sp" data-act="1"></div>
@@ -448,13 +401,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <h2 class="ev">Haldi &amp; Mehndi</h2>
    <p class="oneliner">Turmeric gold and blooming henna.</p>
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi%20%26%20Mehndi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261125/20261126&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Haldi &amp; Mehndi ↗</a><i>all-day hold — timings to follow</i></p>
-   <figure class="slot plate" style="background:#EFE3C8 url(data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMuungFsxuXTkycwfBZZ43jLfye4ubAAP7pUKaqcoz3bKOSUji325rKPnR7yokiyq3SfBeM198ZvVDo5HLIuJ/G+d2NYv92E0l+1PRgEhEXO1bLr9uW0ufFWcMFARH0xvvtjphXj33sp6For4oXRWx8f/DxUjDgxfu63a3unT2dr5EZD/ZIk3y9qODpIukOja4J/64WVSvtazjquZK+hUAezLoAAA==) center/cover">
-    <picture>
-     <source type="image/avif" data-srcset="assets/photos/s4-haldi-480.avif 480w, assets/photos/s4-haldi-600.avif 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <source type="image/webp" data-srcset="assets/photos/s4-haldi-480.webp 480w, assets/photos/s4-haldi-600.webp 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <img data-src="assets/photos/s4-haldi-600.jpg" data-srcset="assets/photos/s4-haldi-480.jpg 480w, assets/photos/s4-haldi-600.jpg 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)" alt="Prateek and Mansi, thumbs up and beaming — the Haldi and Mehndi plate" width="600" height="400" decoding="async" style="object-position:50% 38%" onload="this.classList.add('ld')" onerror="this.closest('.slot').classList.add('no-photo');this.remove();">
-    </picture>
-    <div class="fb fb-ivory" aria-hidden="true"><svg><use href="#fbMehndi"/></svg></div></figure>
   </div>
  </section>
  <div class="rail-sp" data-act="2"></div>
@@ -472,13 +418,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="oneliner"><span class="hi" lang="hi">सात फेरे</span> — seven vows around the sacred fire.</p>
    <div class="dateunit"><span class="sc">Thursday · 26 November 2026</span><span class="muh3">Muhurat &amp; timings will follow with the formal invitation.</span></div>
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shaadi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261126/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Shaadi ↗</a></p>
-   <figure class="slot plate" style="background:#EFE3C8 url(data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBdgA3HfDleGm3Yj1FegAP7xULG2Ie3dSuDFxCWtiN21Fe1Q5eKisTaEY9Xs+hdR21PnpBlfAEalWJf9B433okvl/CbqgGHyiAQHSHKiJBIfIpOFCK32VDpvlAAA) center/cover">
-    <picture>
-     <source type="image/avif" data-srcset="assets/photos/s5-shaadi-480.avif 480w, assets/photos/s5-shaadi-600.avif 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <source type="image/webp" data-srcset="assets/photos/s5-shaadi-480.webp 480w, assets/photos/s5-shaadi-600.webp 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)">
-     <img data-src="assets/photos/s5-shaadi-600.jpg" data-srcset="assets/photos/s5-shaadi-480.jpg 480w, assets/photos/s5-shaadi-600.jpg 600w" sizes="(min-width: 728px) 584px, calc(100vw - 104px)" alt="Mansi leaning on Prateek — the Shaadi plate" width="600" height="400" decoding="async" style="object-position:50% 50%" onload="this.classList.add('ld')" onerror="this.closest('.slot').classList.add('no-photo');this.remove();">
-    </picture>
-    <div class="fb fb-deep fb-keyline" aria-hidden="true"><svg><use href="#fbVarmala"/></svg></div></figure>
   </div>
  </section>
  <div class="rail-sp" data-act="3"></div>
@@ -493,19 +432,15 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
   <p class="gath-echo">— the knot that binds.</p>
  </div>
  <figure class="arch">
-  <div class="clipbox" style="background:#EFE3C8 url(data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAAAwBQCdASoYAB4APu1mq06ppaOiKA1RMB2JYwDKAdwLhUO8oQBsnOrYO8nLlbJEaKJ36AD+9C+ajzO6dodI5+k5rjvQucSCQ8HfAIvwZUA22Ig44p3IzOdJUH0lnvdU5H+LxWbRVM6l7Z9iVcgPkNyPAI904Dkf46Z3pyoKzG7IfAEiKOzNZ4S/tgJbtzHdgRSS98Phowb3KDyGdldeQemj4+s4A+4A6gyvzg5xH+nePpxmeryyJUsveXeLqD83kAA=) center/cover">
-   <picture>
-    <source type="image/avif" srcset="assets/photos/s2-arch-480.avif">
-    <source type="image/webp" srcset="assets/photos/s2-arch-480.webp">
-    <img src="assets/photos/s2-arch-480.jpg" alt="Prateek and Mansi, framed by a jharokha arch" width="480" height="600" loading="lazy" decoding="async" onerror="this.closest('.arch').classList.add('no-photo');this.remove();">
-   </picture>
-   <div class="fb fb-arch" aria-hidden="true"><span class="fbpm">P·M</span><svg viewBox="0 0 48 62"><use href="#sprig"/></svg></div>
+  <div class="clipbox">
+   <div class="arch-art">
+    <svg class="arch-sprig" viewBox="0 0 48 62" aria-hidden="true"><use href="#sprig"/></svg>
+    <p class="hi2 hi" lang="hi">दो परिवार, एक धागा</p>
+    <p class="whisper">Two families, one thread.</p>
+   </div>
   </div>
   <svg class="archline" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true"><path d="M6 125 L6 50 C6 28 18 16 32 13 C40 11.3 45 8 50 2 C55 8 60 11.3 68 13 C82 16 94 28 94 50 L94 125 Z" fill="none" stroke="var(--gold)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
-  <div class="sheer" aria-hidden="true"><i></i><i></i></div>
  </figure>
- <p class="hi2 hi" lang="hi">दो परिवार, एक धागा</p>
- <p class="whisper">Two families, one thread.</p>
  <p class="sc lockup"><span>Prateek &amp; Mansi</span><span>Bhopal · November 2026</span></p>
 </section>
 
@@ -560,17 +495,14 @@ var $=function(s){return d.querySelector(s)},$$=function(s){return [].slice.call
 try{var to=new URLSearchParams(location.search).get('to');
 if(to)to=to.trim().replace(/\s+/g,' ').slice(0,64);
 if(to){$('#chipName').textContent=to;$('#chip').hidden=false;$('#cue').hidden=true;}}catch(e){}
-/* shared IntersectionObserver — promote / reveal / bloom / cue-pause */
+/* shared IntersectionObserver — reveal / bloom / cue-pause */
 var io=new IntersectionObserver(function(es){es.forEach(function(en){var t=en.target,c=t.classList;
  if(t.hasAttribute('data-pause')){c.toggle('paused',!en.isIntersecting);return;}
- if(t.hasAttribute('data-promote')&&en.isIntersecting&&!c.contains('promoted')){c.add('promoted');
-  $$('.acts source[data-srcset]').forEach(function(s){s.setAttribute('srcset',s.getAttribute('data-srcset'));s.removeAttribute('data-srcset')});
-  $$('.acts img[data-src]').forEach(function(i){i.setAttribute('srcset',i.getAttribute('data-srcset'));i.removeAttribute('data-srcset');i.src=i.getAttribute('data-src');i.removeAttribute('data-src')});}
  if(t.hasAttribute('data-reveal')&&en.intersectionRatio>=.15&&!c.contains('in-view')){c.add('in-view');if(t.id==='bless')drift(5);}
  if(t.hasAttribute('data-bloom')&&en.intersectionRatio>=.5)c.add('bloomed');
- if((!t.hasAttribute('data-reveal')||c.contains('in-view'))&&(!t.hasAttribute('data-bloom')||c.contains('bloomed'))&&(!t.hasAttribute('data-promote')||c.contains('promoted')))io.unobserve(t);
+ if((!t.hasAttribute('data-reveal')||c.contains('in-view'))&&(!t.hasAttribute('data-bloom')||c.contains('bloomed')))io.unobserve(t);
 })},{threshold:[0,.15,.5]});
-$$('[data-reveal],[data-bloom],[data-promote],[data-pause]').forEach(function(el){io.observe(el)});
+$$('[data-reveal],[data-bloom],[data-pause]').forEach(function(el){io.observe(el)});
 /* thread scrub floor — one .acts rect read per frame, never a pinned scene's rect */
 var acts=$('.acts'),spines=$$('.sect-thread'),tick=false;
 function clamp(v){return v<0?0:v>1?1:v}
