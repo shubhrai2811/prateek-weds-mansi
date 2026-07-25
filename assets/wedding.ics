@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Roy & Shrivas Families//Prateek weds Mansi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sangeet-20261124@shubhrai2811.github.io
+DTSTAMP:20260724T224140Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Sangeet — Prateek weds Mansi
+LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
+ hopal\, Madhya Pradesh 462022
+DESCRIPTION:Muhurat & timings to follow with the formal invitation.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:haldi-mehndi-20261125@shubhrai2811.github.io
+DTSTAMP:20260724T224140Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Haldi & Mehndi — Prateek weds Mansi
+LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
+ hopal\, Madhya Pradesh 462022
+DESCRIPTION:Muhurat & timings to follow with the formal invitation.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:shaadi-20261126@shubhrai2811.github.io
+DTSTAMP:20260724T224140Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Shaadi — Prateek weds Mansi
+LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
+ hopal\, Madhya Pradesh 462022
+DESCRIPTION:Muhurat & timings to follow with the formal invitation.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
