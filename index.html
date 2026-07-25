@@ -92,17 +92,13 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .muhurat{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 .sect-thread{display:block;width:2px;height:90px;color:var(--gold);margin-top:28px}
 .tpath{stroke:currentColor;stroke-width:2;fill:none;stroke-dasharray:1;stroke-dashoffset:calc((1 - var(--progress,1)) * 1px)}
-/* ---------- Scenes 3–5 · the three acts (sticky cover-cuts) ---------- */
+/* ---------- Scenes 3–5 · the three acts (natural flow) ---------- */
 .acts{position:relative}
-.act{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px 24px}
-.rail-sp{height:80vh}
-.act-sangeet{z-index:1;background:var(--ivory);color:var(--ink)}
-.act-haldi{z-index:2;background:linear-gradient(180deg,var(--haldi-wash),var(--ivory) 78%) #F6E7C6;color:var(--ink)}
+.act{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px 88px}
+.act-sangeet{background:var(--ivory);color:var(--ink)}
+.act-haldi{background:linear-gradient(180deg,var(--haldi-wash),var(--ivory) 78%) #F6E7C6;color:var(--ink)}
 .act-haldi::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 32%,rgba(201,111,7,.16),transparent 62%);pointer-events:none}
-.act-shaadi{z-index:3;background:var(--maroon-deep);color:var(--ivory-soft)}
-.scrim{position:absolute;inset:0;pointer-events:none;background:#5C0A14;opacity:0}
-.act-sangeet .scrim{opacity:calc(var(--p1,0) * .12)}
-.act-haldi .scrim{opacity:calc(var(--p2,0) * .12)}
+.act-shaadi{background:var(--maroon-deep);color:var(--ivory-soft)}
 .cutedge{position:absolute;top:0;left:0;right:0;display:flex;justify-content:center}
 .cutedge::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:currentColor}
 .cutedge svg{width:10px;height:10px;margin-top:-5px}
@@ -110,11 +106,10 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .act-haldi .cutedge svg{background:#F6E7C6}
 .act-shaadi .cutedge{color:var(--gold)}
 .act-shaadi .cutedge svg{background:#5C0A14}
-.gutter{height:12vh;height:12svh;position:relative;display:flex;justify-content:center;flex:none}
+.gutter{height:96px;position:relative;display:flex;justify-content:center;flex:none}
 .gutter .tseg{width:2px;height:100%}
 .act-sangeet .gutter,.act-shaadi .gutter{color:var(--gold)}
 .act-haldi .gutter{color:var(--bronze)}
-.act-sangeet .tpath{--progress:var(--p0,1)}.act-haldi .tpath{--progress:var(--p1,1)}.act-shaadi .tpath{--progress:var(--p2,1)}
 .node{position:absolute;bottom:-14px;left:50%;width:32px;height:32px;margin-left:-16px;--genda:transparent}
 .node-heart{position:absolute;bottom:-4px;left:50%;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:var(--genda);box-shadow:inset 0 0 0 1px #A85F06;opacity:0}
 .act.bloomed .node-heart{opacity:1;transition:opacity .2s ease .4s}
@@ -165,8 +160,6 @@ html.js .slot img:not(.ld){opacity:0}
 .no-photo .fb{display:flex}
 .no-photo picture{display:none}
 /* viewport tiers */
-@media (max-height:800px){.gutter{height:8vh;height:8svh}}
-@media (max-height:744px){.bignum,.act-shaadi .bignum{font-size:clamp(4.5rem,20vw,9rem)}.foil3{font-size:clamp(2.5rem,11vw,4.5rem)}.gutter{height:5vh;height:5svh}.med{width:36px;height:36px}.evrow .med{width:32px;height:32px}.card{padding:14px;gap:6px}}
 @media (max-height:700px){.hero{padding-top:6vh;gap:12px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
 @media (max-width:400px){.proc::before{inset:12px}}
 @media (max-width:430px){.rail-venue{letter-spacing:.08em}.rail-month{letter-spacing:.22em}}
@@ -254,18 +247,6 @@ html.js .slot img:not(.ld){opacity:0}
  html.js .knot path{stroke-dasharray:1;stroke-dashoffset:1}
  html.js .couple.in-view .knot path{stroke-dashoffset:0;transition:stroke-dashoffset .5s ease .2s}
  .petal{animation:fall var(--dur,3.2s) linear var(--delay,0s) forwards}
- /* SDA enhancement — same draw/dim moved onto rail view-timelines (floor: the rAF scrub) */
- @supports ((animation-timeline: --r1) and (timeline-scope: --r1)){
-  html.js .acts{timeline-scope:--r1,--r2,--r3}
-  html.js .rail-sp[data-act="1"]{view-timeline:--r1}
-  html.js .rail-sp[data-act="2"]{view-timeline:--r2}
-  html.js .rail-sp[data-act="3"]{view-timeline:--r3}
-  html.js .act-sangeet .gutter .tpath{animation:tdraw auto linear both;animation-timeline:--r1;animation-range:entry}
-  html.js .act-haldi .gutter .tpath{animation:tdraw auto linear both;animation-timeline:--r2;animation-range:entry}
-  html.js .act-shaadi .gutter .tpath{animation:tdraw auto linear both;animation-timeline:--r3;animation-range:entry}
-  html.js .act-sangeet .scrim{animation:dimup auto linear both;animation-timeline:--r1;animation-range:entry 100% exit 100%}
-  html.js .act-haldi .scrim{animation:dimup auto linear both;animation-timeline:--r2;animation-range:entry 100% exit 100%}
- }
 }
 /* reduced-motion: designed, not disabled (spec §7d override block) */
 @media (prefers-reduced-motion:reduce){
@@ -273,14 +254,11 @@ html.js .slot img:not(.ld){opacity:0}
  [data-reveal]>*,.mask > *{opacity:1!important;transform:none!important}
  .rn,.cd-col b{animation:none!important;opacity:1!important;transform:none!important}
  .slot img{opacity:1!important;transition:none!important;animation:none!important;transform:none!important}
- .scrim{opacity:0!important;animation:none!important}
  .node{transform:none!important;animation:none!important}
  .node-heart{opacity:1!important}
 }
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
-@keyframes tdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes dimup{from{opacity:0}to{opacity:.12}}
 @keyframes maskup{to{transform:translateY(0)}}
 @keyframes leaf{from{opacity:0;transform:rotateX(-45deg) translateY(10px)}to{opacity:1;transform:none}}
 @keyframes lightpass{from{background-position:200% 0}to{background-position:-100% 0}}
@@ -369,10 +347,9 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
  <svg class="sect-thread" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
 </section>
 
-<!-- SCENES 3–5 · THE THREE ACTS (sticky cover-cuts; card text never reveal-gated) -->
+<!-- SCENES 3–5 · THE THREE ACTS (natural flow; card text never reveal-gated) -->
 <div class="acts">
  <section class="act act-sangeet" data-bloom>
-  <div class="scrim" aria-hidden="true"></div>
   <div class="gutter"><svg class="tseg" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
    <svg class="node" viewBox="0 0 32 32" aria-hidden="true" color="var(--gold)"><use href="#marigold"/></svg><span class="node-heart" aria-hidden="true"></span></div>
   <div class="card">
@@ -386,9 +363,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261124/20261125&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Sangeet to your calendar ↗</a><i>all-day hold — timings to follow</i></p>
   </div>
  </section>
- <div class="rail-sp" data-act="1"></div>
  <section class="act act-haldi" data-bloom>
-  <div class="scrim" aria-hidden="true"></div>
   <div class="cutedge" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#marigold"/></svg></div>
   <div class="gutter"><svg class="tseg" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
    <svg class="node" viewBox="0 0 32 32" aria-hidden="true" color="var(--bronze)"><use href="#marigold"/></svg><span class="node-heart" aria-hidden="true"></span></div>
@@ -403,7 +378,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi%20%26%20Mehndi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261125/20261126&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Haldi &amp; Mehndi ↗</a><i>all-day hold — timings to follow</i></p>
   </div>
  </section>
- <div class="rail-sp" data-act="2"></div>
  <section class="act act-shaadi" data-bloom>
   <div class="cutedge" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#marigold"/></svg></div>
   <div class="gutter"><svg class="tseg" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
@@ -420,7 +394,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shaadi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261126/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Shaadi ↗</a></p>
   </div>
  </section>
- <div class="rail-sp" data-act="3"></div>
 </div>
 
 <!-- SCENE 6 · THE COUPLE — the thread ties the गठबंधन -->
@@ -503,11 +476,10 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){var t=en.ta
  if((!t.hasAttribute('data-reveal')||c.contains('in-view'))&&(!t.hasAttribute('data-bloom')||c.contains('bloomed')))io.unobserve(t);
 })},{threshold:[0,.15,.5]});
 $$('[data-reveal],[data-bloom],[data-pause]').forEach(function(el){io.observe(el)});
-/* thread scrub floor — one .acts rect read per frame, never a pinned scene's rect */
-var acts=$('.acts'),spines=$$('.sect-thread'),tick=false;
+/* thread scrub — every thread segment draws as it enters the viewport */
+var spines=$$('.sect-thread,.gutter .tseg'),tick=false;
 function clamp(v){return v<0?0:v>1?1:v}
-function scrub(){tick=false;var vh=innerHeight,tr=-acts.getBoundingClientRect().top;
- for(var i=0;i<3;i++)acts.style.setProperty('--p'+i,clamp((tr-(i*1.8*vh-vh))/(1.8*vh)).toFixed(4));
+function scrub(){tick=false;var vh=innerHeight;
  spines.forEach(function(el){var b=el.getBoundingClientRect();el.style.setProperty('--progress',clamp((vh-b.top)/(vh*.85)).toFixed(4))});}
 function queue(){if(!tick){tick=true;requestAnimationFrame(scrub)}}
 addEventListener('scroll',queue,{passive:true});
