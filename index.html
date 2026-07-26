@@ -42,7 +42,7 @@ section{padding:60px 24px;display:flex;flex-direction:column;align-items:center;
 .sc{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:14px}
 .hi{font-family:var(--deva);font-weight:400}
 .whisper{font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft)}
-.oneliner,.muh3,.whisper,.inv-line{text-wrap:balance}
+.oneliner,.muh3,.whisper,.inv-line,.muhurat,.cal-note,.echo3,.wayfind p{text-wrap:balance}
 .btn{display:inline-block;background:var(--maroon);color:var(--ivory);font-weight:600;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:15px 28px;text-decoration:none;border-radius:2px}
 .hairline{width:120px;height:1px;background:var(--gold);border:0}
 /* ---------- Scene 0 · title sequence ---------- */
@@ -88,11 +88,12 @@ section{padding:60px 24px;display:flex;flex-direction:column;align-items:center;
 .cd-col:first-child b{font-size:48px;min-width:3ch}
 .cd-col i{font-style:normal;font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
 .cd-rule{width:1px;height:44px;background:var(--champagne);align-self:center}
-.icslink,.daylink{font-size:15px;letter-spacing:.04em}
+.icslink,.daylink{font-size:17px;letter-spacing:.04em;padding-block:10px;margin-block:-10px}
 .cd-prog{display:flex;flex-direction:column;gap:9px;font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft);margin-top:2px}
 .cd-line{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap}
 .cd-line b{font-style:normal;font-weight:500;font-size:20px;color:var(--maroon)}
 .muhurat{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
+.cal-note{font-style:italic;font-weight:400;font-size:16px;color:var(--ink-soft)}
 .sect-thread{display:block;width:2px;height:80px;color:var(--gold);margin-top:20px}
 .tpath{stroke:currentColor;stroke-width:2;fill:none;stroke-dasharray:1;stroke-dashoffset:calc((1 - var(--progress,1)) * 1px)}
 /* ---------- Scenes 3–5 · the three acts (natural flow) ---------- */
@@ -150,7 +151,7 @@ section{padding:60px 24px;display:flex;flex-direction:column;align-items:center;
 .dateunit .sc{letter-spacing:.16em;color:var(--ivory-soft)}
 .muh3{font-style:italic;font-weight:400;font-size:17px;color:var(--champagne)}
 .calrow{display:flex;flex-direction:column;gap:2px;align-items:center}
-.calrow i{font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft)}
+.calrow i{font-style:italic;font-weight:400;font-size:16px;color:var(--ink-soft)}
 .daylink{color:var(--maroon)}.daylink:hover{color:var(--bronze)}
 .act-shaadi .daylink{color:var(--ivory-soft)}.act-shaadi .daylink:hover{color:var(--champagne)}
 /* photo slot (venue wayfinding thumb only) */
@@ -164,6 +165,7 @@ html.js .slot img:not(.ld){opacity:0}
 .no-photo picture{display:none}
 /* viewport tiers */
 @media (max-height:700px){.hero{padding-top:6vh;gap:12px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
+@media (min-height:800px){.hero{padding-top:14svh}}
 @media (max-width:400px){.proc::before{inset:12px}}
 @media (max-width:430px){.rail-venue{letter-spacing:.08em}.rail-month{letter-spacing:.22em}}
 /* ---------- Scene 6 · the couple, गठबंधन ---------- */
@@ -172,7 +174,7 @@ html.js .slot img:not(.ld){opacity:0}
 .knot{width:38px;height:33px}
 .knot path{stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round}
 .gath{font-size:19px;color:var(--bronze)}
-.gath-echo{font-style:italic;font-weight:400;font-size:15px;color:var(--ink-soft)}
+.gath-echo{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 .arch{position:relative;width:min(80vw,420px);aspect-ratio:4/5;margin:20px 0 8px}
 .clipbox{position:absolute;inset:0;clip-path:url(#jharokha);background:linear-gradient(180deg,var(--ivory-soft),var(--champagne));overflow:hidden}
 .arch-art{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:15% 24px 24px}
@@ -186,7 +188,7 @@ html.js .slot img:not(.ld){opacity:0}
 .venue h2{font-weight:500;font-size:28px;color:var(--maroon)}
 .venue address{font-style:normal;font-size:18px}
 .wayfind{display:flex;align-items:center;gap:16px;margin-top:10px;max-width:360px;text-align:left}
-.wayfind .slot{width:96px;height:96px;flex:none;border-radius:8px;box-shadow:0 0 0 1px var(--gold);margin:0}
+.wayfind .slot{width:112px;height:112px;flex:none;border-radius:8px;box-shadow:0 0 0 1px var(--gold);margin:0}
 .wayfind .fb{background:var(--champagne);color:var(--bronze)}
 .wayfind p{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 /* ---------- Scene 8 · the closing (type-on-maroon, S6 contingency) + blessing ---------- */
@@ -199,20 +201,21 @@ html.js .slot img:not(.ld){opacity:0}
 .close-rail{display:flex;align-items:center;gap:14px;color:var(--champagne);font-size:32px;line-height:1;margin-top:10px}
 .close-rail svg{width:18px;height:18px;color:var(--gold);--genda:transparent}
 .close-date{color:var(--ivory);letter-spacing:.16em}
-.bless{display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:16px}
+.bless{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:16px}
 .sprig-btn{min-width:44px;min-height:44px;color:var(--gold)}
 .sprig-btn:focus-visible{outline:2px solid var(--champagne)}
 .sprig-btn svg{width:48px;height:62px}
 .bless .hi{font-size:24px;color:var(--champagne)}
 .bless .await{font-style:italic;font-weight:400;font-size:17px;color:rgba(239,227,200,.92)}
 .bless .formal{color:var(--champagne)}
-.credit{font-style:italic;font-weight:400;font-size:13px;color:rgba(239,227,200,.9)}
+.credit{font-style:italic;font-weight:400;font-size:15px;color:rgba(239,227,200,.9)}
 /* ---------- petals (fixed clipped layer) ---------- */
 #petals{position:fixed;inset:0;pointer-events:none;overflow:clip;z-index:80}
 .petal{position:fixed;top:-28px;left:var(--x,50vw);width:18px;height:18px}
 .petal.p1{width:14px;height:14px}.petal.p0{width:21px;height:21px}
 .petal.genda{--pbody:#E8890C}
-.arc-static{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);width:220px;height:70px;opacity:0;transition:opacity .8s ease;color:var(--gold)}
+.arc-slot{position:absolute;left:calc(50% - 110px);top:-40px;width:220px;height:70px;pointer-events:none}
+.arc-static{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;color:var(--gold)}
 .arc-on .arc-static{opacity:1}
 /* ---------- motion (html.js gated; decoration under no-preference) ---------- */
 @media (prefers-reduced-motion:no-preference){
@@ -241,7 +244,7 @@ html.js .slot img:not(.ld){opacity:0}
  html.js .cue.paused::after{animation-play-state:paused}
  html.js [data-reveal]>*{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
  html.js [data-reveal].in-view>*{opacity:1;transform:none}
- html.js [data-reveal].in-view>*:nth-child(2){transition-delay:.08s}html.js [data-reveal].in-view>*:nth-child(3){transition-delay:.16s}html.js [data-reveal].in-view>*:nth-child(4){transition-delay:.24s}html.js [data-reveal].in-view>*:nth-child(5){transition-delay:.32s}html.js [data-reveal].in-view>*:nth-child(6){transition-delay:.4s}
+ html.js [data-reveal].in-view>*:nth-child(2){transition-delay:.08s}html.js [data-reveal].in-view>*:nth-child(3){transition-delay:.16s}html.js [data-reveal].in-view>*:nth-child(4){transition-delay:.24s}html.js [data-reveal].in-view>*:nth-child(5){transition-delay:.32s}html.js [data-reveal].in-view>*:nth-child(6){transition-delay:.4s}html.js [data-reveal].in-view>*:nth-child(7){transition-delay:.48s}
  html.js .proc.in-view .foil,html.js .act-shaadi.bloomed .foil{background-image:linear-gradient(105deg,rgba(255,246,215,0) 42%,rgba(255,246,215,.85) 50%,rgba(255,246,215,0) 58%),linear-gradient(135deg,#A67C00,#E8C767 45%,#9C7414);background-size:250% 100%,100% 100%;animation:foilsweep .9s ease .4s 1 both}
  html.js .act .med :is(path,circle,ellipse){stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .6s ease .2s}
  html.js .act.bloomed .med :is(path,circle,ellipse){stroke-dashoffset:0}
@@ -269,7 +272,7 @@ html.js .slot img:not(.ld){opacity:0}
 @keyframes cuefall{0%{transform:translateY(0);opacity:1}80%{transform:translateY(36px);opacity:0}100%{opacity:0}}
 @keyframes bloom{from{transform:scale(0) rotate(-20deg)}to{transform:scale(1) rotate(0)}}
 @keyframes fall{to{transform:translate(var(--drift,0px),108vh) rotate(var(--spin,140deg));opacity:.85}}
-@media (min-width:1024px){section{padding-left:120px;padding-right:120px}.invoc{font-size:22px}.accent{font-size:26px}.ev{font-size:40px}.evrow .ev{font-size:30px}.cd-col b{font-size:40px}.cd-col:first-child b{font-size:64px}.rail-month{font-size:16px}.rail-venue{font-size:14px}}
+@media (min-width:1024px){section{padding-left:120px;padding-right:120px}.invoc{font-size:22px}.accent{font-size:26px}.ev{font-size:40px}.evrow .ev{font-size:30px}.cd-col b{font-size:40px}.cd-col:first-child b{font-size:64px}.rail-month{font-size:16px}.rail-venue{font-size:14px}.proc::before{inset:20px max(20px,calc((100% - 880px)/2))}}
 @media (min-width:1024px) and (max-height:820px){.foil3{font-size:clamp(2.5rem,3.4vw,3.25rem)}.bignum{font-size:clamp(5rem,14vw,9rem)}.act-shaadi .bignum{font-size:clamp(4.5rem,11vw,7.5rem)}}
 </style>
 <script>
@@ -293,7 +296,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
   <symbol id="petalShape" viewBox="0 0 20 20"><path d="M10 1.5 C14.5 6 14.5 12 10 18.5 C5.5 12 5.5 6 10 1.5 Z" fill="var(--pbody,none)" fill-opacity=".68" stroke="#C9A227" stroke-width="1.5"/></symbol>
   <symbol id="sprig" viewBox="0 0 48 62"><use href="#marigold" x="8" y="0" width="32" height="32"/><path d="M24 32 V54 M24 42 C18 40 15 43 14 47 C19 48 22 46 24 44 M24 46 C30 44 33 47 34 51 C29 52 26 50 24 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
   <symbol id="medDhol" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path pathLength="1" d="M15 18 H49"/><path pathLength="1" d="M15 46 H49"/><ellipse pathLength="1" cx="15" cy="32" rx="6.5" ry="14"/><ellipse pathLength="1" cx="49" cy="32" rx="6.5" ry="14"/><path pathLength="1" d="M18 21 L46 43 M18 43 L46 21 M32 18.5 V45.5"/></g></symbol>
-  <symbol id="medHaldi" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path pathLength="1" d="M14 38 H50"/><path pathLength="1" d="M16 38 C18 50 26 54 32 54 C38 54 46 50 48 38"/><circle pathLength="1" cx="32" cy="23" r="9"/><circle pathLength="1" cx="32" cy="23" r="4"/><path pathLength="1" d="M32 10 V13.5 M41.5 15 L39 17.5 M45 23 H41.5 M22.5 15 L25 17.5 M19 23 H22.5"/><path pathLength="1" d="M52 16 C58 10 60 20 54 22 C50 23.3 49 18.5 52 16 Z"/></g></symbol>
+  <symbol id="medHaldi" viewBox="0 0 64 64"><g transform="translate(-2.5 0)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path pathLength="1" d="M14 38 H50"/><path pathLength="1" d="M16 38 C18 50 26 54 32 54 C38 54 46 50 48 38"/><circle pathLength="1" cx="32" cy="23" r="9"/><circle pathLength="1" cx="32" cy="23" r="4"/><path pathLength="1" d="M32 10 V13.5 M41.5 15 L39 17.5 M45 23 H41.5 M22.5 15 L25 17.5 M19 23 H22.5"/><path pathLength="1" d="M52 16 C58 10 60 20 54 22 C50 23.3 49 18.5 52 16 Z"/></g></symbol>
   <symbol id="medKalash" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M24 34 C22 44 26 50 32 50 C38 50 42 44 40 34"/><path pathLength="1" d="M25 30 H39 M26 34 H38 M27 30 L26 34 M37 30 L38 34"/><circle pathLength="1" cx="32" cy="25" r="4.5"/><path pathLength="1" d="M26 28 C23 24 22 22 24 19 M38 28 C41 24 42 22 40 19 M29 27 C28 23 29 21 31 19 M35 27 C36 23 35 21 33 19"/><path pathLength="1" d="M6 50 C8 54.5 14 54.5 16 50 Z M11 47 C9.5 44.5 11 42.5 11 41 C12.5 43 12.5 45 11 47 Z"/><path pathLength="1" d="M48 50 C50 54.5 56 54.5 58 50 Z M53 47 C51.5 44.5 53 42.5 53 41 C54.5 43 54.5 45 53 47 Z"/></g></symbol>
   <symbol id="gateway" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 54 V26 C12 14 22 8 32 8 C42 8 52 14 52 26 V54 M20 54 V30 C20 20 26 16 32 16 C38 16 44 20 44 30 V54 M8 54 H56 M32 8 V3 M32 3 L36 5.5 L32 8"/></g></symbol>
  </defs>
@@ -312,7 +315,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
   <path class="divpath" pathLength="1" d="M0 10 H72" stroke="currentColor" stroke-width="1"/><path class="divpath" pathLength="1" d="M88 10 H160" stroke="currentColor" stroke-width="1"/>
   <use href="#marigold" x="74" y="4" width="12" height="12"/>
  </svg>
- <button id="railBtn" class="rail-btn t2 t2b" type="button" aria-label="Sangeet 24, Haldi-Mehndi 25, Shaadi 26 November 2026 — tap to shower marigold petals">
+ <button id="railBtn" class="rail-btn t2 t2b" type="button" aria-label="Sangeet 24, Haldi-Mehndi 25, Shaadi 26 November 2026 at Hotel Yashoda Privilege, Bhopal — tap to shower marigold petals">
   <span class="rail-row"><span class="rn" data-day="24">24</span><svg class="ri" aria-hidden="true"><use href="#marigold"/></svg><span class="rn" data-day="25">25</span><svg class="ri" aria-hidden="true"><use href="#marigold"/></svg><span class="rn" data-day="26">26</span></span>
   <span class="shine" aria-hidden="true"></span>
   <span class="rail-month">November 2026</span>
@@ -327,7 +330,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
  <h2 class="foil hi" lang="hi">शुभ विवाह</h2>
  <p class="sc echo">Shubh Vivah · An Auspicious Union</p>
  <p class="fam">The Roy &amp; Shrivas families</p>
- <p class="inv-line">joyfully invite you to bless and celebrate the union of</p>
+ <p class="inv-line">joyfully invite you and your family to bless and celebrate the union of</p>
  <p class="inv-names">Prateek <i>&amp;</i> Mansi</p>
  <p class="inv-line">over three days of ritual, music and marigolds in Bhopal.</p>
 </section>
@@ -335,22 +338,23 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
 <!-- SCENE 2 · THE OVERTURE -->
 <section class="overture" data-reveal>
  <p class="hi" lang="hi">तीन दिन · तीन उत्सव</p>
- <p class="sc" style="color:var(--ink)">Three Days · Three Celebrations</p>
- <p class="sc cd-label" id="cdLabel">Until the celebrations begin</p>
+ <p class="sc" style="color:var(--ink);letter-spacing:.16em">Three Days · Three&nbsp;Celebrations</p>
+ <p class="sc cd-label" id="cdLabel">Until the celebrations&nbsp;begin</p>
  <p class="hi cd-hi" id="cdHi" lang="hi" hidden>शुभ घड़ी आई</p>
  <div class="cd-row" id="cdRow" hidden>
   <span class="cd-col"><b id="cdD">–</b><i>Days</i></span><span class="cd-rule"></span>
   <span class="cd-col"><b id="cdH">–</b><i>Hrs</i></span><span class="cd-rule"></span>
-  <span class="cd-col"><b id="cdM">–</b><i>Min</i></span>
+  <span class="cd-col"><b id="cdM">–</b><i>Mins</i></span>
  </div>
  <div class="cd-prog" id="cdSub">
   <span class="cd-line"><b>Sangeet</b><em>Tuesday · 24 November</em></span>
   <span class="cd-line"><b>Haldi &amp; Mehndi</b><em>Wednesday · 25 November</em></span>
   <span class="cd-line"><b>Shaadi</b><em>Thursday · 26 November</em></span>
  </div>
- <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prateek%20weds%20Mansi%20%E2%80%94%20Wedding%20Celebrations&amp;dates=20261124/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Sangeet%20(24%20Nov)%20%C2%B7%20Haldi%20%26%20Mehndi%20(25%20Nov)%20%C2%B7%20Shaadi%20(26%20Nov).%20Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add All Three Days</a>
+ <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prateek%20weds%20Mansi%20%E2%80%94%20Wedding%20Celebrations&amp;dates=20261124/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Sangeet%20(24%20Nov)%20%C2%B7%20Haldi%20%26%20Mehndi%20(25%20Nov)%20%C2%B7%20Shaadi%20(26%20Nov).%20Muhurat%20%26%20timings%20will%20follow%20with%20the%20formal%20invitation.">Add All Three Days</a>
+ <p class="cal-note">opens Google Calendar — saves the dates in one tap</p>
  <p class="muhurat">Muhurat &amp; timings will follow with the formal invitation.</p>
- <a class="icslink" href="assets/wedding.ics">Apple Calendar · download .ics</a>
+ <a class="icslink" href="assets/wedding.ics">For iPhone — Apple&nbsp;Calendar&nbsp;·&nbsp;Download&nbsp;.ics</a>
  <svg class="sect-thread" viewBox="0 0 2 100" preserveAspectRatio="none" aria-hidden="true"><path class="tpath" pathLength="1" d="M1 0 V100"/></svg>
 </section>
 
@@ -367,7 +371,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="accent hi" lang="hi">संगीत</p>
    <h2 class="ev">Sangeet</h2>
    <p class="oneliner">An evening of music, dance and unabashed joy.</p>
-   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261124/20261125&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Sangeet to your calendar ↗</a><i>all-day hold — timings to follow</i></p>
+   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261124/20261125&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20will%20follow%20with%20the%20formal%20invitation.">Add the Sangeet to your calendar ↗</a><i>all-day hold — timings to follow</i></p>
   </div>
  </section>
  <section class="act act-haldi" data-bloom>
@@ -382,7 +386,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <p class="accent hi" lang="hi">हल्दी · मेहंदी</p>
    <h2 class="ev">Haldi &amp; Mehndi</h2>
    <p class="oneliner">Turmeric gold and blooming henna.</p>
-   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi%20%26%20Mehndi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261125/20261126&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Haldi &amp; Mehndi ↗</a><i>all-day hold — timings to follow</i></p>
+   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi%20%26%20Mehndi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261125/20261126&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20will%20follow%20with%20the%20formal%20invitation.">Add the Haldi &amp; Mehndi ↗</a><i>all-day hold — timings to follow</i></p>
   </div>
  </section>
  <section class="act act-shaadi" data-bloom>
@@ -395,10 +399,10 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <div class="evrow"><svg class="med" aria-hidden="true"><use href="#medKalash"/></svg><h2 class="ev">Shaadi</h2></div>
    <svg class="loop3" viewBox="0 0 24 34" width="24" height="34" aria-hidden="true"><path class="tpath" pathLength="1" d="M12 0 V9 C4 10 4 22 12 22 C20 22 20 10 12 12" stroke-width="1.25"/><path class="tpath" pathLength="1" d="M12 22 V34" stroke-width="1.25"/></svg>
    <h3 class="foil foil3 hi" lang="hi">शुभ विवाह</h3>
-   <p class="echo3">Saat Phere · The Seven Vows</p>
+   <p class="echo3">Shubh Vivah · An Auspicious Union</p>
    <p class="oneliner"><span class="hi" lang="hi">सात फेरे</span> — seven vows around the sacred fire.</p>
    <div class="dateunit"><span class="sc">Thursday · 26 November 2026</span><span class="muh3">Muhurat &amp; timings will follow with the formal invitation.</span></div>
-   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shaadi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261126/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add the Shaadi ↗</a></p>
+   <p class="calrow"><a class="daylink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shaadi%20%E2%80%94%20Prateek%20weds%20Mansi&amp;dates=20261126/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Muhurat%20%26%20timings%20will%20follow%20with%20the%20formal%20invitation.">Add the Shaadi ↗</a></p>
   </div>
  </section>
 </div>
@@ -447,23 +451,23 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
  <div class="close-plate" data-reveal>
   <div class="sprigrow" aria-hidden="true"><svg viewBox="0 0 48 62" style="transform:scaleX(-1)"><use href="#sprig"/></svg><svg viewBox="0 0 48 62"><use href="#sprig"/></svg></div>
   <h2 class="close-hi hi" lang="hi">जल्द मिलेंगे</h2>
-  <p class="close-echo">see you soon — the next chapter begins in Bhopal.</p>
+  <p class="close-echo">See you soon — the next chapter begins in Bhopal.</p>
   <div class="close-rail" aria-hidden="true"><span>24</span><svg viewBox="0 0 32 32"><use href="#marigold"/></svg><span>25</span><svg viewBox="0 0 32 32"><use href="#marigold"/></svg><span>26</span></div>
-  <p class="sc close-date">24 · 25 · 26 November 2026</p>
+  <p class="sc close-date">November 2026</p>
  </div>
  <div class="bless" id="bless" data-reveal>
   <button id="sprigBtn" class="sprig-btn" type="button" aria-label="Shower marigold petals to bless the couple"><svg viewBox="0 0 48 62" aria-hidden="true"><use href="#sprig"/></svg></button>
+  <p class="await">Tap the marigold to shower petals.</p>
   <p class="hi" lang="hi">आपके आशीर्वाद के अभिलाषी</p>
   <p class="await">Awaiting your blessings — the Roy &amp; Shrivas families</p>
   <hr class="hairline">
-  <p class="sc formal">Formal Invitation to Follow</p>
+  <p class="sc formal">Formal Invitation to&nbsp;Follow</p>
   <p class="credit">Crafted with love by the families.</p>
+  <div class="arc-slot" aria-hidden="true"><svg class="arc-static" viewBox="0 0 220 70"><use href="#petalShape" x="20" y="34" width="18" height="18"/><use href="#petalShape" x="62" y="12" width="16" height="16" style="--pbody:#E8890C"/><use href="#petalShape" x="102" y="2" width="20" height="20"/><use href="#petalShape" x="146" y="12" width="16" height="16" style="--pbody:#E8890C"/><use href="#petalShape" x="184" y="34" width="18" height="18"/></svg></div>
  </div>
 </section>
 
-<div id="petals" aria-hidden="true">
- <svg class="arc-static" viewBox="0 0 220 70"><use href="#petalShape" x="20" y="34" width="18" height="18"/><use href="#petalShape" x="62" y="12" width="16" height="16" style="--pbody:#E8890C"/><use href="#petalShape" x="102" y="2" width="20" height="20"/><use href="#petalShape" x="146" y="12" width="16" height="16" style="--pbody:#E8890C"/><use href="#petalShape" x="184" y="34" width="18" height="18"/></svg>
-</div>
+<div id="petals" aria-hidden="true"></div>
 
 <script>
 (function(){
@@ -505,9 +509,9 @@ var ist=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4);
 if(ist.getFullYear()===2026&&ist.getMonth()===10)$$('.rn').forEach(function(n){var day=+n.getAttribute('data-day');
  if(ist.getDate()>day)n.classList.add('past');else if(ist.getDate()===day)n.classList.add('today')});
 /* phoolon ki barsaat — two registers: tap bursts genda-bodied, auto-drift stroke-only */
-var layer=$('#petals'),lastBurst=0,NS='http://www.w3.org/2000/svg';
-function spawn(n,genda,force){var now=Date.now();if(!force){if(now-lastBurst<6e3)return;lastBurst=now;}
- if(matchMedia('(prefers-reduced-motion: reduce)').matches){layer.classList.add('arc-on');setTimeout(function(){layer.classList.remove('arc-on')},2200);return;}
+var layer=$('#petals'),last={},NS='http://www.w3.org/2000/svg';
+function spawn(n,genda,force,key){var now=Date.now();if(!force){if(now-(last[key]||0)<6e3)return;last[key]=now;}
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){de.classList.add('arc-on');setTimeout(function(){de.classList.remove('arc-on')},2200);return;}
  for(var i=0;i<n;i++){var s=d.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 20 20');
   s.setAttribute('class','petal p'+(i%3)+(genda?' genda':''));
   var u=d.createElementNS(NS,'use');u.setAttribute('href','#petalShape');s.appendChild(u);
@@ -516,8 +520,8 @@ function spawn(n,genda,force){var now=Date.now();if(!force){if(now-lastBurst<6e3
   s.style.setProperty('--dur',(3+Math.random()*.5).toFixed(2)+'s');
   layer.appendChild(s);s.addEventListener('animationend',function(ev){ev.currentTarget.remove()});}}
 function drift(n){spawn(n,false,true)}
-$('#railBtn').addEventListener('click',function(){spawn(9,true)});
-$('#sprigBtn').addEventListener('click',function(){spawn(9,true)});
+$('#railBtn').addEventListener('click',function(){spawn(9,true,false,'rail')});
+$('#sprigBtn').addEventListener('click',function(){spawn(9,true,false,'sprig')});
 /* visibility hygiene — pause countdown, clear petals */
 d.addEventListener('visibilitychange',function(){
  if(d.hidden){clearInterval(cdT);$$('.petal').forEach(function(p){p.remove()})}
