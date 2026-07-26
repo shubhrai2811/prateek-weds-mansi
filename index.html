@@ -38,7 +38,7 @@ button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
 button:focus-visible{outline:2px solid var(--maroon);outline-offset:4px}
 a{color:var(--maroon)}
 h1,h2,h3{font-weight:500}
-section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+section{padding:60px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .sc{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:14px}
 .hi{font-family:var(--deva);font-weight:400}
 .whisper{font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft)}
@@ -46,7 +46,7 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .btn{display:inline-block;background:var(--maroon);color:var(--ivory);font-weight:600;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:15px 28px;text-decoration:none;border-radius:2px}
 .hairline{width:120px;height:1px;background:var(--gold);border:0}
 /* ---------- Scene 0 · title sequence ---------- */
-.hero{min-height:100vh;min-height:100svh;justify-content:flex-start;padding-top:12vh;gap:20px;position:relative}
+.hero{min-height:100vh;min-height:100svh;justify-content:flex-start;padding-top:10vh;gap:20px;position:relative}
 .invoc{font-size:19px;color:var(--bronze)}
 .std{color:var(--bronze);margin-top:10px}
 .names{line-height:1.02;font-weight:500}
@@ -69,7 +69,7 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .cue{position:relative;width:1px;height:40px;background:var(--gold);margin-top:auto;margin-bottom:24px}
 .cue::after{content:'';position:absolute;left:-1.5px;top:0;width:4px;height:4px;border-radius:50%;background:var(--gold)}
 /* ---------- Scene 1 · proclamation ---------- */
-.proc{background:var(--maroon-deep);color:var(--ivory-soft);position:relative;padding:88px 32px}
+.proc{background:var(--maroon-deep);color:var(--ivory-soft);position:relative;padding:72px 28px}
 .proc::before{content:'';position:absolute;inset:16px;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.45);outline-offset:-5px;pointer-events:none}
 .foil{font-family:var(--deva);font-weight:400;font-size:clamp(44px,9vw,72px);line-height:1.4;color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(135deg,#A67C00,#E8C767 45%,#9C7414)}
 .proc .echo{color:var(--ivory);letter-spacing:.16em;margin:10px 0 34px}
@@ -89,12 +89,15 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .cd-col i{font-style:normal;font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
 .cd-rule{width:1px;height:44px;background:var(--champagne);align-self:center}
 .icslink,.daylink{font-size:15px;letter-spacing:.04em}
+.cd-prog{display:flex;flex-direction:column;gap:9px;font-style:italic;font-weight:400;font-size:18px;color:var(--ink-soft);margin-top:2px}
+.cd-line{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap}
+.cd-line b{font-style:normal;font-weight:500;font-size:20px;color:var(--maroon)}
 .muhurat{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
-.sect-thread{display:block;width:2px;height:90px;color:var(--gold);margin-top:28px}
+.sect-thread{display:block;width:2px;height:80px;color:var(--gold);margin-top:20px}
 .tpath{stroke:currentColor;stroke-width:2;fill:none;stroke-dasharray:1;stroke-dashoffset:calc((1 - var(--progress,1)) * 1px)}
 /* ---------- Scenes 3–5 · the three acts (natural flow) ---------- */
 .acts{position:relative}
-.act{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px 88px}
+.act{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px 60px}
 .act-sangeet{background:var(--ivory);color:var(--ink)}
 .act-haldi{background:linear-gradient(180deg,var(--haldi-wash),var(--ivory) 78%) #F6E7C6;color:var(--ink)}
 .act-haldi::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 32%,rgba(201,111,7,.16),transparent 62%);pointer-events:none}
@@ -106,7 +109,7 @@ section{padding:72px 24px;display:flex;flex-direction:column;align-items:center;
 .act-haldi .cutedge svg{background:#F6E7C6}
 .act-shaadi .cutedge{color:var(--gold)}
 .act-shaadi .cutedge svg{background:#5C0A14}
-.gutter{height:96px;position:relative;display:flex;justify-content:center;flex:none}
+.gutter{height:80px;position:relative;display:flex;justify-content:center;flex:none}
 .gutter .tseg{width:2px;height:100%}
 .act-sangeet .gutter,.act-shaadi .gutter{color:var(--gold)}
 .act-haldi .gutter{color:var(--bronze)}
@@ -164,7 +167,7 @@ html.js .slot img:not(.ld){opacity:0}
 @media (max-width:400px){.proc::before{inset:12px}}
 @media (max-width:430px){.rail-venue{letter-spacing:.08em}.rail-month{letter-spacing:.22em}}
 /* ---------- Scene 6 · the couple, गठबंधन ---------- */
-.couple{padding:96px 24px;gap:14px}
+.couple{padding:72px 24px;gap:14px}
 .knotwrap{display:flex;flex-direction:column;align-items:center;gap:8px}
 .knot{width:38px;height:33px}
 .knot path{stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round}
@@ -187,8 +190,8 @@ html.js .slot img:not(.ld){opacity:0}
 .wayfind .fb{background:var(--champagne);color:var(--bronze)}
 .wayfind p{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
 /* ---------- Scene 8 · the closing (type-on-maroon, S6 contingency) + blessing ---------- */
-.close{background:var(--maroon-deep);color:var(--champagne);padding:110px 24px 72px}
-.close-plate{display:flex;flex-direction:column;align-items:center;gap:16px;padding-bottom:56px}
+.close{background:var(--maroon-deep);color:var(--champagne);padding:84px 24px 64px}
+.close-plate{display:flex;flex-direction:column;align-items:center;gap:16px;padding-bottom:44px}
 .sprigrow{display:flex;gap:28px;color:var(--gold)}
 .sprigrow svg{width:34px;height:44px}
 .close-hi{font-size:clamp(28px,6vw,36px);line-height:1.5;color:var(--champagne)}
@@ -325,7 +328,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
  <p class="sc echo">Shubh Vivah · An Auspicious Union</p>
  <p class="fam">The Roy &amp; Shrivas families</p>
  <p class="inv-line">joyfully invite you to bless and celebrate the union of</p>
- <p class="inv-names">Prateek Roy <i>&amp;</i> Mansi Shrivas</p>
+ <p class="inv-names">Prateek <i>&amp;</i> Mansi</p>
  <p class="inv-line">over three days of ritual, music and marigolds in Bhopal.</p>
 </section>
 
@@ -340,7 +343,11 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
   <span class="cd-col"><b id="cdH">–</b><i>Hrs</i></span><span class="cd-rule"></span>
   <span class="cd-col"><b id="cdM">–</b><i>Min</i></span>
  </div>
- <p class="whisper" id="cdSub">Sangeet on Tuesday the 24th — Shaadi on Thursday, 26 November 2026.</p>
+ <div class="cd-prog" id="cdSub">
+  <span class="cd-line"><b>Sangeet</b><em>Tuesday · 24 November</em></span>
+  <span class="cd-line"><b>Haldi &amp; Mehndi</b><em>Wednesday · 25 November</em></span>
+  <span class="cd-line"><b>Shaadi</b><em>Thursday · 26 November</em></span>
+ </div>
  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prateek%20weds%20Mansi%20%E2%80%94%20Wedding%20Celebrations&amp;dates=20261124/20261127&amp;location=Hotel%20Yashoda%20Privilege%2C%20Narela%20Shankri%2C%20Ayodhya%20Bypass%20Road%2C%20Bhopal%2C%20Madhya%20Pradesh%20462022&amp;details=Sangeet%20(24%20Nov)%20%C2%B7%20Haldi%20%26%20Mehndi%20(25%20Nov)%20%C2%B7%20Shaadi%20(26%20Nov).%20Muhurat%20%26%20timings%20to%20follow%20with%20the%20formal%20invitation.">Add All Three Days</a>
  <p class="muhurat">Muhurat &amp; timings will follow with the formal invitation.</p>
  <a class="icslink" href="assets/wedding.ics">Apple Calendar · download .ics</a>
@@ -433,7 +440,6 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
    <div class="fb" aria-hidden="true"><svg width="64" height="64"><use href="#gateway"/></svg></div></figure>
   <p>Look for the lit gateway on Ayodhya Bypass Road.</p>
  </div>
- <a class="icslink" rel="noopener" href="https://hotelyashodaprivilege.com">hotelyashodaprivilege.com</a>
 </section>
 
 <!-- SCENE 8 · THE CLOSING — type on maroon (S6 contingency), then the blessing -->
