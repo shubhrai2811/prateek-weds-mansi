@@ -4,7 +4,7 @@ PRODID:-//Roy & Shrivas Families//Prateek weds Mansi//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:sangeet-20261124@shubhrai2811.github.io
+UID:sangeet-20261124@prateek-weds-mansi.netlify.app
 DTSTAMP:20260724T224140Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
@@ -15,7 +15,7 @@ DESCRIPTION:Muhurat & timings will follow with the formal invitation.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:haldi-mehndi-20261125@shubhrai2811.github.io
+UID:haldi-mehndi-20261125@prateek-weds-mansi.netlify.app
 DTSTAMP:20260724T224140Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -26,7 +26,7 @@ DESCRIPTION:Muhurat & timings will follow with the formal invitation.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:shaadi-20261126@shubhrai2811.github.io
+UID:shaadi-20261126@prateek-weds-mansi.netlify.app
 DTSTAMP:20260724T224140Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
