@@ -47,6 +47,7 @@ section{padding:60px 24px;display:flex;flex-direction:column;align-items:center;
 .hairline{width:120px;height:1px;background:var(--gold);border:0}
 /* ---------- Scene 0 · title sequence ---------- */
 .hero{min-height:100vh;min-height:100svh;justify-content:flex-start;padding-top:10vh;gap:20px;position:relative}
+.ganesh{width:76px;height:76px;color:var(--maroon);flex:none}
 .invoc{font-size:19px;color:var(--bronze)}
 .std{color:var(--bronze);margin-top:10px}
 .names{line-height:1.02;font-weight:500}
@@ -164,27 +165,27 @@ html.js .slot img:not(.ld){opacity:0}
 .no-photo .fb{display:flex}
 .no-photo picture{display:none}
 /* viewport tiers */
-@media (max-height:700px){.hero{padding-top:6vh;gap:12px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
+@media (max-height:700px){.hero{padding-top:4vh;gap:12px}.ganesh{width:56px;height:56px}.name{font-size:clamp(2.6rem,14vw,6.5rem)}}
 @media (min-height:800px){.hero{padding-top:14svh}}
 @media (max-width:400px){.proc::before{inset:12px}}
 @media (max-width:430px){.rail-venue{letter-spacing:.08em}.rail-month{letter-spacing:.22em}}
 /* ---------- Scene 6 · the couple, गठबंधन ---------- */
-.couple{padding:72px 24px;gap:14px}
+.couple{padding:72px 24px 48px;gap:14px}
 .knotwrap{display:flex;flex-direction:column;align-items:center;gap:8px}
 .knot{width:38px;height:33px}
 .knot path{stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round}
 .gath{font-size:19px;color:var(--bronze)}
 .gath-echo{font-style:italic;font-weight:400;font-size:17px;color:var(--ink-soft)}
-.arch{position:relative;width:min(80vw,420px);aspect-ratio:4/5;margin:20px 0 8px}
+.arch{position:relative;width:min(80vw,420px);aspect-ratio:10/11;margin:20px 0 8px}
 .clipbox{position:absolute;inset:0;clip-path:url(#jharokha);background:linear-gradient(180deg,var(--ivory-soft),var(--champagne));overflow:hidden}
-.arch-art{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:15% 24px 24px}
+.arch-art{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:22% 24px 5%}
 .arch-sprig{width:88px;height:113px;color:var(--bronze)}
 .archline{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .couple .hi2{font-size:26px;color:var(--maroon)}
 .lockup{display:flex;flex-direction:column;gap:2px;color:var(--bronze)}
 .lockup span{white-space:nowrap}
 /* ---------- Scene 7 · the venue (one compact block) ---------- */
-.venue{gap:10px}
+.venue{gap:10px;padding-top:40px}
 .venue h2{font-weight:500;font-size:28px;color:var(--maroon)}
 .venue address{font-style:normal;font-size:18px}
 .wayfind{display:flex;align-items:center;gap:16px;margin-top:10px;max-width:360px;text-align:left}
@@ -221,21 +222,25 @@ html.js .slot img:not(.ld){opacity:0}
 @media (prefers-reduced-motion:no-preference){
  html.js .t0,html.js .t2{opacity:0}
  html.js .divpath{stroke-dasharray:1;stroke-dashoffset:1}
+ html.js .ganesh path{stroke-dasharray:1;stroke-dashoffset:1}
+ html.js .ganesh circle{opacity:0}
  html.js .mask span{transform:translateY(110%)}
- html.js.intro-go .t0{animation:rise .6s cubic-bezier(.22,1,.36,1) forwards}
+ html.js.intro-go .ganesh path{animation:draw .9s ease forwards}
+ html.js.intro-go .ganesh circle{opacity:1;transition:opacity .35s ease .55s}
+ html.js.intro-go .t0{animation:rise .6s cubic-bezier(.22,1,.36,1) .2s forwards}
  html.js.intro-go .mask span{animation:maskup .6s cubic-bezier(.22,1,.36,1) forwards}
- html.js.intro-go .m1 span{animation-delay:.35s}html.js.intro-go .m2 span{animation-delay:.43s}html.js.intro-go .m3 span{animation-delay:.51s}
- html.js.intro-go .divpath{animation:draw .5s ease .7s forwards}
- html.js.intro-go .t2a{animation:rise .6s ease .25s forwards}html.js.intro-go .t2b{animation:rise .6s ease .82s forwards}html.js.intro-go .t2c{animation:rise .6s ease .9s forwards}
- html.js.intro-go .shine{background:linear-gradient(90deg,rgba(201,162,39,.2),#F3DE9C 50%,rgba(201,162,39,.2));background-size:220% 100%;animation:lightpass .6s ease 1.8s 1 both}
+ html.js.intro-go .m1 span{animation-delay:.5s}html.js.intro-go .m2 span{animation-delay:.58s}html.js.intro-go .m3 span{animation-delay:.66s}
+ html.js.intro-go .divpath{animation:draw .5s ease .85s forwards}
+ html.js.intro-go .t2a{animation:rise .6s ease .4s forwards}html.js.intro-go .t2b{animation:rise .6s ease .95s forwards}html.js.intro-go .t2c{animation:rise .6s ease 1.03s forwards}
+ html.js.intro-go .shine{background:linear-gradient(90deg,rgba(201,162,39,.2),#F3DE9C 50%,rgba(201,162,39,.2));background-size:220% 100%;animation:lightpass .6s ease 1.95s 1 both}
  /* §12.A2 — rail numerals settle like calendar leaves: −45° bottom hinge, absolute delays, 24→25→26 */
  html.js .rn{opacity:0}
- html.js.intro-go .rn{animation:leaf .42s cubic-bezier(.22,1,.36,1) 1.1s both}
- html.js.intro-go .rn[data-day="25"]{animation-delay:1.22s}
- html.js.intro-go .rn[data-day="26"]{animation-delay:1.34s}
- html.js.intro-skip .t0,html.js.intro-skip .t2,html.js.intro-skip .rn{opacity:1}
+ html.js.intro-go .rn{animation:leaf .42s cubic-bezier(.22,1,.36,1) 1.25s both}
+ html.js.intro-go .rn[data-day="25"]{animation-delay:1.37s}
+ html.js.intro-go .rn[data-day="26"]{animation-delay:1.49s}
+ html.js.intro-skip .t0,html.js.intro-skip .t2,html.js.intro-skip .rn,html.js.intro-skip .ganesh circle{opacity:1}
  html.js.intro-skip .mask span{transform:none}
- html.js.intro-skip .divpath{stroke-dashoffset:0}
+ html.js.intro-skip .divpath,html.js.intro-skip .ganesh path{stroke-dashoffset:0}
  /* §12.A3 — countdown flip-populate: same leaf grammar, once, in view (data-reveal gate); 30s updates stay silent */
  html.js .overture.in-view .cd-col b{animation:leaf .42s cubic-bezier(.22,1,.36,1) backwards}
  html.js .overture.in-view .cd-col:nth-child(3) b{animation-delay:.09s}
@@ -256,7 +261,8 @@ html.js .slot img:not(.ld){opacity:0}
 }
 /* reduced-motion: designed, not disabled (spec §7d override block) */
 @media (prefers-reduced-motion:reduce){
- .tpath,.knot path{stroke-dashoffset:0!important;animation:none!important}
+ .tpath,.knot path,.ganesh path{stroke-dashoffset:0!important;animation:none!important}
+ .ganesh circle{opacity:1!important}
  [data-reveal]>*,.mask > *{opacity:1!important;transform:none!important}
  .rn,.cd-col b{animation:none!important;opacity:1!important;transform:none!important}
  .slot img{opacity:1!important;transition:none!important;animation:none!important;transform:none!important}
@@ -304,6 +310,7 @@ Promise.race(r).then(function(c){document.documentElement.classList.add(c)});})(
 
 <!-- SCENE 0 · TITLE SEQUENCE -->
 <section class="hero">
+ <svg class="ganesh" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M32 2.6 C33 3.9 33 5.2 32 6.2 C31 5.2 31 3.9 32 2.6 Z"/><path pathLength="1" d="M29.6 15.8 C29.1 11.6 30.3 9 32 7.7 C33.7 9 34.9 11.6 34.4 15.8"/><path pathLength="1" d="M26.4 16.2 C26 13.2 26.9 11.1 28.5 10.1 C29.2 11.8 29.4 14 28.8 16"/><path pathLength="1" d="M37.6 16.2 C38 13.2 37.1 11.1 35.5 10.1 C34.8 11.8 34.6 14 35.2 16"/><path pathLength="1" d="M25.8 17.4 Q32 15.6 38.2 17.4"/><path pathLength="1" d="M25 18.8 C17.8 17.2 13.4 22 15.3 27.8 C16.6 31.6 20.4 33 23.6 31.2"/><path pathLength="1" d="M39 18.8 C46.2 17.2 50.6 22 48.7 27.8 C47.4 31.6 43.6 33 40.4 31.2"/><path pathLength="1" d="M26.5 22.1 C27.4 23.3 28.9 23.4 29.9 22.4"/><path pathLength="1" d="M37.5 22.1 C36.6 23.3 35.1 23.4 34.1 22.4"/><path pathLength="1" d="M33.9 20.2 C34.2 24.6 33.9 27.6 33.1 30.4 C32.7 31.8 32.4 33 32.3 34.2"/><path pathLength="1" d="M30.1 20.2 C30.3 24.6 30 27.8 29.2 30.6 C28.6 32.8 28.2 34.6 28.5 36.4 C28.8 38.3 30.2 39.2 31.6 38.7 C32.8 38.2 33.2 37 32.5 36.1"/><path pathLength="1" d="M35 26.4 C36.3 28 36.5 30 35.5 31.7"/><path pathLength="1" d="M27 33 C22.6 36.8 22 42.6 25.6 46.6"/><path pathLength="1" d="M37 33 C41.4 36.8 42 42.6 38.4 46.6"/><path pathLength="1" d="M31 46.2 C31 44 32.1 42.7 33.5 42.3 C34.9 42.7 36 44 36 46.2"/><path pathLength="1" d="M23 48.9 C27.6 47.4 36.4 47.4 41 48.9"/><path pathLength="1" d="M21.6 51.5 C26.4 53.6 37.6 53.6 42.4 51.5"/><path pathLength="1" d="M22.5 55.5 Q32 57.3 41.5 55.5"/></g><circle cx="32.05" cy="21.9" r="1" fill="#E8890C" stroke="#A85F06" stroke-width="1"/></svg>
  <p class="invoc hi t0" lang="hi">॥ श्री गणेशाय नमः ॥</p>
  <p class="sc std t2 t2a">Save the Date</p>
  <h1 class="names">
