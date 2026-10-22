@@ -1,39 +1,51 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Roy & Shrivas Families//Prateek weds Mansi//EN
+PRODID:-//Roy Family//Prateek weds Mansi//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:sangeet-20261124@prateek-weds-mansi.netlify.app
-DTSTAMP:20260724T224140Z
-DTSTART;VALUE=DATE:20261124
-DTEND;VALUE=DATE:20261125
-SUMMARY:Sangeet — Prateek weds Mansi
-LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
- hopal\, Madhya Pradesh 462022
-DESCRIPTION:Timings will be shared by the families.
-TRANSP:TRANSPARENT
+UID:ganesh-2026@prateek-weds-mansi.netlify.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261123T043000Z
+DTEND:20261123T063000Z
+SUMMARY:Ganesh Pujan & Mata Pujan — Prateek weds Mansi
+LOCATION:Our home (Nij Niwas)\, 131 Karmaveer Nagar\, Shiv Mandir\, Bhopal
+DESCRIPTION:https://prateek-weds-mansi.netlify.app/
 END:VEVENT
 BEGIN:VEVENT
-UID:haldi-mehndi-20261125@prateek-weds-mansi.netlify.app
-DTSTAMP:20260724T224140Z
-DTSTART;VALUE=DATE:20261125
-DTEND;VALUE=DATE:20261126
-SUMMARY:Haldi & Mehndi — Prateek weds Mansi
-LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
- hopal\, Madhya Pradesh 462022
-DESCRIPTION:Timings will be shared by the families.
-TRANSP:TRANSPARENT
+UID:sangeet-2026@prateek-weds-mansi.netlify.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261123T093000Z
+DTEND:20261123T123000Z
+SUMMARY:Mahila Sangeet — Prateek weds Mansi
+LOCATION:Our home (Nij Niwas)\, 131 Karmaveer Nagar\, Shiv Mandir\, Bhopal
+DESCRIPTION:https://prateek-weds-mansi.netlify.app/
 END:VEVENT
 BEGIN:VEVENT
-UID:shaadi-20261126@prateek-weds-mansi.netlify.app
-DTSTAMP:20260724T224140Z
-DTSTART;VALUE=DATE:20261126
-DTEND;VALUE=DATE:20261127
-SUMMARY:Shaadi — Prateek weds Mansi
-LOCATION:Hotel Yashoda Privilege\, Narela Shankri\, Ayodhya Bypass Road\, B
- hopal\, Madhya Pradesh 462022
-DESCRIPTION:Timings will be shared by the families.
-TRANSP:TRANSPARENT
+UID:haldi-2026@prateek-weds-mansi.netlify.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261125T103000Z
+DTEND:20261125T133000Z
+SUMMARY:Mandap Pujan & Haldi\, Tel — Prateek weds Mansi
+LOCATION:Our home (Nij Niwas)\, 131 Karmaveer Nagar\, Shiv Mandir\, Bhopal
+DESCRIPTION:https://prateek-weds-mansi.netlify.app/
+END:VEVENT
+BEGIN:VEVENT
+UID:baraat-2026@prateek-weds-mansi.netlify.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261126T123000Z
+DTEND:20261126T143000Z
+SUMMARY:Baraat Prasthan & Panigrahan Sanskar — Prateek weds Mansi
+LOCATION:Our home (Nij Niwas)\, 131 Karmaveer Nagar\, Shiv Mandir\, Bhopal
+DESCRIPTION:https://prateek-weds-mansi.netlify.app/
+END:VEVENT
+BEGIN:VEVENT
+UID:ashirwad-2026@prateek-weds-mansi.netlify.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261126T143000Z
+DTEND:20261126T180000Z
+SUMMARY:Ashirwad Samaroh & Swaruchi Bhoj — Prateek weds Mansi
+LOCATION:Yashoda Privilege Marriage Garden\, Near Boni Foi School\, Narela Shankri\, Ayodhya Bypass Road\, Bhopal 462022
+DESCRIPTION:https://prateek-weds-mansi.netlify.app/
 END:VEVENT
 END:VCALENDAR
