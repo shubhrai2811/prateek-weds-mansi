@@ -18,7 +18,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%236B0F1A'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E8890C' stroke='%23C9A227' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/greatvibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-500.woff2" as="font" type="font/woff2" crossorigin>
-<script>document.documentElement.className='js'</script>
+<script>document.documentElement.className='js';try{if(sessionStorage.getItem('opened')==='1')document.documentElement.className+=' seen'}catch(e){}</script>
 <style>
 @font-face{font-family:'Great Vibes';font-weight:400;font-display:swap;src:url('assets/fonts/greatvibes.woff2') format('woff2')}
 @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/cormorant-500.woff2') format('woff2')}
@@ -32,7 +32,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
 body{background:var(--ivory);color:var(--ink);font:500 19px/1.65 var(--serif);overflow-x:clip}
-body.locked{overflow:hidden;height:100svh}
+.js:not(.seen) body.locked{overflow:hidden;height:100svh}
 [hidden]{display:none!important}
 img{max-width:100%;display:block}
 button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
@@ -58,6 +58,7 @@ html[lang=hi] .btn{letter-spacing:.04em;text-transform:none;font-size:17px}
 .gate{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px;text-align:center;color:var(--ivory);
  background:radial-gradient(ellipse at 50% 35%,#7A1424 0%,var(--wine) 55%,var(--wine-deep) 100%);transition:opacity .8s ease,visibility .8s}
 .js .gate{display:flex}
+.seen .gate{display:none!important}
 .gate.gone{opacity:0;visibility:hidden}
 .gate::before{content:'';position:absolute;inset:0;opacity:.16;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='%23C9A227' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='38'/%3E%3Ccircle cx='60' cy='22' r='38'/%3E%3Ccircle cx='60' cy='98' r='38'/%3E%3Ccircle cx='22' cy='60' r='38'/%3E%3Ccircle cx='98' cy='60' r='38'/%3E%3C/svg%3E")}
 .gate>*{position:relative}
@@ -70,7 +71,8 @@ html[lang=hi] .g-names{font-family:var(--deva);font-size:clamp(2rem,8vw,3rem)}
 .e-back{inset:0;background:#E3D2A9;border-radius:4px}
 .e-letter{left:7%;right:7%;top:8%;bottom:6%;background:var(--ivory);border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--maroon);transition:transform 1s cubic-bezier(.3,.8,.3,1) .55s;z-index:1;text-align:center}
 .e-letter .hi{font-size:18px;line-height:1.2}
-.e-letter b{font-family:var(--script);font-weight:400;font-size:26px;color:var(--maroon)}
+.e-letter b{font-family:var(--script);font-weight:400;font-size:clamp(22px,7vw,28px);color:var(--maroon);line-height:1.3}
+.e-letter small{font-size:13px;letter-spacing:.2em;color:var(--bronze)}
 .e-front{inset:0;background:linear-gradient(180deg,#F1E5C8,#EBDDB9);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%);z-index:2;border-radius:4px}
 .e-flap{left:0;top:0;width:100%;height:56%;background:linear-gradient(180deg,#EADBB6,#F3E8CD);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transition:transform .8s ease .25s,z-index 0s .5s;z-index:3}
 .e-seal{left:50%;top:54%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;z-index:4;display:grid;place-items:center;color:#F0D98A;background:radial-gradient(circle at 35% 30%,#A52035,var(--maroon) 62%,#4A0A14);box-shadow:0 3px 8px rgba(0,0,0,.5),inset 0 0 0 3px rgba(240,217,138,.28);transition:transform .35s ease,opacity .35s ease}
@@ -82,11 +84,14 @@ html[lang=hi] .g-names{font-family:var(--deva);font-size:clamp(2rem,8vw,3rem)}
 html[lang=hi] .g-btn{letter-spacing:.04em;text-transform:none;font-size:18px}
 .g-btn:hover{transform:translateY(-2px)}
 .g-skip{font-size:16px;color:var(--gold-soft);text-decoration:underline;text-underline-offset:4px;opacity:.85;min-height:44px;padding:8px 14px}
+.gate.open .g-names,.gate.open .g-top{opacity:0;transition:opacity .4s}
 .gate.open .g-btn,.gate.open .g-skip{opacity:0;pointer-events:none;transition:opacity .3s}
 
 /* ---------- Top bar ---------- */
 .bar{position:fixed;z-index:60;top:max(12px,env(safe-area-inset-top));right:12px;left:12px;display:flex;justify-content:flex-end;align-items:center;gap:10px;pointer-events:none}
 .bar>*{pointer-events:auto}
+.bar{transition:transform .35s ease,opacity .35s}
+.bar.tuck{transform:translateY(-90px);opacity:0}
 .nav{display:none;gap:4px;padding:6px;border-radius:999px;background:rgba(250,246,236,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(74,10,20,.14);margin-right:auto;margin-left:auto;transform:translateY(-70px);transition:transform .4s}
 .nav.show{transform:none}
 .nav a{padding:8px 16px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft)}
@@ -104,12 +109,12 @@ html[lang=hi] .g-btn{letter-spacing:.04em;text-transform:none;font-size:18px}
 @media(prefers-reduced-motion:no-preference){.mandala g{animation:spin 240s linear infinite}}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero>*:not(.garland):not(.mandala){position:relative;z-index:1}
-.arch{position:relative;width:clamp(190px,56vw,250px);aspect-ratio:10/12.5;margin:14px 0 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--maroon);
+.arch{position:relative;width:clamp(200px,58vw,270px);aspect-ratio:4/5.2;margin:14px 0 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--maroon);
  border-radius:999px 999px 14px 14px;background:linear-gradient(180deg,#FFFBF1,#F8EBD0);box-shadow:0 14px 40px rgba(107,15,26,.14),inset 0 0 0 1px var(--gold)}
 .arch::before{content:'';position:absolute;inset:7px;border-radius:999px 999px 8px 8px;border:1px solid rgba(201,162,39,.55);pointer-events:none}
 .ganesh{width:46%;height:auto;flex:none}
 .arch .invoc{font-size:15px;color:var(--bronze);line-height:1.5;padding:0 12px}
-.eyebrow{color:var(--bronze);margin-bottom:8px;letter-spacing:.2em;max-width:30ch}
+.eyebrow{color:var(--bronze);margin-bottom:8px;letter-spacing:.22em}
 .line{font-style:italic;font-weight:400;font-size:20px;color:var(--ink-soft);max-width:30ch}
 .names{font-family:var(--script);font-weight:400;font-size:clamp(3.4rem,17vw,6.2rem);line-height:1.02;color:var(--maroon);margin:6px 0 2px;display:flex;flex-direction:column;align-items:center}
 .names .weds{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.1rem,4.6vw,1.7rem);color:var(--gold);line-height:1.2;margin:-2px 0}
@@ -139,6 +144,7 @@ html[lang=hi] .count h2{font-family:var(--deva);font-size:clamp(2rem,8vw,2.8rem)
 html[lang=hi] .cd span{text-transform:none;letter-spacing:.04em;font-size:15px}
 .cd-msg{font-size:24px;color:var(--gold-soft);font-style:italic}
 .cd-date{margin-top:28px;color:var(--ivory);opacity:.9;letter-spacing:.14em}
+.cd-sub{margin-top:6px;font-style:italic;font-weight:400;font-size:18px;color:#F2E6CF;opacity:.85}
 
 /* ---------- Events ---------- */
 .events{padding:84px 22px 40px;text-align:center;background:linear-gradient(180deg,var(--blush),var(--ivory))}
@@ -155,7 +161,8 @@ html[lang=hi] .sec-head h2{font-family:var(--deva);font-size:clamp(2rem,8vw,2.8r
 .card{position:relative;padding:64px 26px 30px;border-radius:999px 999px 22px 22px;background:linear-gradient(180deg,#FFFCF4,#FBF1DC);box-shadow:0 12px 36px rgba(107,15,26,.1),inset 0 0 0 1px rgba(201,162,39,.7);display:flex;flex-direction:column;align-items:center}
 .card::before{content:'';position:absolute;inset:7px;border-radius:999px 999px 16px 16px;border:1px solid rgba(201,162,39,.35);pointer-events:none}
 .badge{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;color:var(--ivory);background:radial-gradient(circle at 35% 30%,#8A1A2C,var(--maroon));box-shadow:0 4px 12px rgba(107,15,26,.3);margin-bottom:12px}
-.badge svg{width:36px;height:36px}
+.badge svg{width:38px;height:38px}
+#medDhol g,#medHaldi g,#medKalash g{stroke-width:2.6}
 .card .dn{font-size:14px;color:var(--bronze)}
 .card h3{font-family:var(--script);font-weight:400;font-size:2.7rem;line-height:1.15;color:var(--maroon);margin:4px 0}
 html[lang=hi] .card h3{font-family:var(--deva);font-size:2.1rem}
@@ -174,13 +181,14 @@ html[lang=hi] .meta b{text-transform:none;letter-spacing:.04em;font-size:15px}
 /* ---------- Photo slots (auto-fill from assets/photos/) ---------- */
 .arch.photo{padding:0;overflow:hidden}
 .arch.photo>*:not(img){display:none}
-.arch.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.arch.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:inherit}
+.arch.photo::after{content:"";position:absolute;inset:7px;border-radius:999px 999px 8px 8px;border:1px solid rgba(255,244,214,.85);z-index:2;pointer-events:none}
 .gallery{padding:70px 22px 30px;text-align:center;background:var(--ivory)}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:36px auto 0}
 @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
 .grid figure{aspect-ratio:3/4;border-radius:999px 999px 14px 14px;overflow:hidden;background:var(--cream);box-shadow:inset 0 0 0 1px var(--gold)}
 .grid figure:nth-child(even){margin-top:26px}
-.grid img{width:100%;height:100%;object-fit:cover}
+.grid img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .grid figure.ph{display:grid;place-items:center;color:var(--bronze);border:1px dashed var(--gold);box-shadow:none;font-style:italic;font-size:17px}
 /* ---------- Venue ---------- */
 .venue{padding:70px 24px 84px;text-align:center;display:flex;flex-direction:column;align-items:center;background:var(--ivory)}
@@ -193,7 +201,8 @@ html[lang=hi] .venue h3{font-family:var(--deva);font-size:2.1rem}
 .wayfind p{font-style:italic;font-weight:400;font-size:19px;color:var(--ink-soft);line-height:1.4}
 
 /* ---------- Closing ---------- */
-.thanks{position:relative;background:radial-gradient(ellipse at 50% 100%,#7A1424 0%,var(--wine) 60%,var(--wine-deep) 100%);color:var(--ivory);text-align:center;padding:84px 26px 64px;overflow:hidden}
+.thanks{position:relative;background:radial-gradient(ellipse at 50% 100%,#7A1424 0%,var(--wine) 60%,var(--wine-deep) 100%);color:var(--ivory);text-align:center;padding:0 26px 64px;overflow:hidden}
+.toran{margin:0 -26px 34px;width:calc(100% + 52px);color:#E8A33A}
 .thanks .sc{color:var(--gold-soft)}
 .thanks h2{font-family:var(--script);font-weight:400;font-size:clamp(2.4rem,10vw,3.6rem);line-height:1.2;margin:8px 0 18px}
 html[lang=hi] .thanks h2{font-family:var(--deva);font-size:2.2rem}
@@ -205,8 +214,9 @@ html[lang=hi] .sig{font-family:var(--deva);font-size:2.2rem}
 .sprig-btn svg{width:100%;height:100%;color:var(--gold-soft)}
 .thanks .tap{font-size:17px;font-style:italic;font-weight:400;opacity:.85}
 .fam2{margin-top:26px;font-size:20px;color:#F2E6CF}
+.btn.share{margin-top:26px;background:transparent;color:var(--gold-soft);border-color:rgba(230,204,122,.7)}
 .credit{margin-top:34px;font-size:15px;opacity:.7;letter-spacing:.04em}
-#petals{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:110;overflow:hidden}
 .petal{position:absolute;top:-30px;width:16px;height:22px;border-radius:70% 0 70% 0;background:var(--genda);opacity:.95;animation:fall linear forwards}
 .petal.g{background:var(--gold)}.petal.r{background:#B0243A}
 @keyframes fall{to{transform:translate3d(var(--dx),calc(100vh + 60px),0) rotate(var(--rot))}}
@@ -240,7 +250,7 @@ html[lang=hi] .sig{font-family:var(--deva);font-size:2.2rem}
  <h1 class="g-names" data-hi="प्रतीक संग मानसी">Prateek <em>weds</em> Mansi</h1>
  <div class="env" aria-hidden="true">
   <div class="e-back"></div>
-  <div class="e-letter"><span class="hi">॥ शुभ विवाह ॥</span><b>P &amp; M</b></div>
+  <div class="e-letter"><span class="hi">॥ शुभ विवाह ॥</span><b>Prateek &amp; Mansi</b><small>26 · 11 · 2026</small></div>
   <div class="e-front"></div>
   <div class="e-flap"></div>
   <div class="e-seal"><svg  viewBox="-233.94 -25.83 912.52 912.52" aria-hidden="true"><g fill="currentColor" transform="translate(-94.853 -67.642)"><rect x="213.81" y="174.37" width="208.27" height="25.02" ry="8.7124"/><rect x="248.29" y="139.52" width="139.33" height="25.02" ry="8.7124"/><rect x="267.62" y="106.85" width="100.65" height="20.664" ry="7.1955"/><rect x="302.1" y="67.642" width="31.705" height="29.376" ry="10.229"/><rect x="307.98" y="217.39" width="19.934" height="53.336" ry="18.572"/><path d="m94.9 252.3c27.3-16.3 56.2-35.3 92.8-35.8 22.3-1 44.6-0.9 66.9 17.5 21.2 20.3 25.8 53.1 31.8 84.9 0 0 6.5 49.6 15.6 71.4 13.6 32.5 56.4 84.1 56.4 84.1 25 37.6 32.8 60.4 31.5 107.7-1.8 48.8-39.7 60.1-69.9 82.8-29.6 19.8-48 38-51.8 57.8-6.8 37.6 46.8 82.2 40.1 89.7-45.1-13.4-78.6-43.9-66.3-103.4 14.9-68.3 128.8-72.8 126.5-129.9-1.4-26.1-14.4-57.8-31-82.5-19.6-27.7-32.7-49.1-51.6-79.8-2.9-4.7-25 13.7-41.4 11.1 3.9-14.3 25.9-31 24.9-38.9-9.7-42.9-15.8-95-30.1-111.1-30.4-32.7-47.6-24.8-86-14.9 11.4 34.5 39.1 75 31.9 104.7z"/><path d="m532.8 285.7c31.1-17.9-55-68.8-91.7-69.4-22.3-1-44 2.9-66.3 21.8-32.6 37.9-53.4 99.1-42.7 154 11.8 60.7 83.5 113.2 83 172 2.8 87.2-143.6 105.7-132.1 175.6 7.4 51.5 44.5 44.6 55.5 23.7 6.6-12.6-0.5-48.4-32.7-34.2 4.3-20.6 32-36 66.2-55.9 27.2-18.5 71.4-63.7 72.9-101.4 5.9-63.4-52.6-115.3-69.2-154.1-2.5-5.9 12.2-2.4 21.2-8.6-9-16.8-37.6-27.3-38.2-31.3-4.2-42.6 9.6-85.6 24.9-101.6 12.9-13 37.4-27.6 61.2-27.6 17.8 5.1 26 9.4 45.3 28.3-52.5 61.2-74.3 86.6-65.4 120.1 8.9 33.5 30.2-66.4 108.1-111.1z"/><rect x="248.29" y="-863.17" width="139.33" height="25.02" ry="8.7124" transform="scale(1,-1)"/><rect x="267.62" y="-892.57" width="100.65" height="20.664" ry="7.1955" transform="scale(1,-1)"/><rect x="302.1" y="-928.51" width="31.705" height="29.376" ry="10.229" transform="scale(1,-1)"/></g><circle cx="222.3" cy="235" r="14" fill="#E8890C"/></svg></div>
@@ -294,6 +304,7 @@ html[lang=hi] .sig{font-family:var(--deva);font-size:2.2rem}
  </div>
  <p class="cd-msg" id="cdMsg" hidden></p>
  <p class="sc cd-date rv" data-hi="गुरुवार, 26 नवंबर 2026">Thursday · 26 November 2026</p>
+ <p class="cd-sub balance rv" data-hi="उत्सव का आरंभ मंगलवार, 24 नवंबर को संगीत से">Celebrations begin on 24 November with the Sangeet</p>
 </section>
 
 <!-- EVENTS -->
@@ -361,6 +372,7 @@ html[lang=hi] .sig{font-family:var(--deva);font-size:2.2rem}
 
 <!-- THANKS -->
 <footer class="thanks">
+ <svg class="garland toran" aria-hidden="true" preserveAspectRatio="xMidYMin slice"><rect width="100%" height="96" fill="url(#gpat)"/></svg>
  <p class="sc rv" data-hi="प्रेम और आभार सहित">With love &amp; gratitude</p>
  <h2 class="rv" data-hi="आपके आशीर्वाद के अभिलाषी">Awaiting your blessings</h2>
  <p class="msg balance rv" data-hi="आपका स्नेह, हँसी और आशीर्वाद हमारे लिए अनमोल है। आपके साथ यह उत्सव मनाने की प्रतीक्षा है।">Your love, laughter and blessings mean the world to us. We can’t wait to celebrate with you.</p>
@@ -369,6 +381,7 @@ html[lang=hi] .sig{font-family:var(--deva);font-size:2.2rem}
  <button class="sprig-btn rv" id="sprigBtn" type="button" aria-label="Shower marigold petals"><svg viewBox="0 0 48 62" aria-hidden="true"><use href="#sprig"/></svg></button>
  <p class="tap rv" data-hi="फूलों की वर्षा के लिए गेंदे को छुएँ।">Tap the marigold to shower petals.</p>
  <p class="fam2 rv" data-hi="— राय एवं श्रीवास परिवार">— The Roy &amp; Shrivas families</p>
+ <button class="btn share rv" id="shareBtn" type="button"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span data-hi="निमंत्रण साझा करें">Share the invitation</span></button>
  <p class="credit rv" data-hi="परिवारों के स्नेह से बनाया गया।">Made with love by the families.</p>
 </footer>
 <div id="petals" aria-hidden="true"></div>
@@ -397,23 +410,27 @@ $('#enBtn').onclick=function(){setLang('en')};$('#hiBtn').onclick=function(){set
 /* gate */
 var gate=$('#gate'),opened=false;
 function enter(){gate.classList.add('gone');d.body.classList.remove('locked');scrollTo(0,0);setTimeout(function(){gate.remove()},900);}
-function openEnv(){if(opened)return;opened=true;
+function seen(){try{sessionStorage.setItem('opened','1')}catch(e){}}
+function openEnv(){if(opened)return;opened=true;seen();
  if(reduce){enter();return;}
- gate.classList.add('open');setTimeout(enter,2600);}
-$('#openBtn').onclick=openEnv;$('#skipBtn').onclick=function(){opened=true;enter()};
+ gate.classList.add('open');setTimeout(function(){shower(28)},900);setTimeout(enter,2600);}
+$('#openBtn').onclick=openEnv;$('#skipBtn').onclick=function(){opened=true;seen();enter()};
+addEventListener('keydown',function(e){if(e.key==='Escape'&&!opened){opened=true;seen();enter()}});
+var back=false;try{back=sessionStorage.getItem('opened')==='1'}catch(e){}
+if(back){opened=true;gate.remove();d.body.classList.remove('locked')}else{try{$('#openBtn').focus({preventScroll:true})}catch(e){}}
 if(!d.documentElement.classList.contains('js')){d.body.classList.remove('locked')}
 /* reveal + nav highlight */
 var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 $$('.rv').forEach(function(el,i){el.style.transitionDelay=(el.closest('.cards')?(i%3)*.12:0)+'s';io.observe(el)});
-var nav=$('#nav'),links=$$('#nav a'),secs=['top','countdown','events','venue'].map(function(id){return d.getElementById(id)});
-function onScroll(){nav.classList.toggle('show',scrollY>innerHeight*.6);var y=scrollY+innerHeight*.4,k=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)k=i});links.forEach(function(a,i){a.classList.toggle('on',i===k)})}
+var bar=$('#bar'),lastY=0,nav=$('#nav'),links=$$('#nav a'),secs=['top','countdown','events','venue'].map(function(id){return d.getElementById(id)});
+function onScroll(){var y0=scrollY;bar.classList.toggle('tuck',innerWidth<760&&y0>lastY+4&&y0>200);if(y0<lastY-4||y0<200)bar.classList.remove('tuck');lastY=y0;nav.classList.toggle('show',scrollY>innerHeight*.6);var y=scrollY+innerHeight*.4,k=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)k=i});links.forEach(function(a,i){a.classList.toggle('on',i===k)})}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 /* countdown — IST, explicit +05:30 */
-var T1=+new Date('2026-11-24T00:00:00+05:30'),T2=+new Date('2026-11-26T00:00:00+05:30'),T3=+new Date('2026-11-27T00:00:00+05:30');
+var T2=+new Date('2026-11-26T00:00:00+05:30'),T3=+new Date('2026-11-27T00:00:00+05:30');
 function cd(){var n=Date.now(),row=$('#cdRow'),msg=$('#cdMsg'),hi=d.documentElement.lang==='hi';
- if(n<T1){var ms=T1-n;$('#cdD').textContent=Math.floor(ms/864e5);$('#cdH').textContent=Math.floor(ms%864e5/36e5);$('#cdM').textContent=Math.floor(ms%36e5/6e4);$('#cdS').textContent=Math.floor(ms%6e4/1e3);row.hidden=false;msg.hidden=true;return}
+ if(n<T2){var ms=T2-n;$('#cdD').textContent=Math.floor(ms/864e5);$('#cdH').textContent=Math.floor(ms%864e5/36e5);$('#cdM').textContent=Math.floor(ms%36e5/6e4);$('#cdS').textContent=Math.floor(ms%6e4/1e3);row.hidden=false;msg.hidden=true;return}
  row.hidden=true;msg.hidden=false;
- msg.textContent=n<T2?(hi?'उत्सव शुरू हो चुका है — शुभ विवाह गुरुवार, 26 नवंबर को।':'The celebrations have begun — Shaadi on Thursday, 26 November.'):n<T3?(hi?'आज शुभ विवाह है — प्रतीक संग मानसी।':'Today is the day — Prateek weds Mansi.'):(hi?'विवाह सम्पन्न — 26 नवंबर 2026।':'Happily married — 26 November 2026.');}
+ msg.textContent=n<T3?(hi?'आज शुभ विवाह है — प्रतीक संग मानसी।':'Today is the day — Prateek weds Mansi.'):(hi?'विवाह सम्पन्न — 26 नवंबर 2026।':'Happily married — 26 November 2026.');}
 cd();setInterval(cd,1000);
 /* petals */
 var layer=$('#petals');
@@ -423,6 +440,10 @@ function shower(n){if(reduce)return;var cls=['','g','r'];
   p.style.animationDuration=(3.2+Math.random()*2.6)+'s';p.style.animationDelay=(Math.random()*.9)+'s';p.style.transform='scale('+(.7+Math.random()*.7)+')';
   layer.appendChild(p);(function(x){setTimeout(function(){x.remove()},7500)})(p);}}
 $('#sprigBtn').onclick=function(){shower(34)};
+/* share — native sheet on phones, WhatsApp on desktop */
+$('#shareBtn').onclick=function(){var url='https://prateek-weds-mansi.netlify.app/',txt='Prateek weds Mansi — 24–26 November 2026, Hotel Yashoda Privilege, Bhopal. With love, the Roy & Shrivas families.';
+ if(navigator.share){navigator.share({title:'Prateek weds Mansi',text:txt,url:url}).catch(function(){});return}
+ open('https://wa.me/?text='+encodeURIComponent(txt+'\n'+url),'_blank','noopener');};
 var shown=false;new IntersectionObserver(function(es,o){if(es[0].isIntersecting&&!shown){shown=true;shower(14);o.disconnect()}},{threshold:.5}).observe($('.thanks .sig'));
 /* photo slots — drop files into assets/photos/: couple-hero.jpg, gallery-1.jpg … gallery-6.jpg. ?placeholders=1 previews the empty frames */
 var ph=/[?&]placeholders=1/.test(location.search),grid=$('#grid'),gal=$('#gallery'),got=0;
@@ -430,7 +451,7 @@ function probe(src,ok,fail){var im=new Image();im.onload=function(){ok(im)};im.o
 probe('assets/photos/couple-hero.jpg',function(im){im.alt='Prateek and Mansi';im.decoding='async';$('#archSlot').classList.add('photo');$('#archSlot').appendChild(im)});
 for(var i=1;i<=6;i++)(function(n){var f=d.createElement('figure');f.className='ph';f.textContent=ph?'Photo '+n:'';f.style.order=n;
  if(ph){grid.appendChild(f);gal.hidden=false}
- probe('assets/photos/gallery-'+n+'.jpg',function(im){im.alt='Prateek and Mansi — photo '+n;im.loading='lazy';f.className='';f.textContent='';f.appendChild(im);if(!f.parentNode)grid.appendChild(f);gal.hidden=false;gal.classList.add('has');$('#gallery .rv').forEach(function(e){io.observe(e)})})})(i);
+ probe('assets/photos/gallery-'+n+'.jpg',function(im){im.alt='Prateek and Mansi — photo '+n;im.loading='lazy';f.className='';f.textContent='';f.appendChild(im);if(!f.parentNode)grid.appendChild(f);gal.hidden=false;gal.classList.add('has');$$('#gallery .rv').forEach(function(e){io.observe(e)})})})(i);
 /* restore language */
 try{if(localStorage.getItem('lang')==='hi')setLang('hi')}catch(e){}
 })();
