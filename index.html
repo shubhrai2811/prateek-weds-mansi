@@ -236,16 +236,15 @@ html[lang=hi] .card dd{font:400 16px/1.55 var(--deva)}
 .grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;gap:12px;max-width:760px;margin:44px auto 0}
 .grid li:nth-child(1),.grid li:nth-child(2){grid-row:span 2}
 @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:150px}.grid li:nth-child(3){grid-row:span 2}}
-.grid button{display:block;width:100%;height:100%;border-radius:18px;overflow:hidden;border:1px solid rgba(184,137,59,.35);background:#F1E4D6;box-shadow:0 16px 30px -18px rgba(63,10,21,.45)}
+.grid:has(>li:nth-child(3):last-child),.grid:has(>li:nth-child(2):last-child),.grid:has(>li:only-child){grid-template-columns:1fr;grid-auto-rows:auto;max-width:440px}
+.grid:has(>li:nth-child(3):last-child) li,.grid:has(>li:nth-child(2):last-child) li,.grid:has(>li:only-child) li{grid-row:auto!important;margin:0;aspect-ratio:4/5}
+@media(min-width:760px){.grid:has(>li:nth-child(3):last-child){grid-template-columns:repeat(3,1fr);max-width:980px}.grid:has(>li:nth-child(2):last-child){grid-template-columns:repeat(2,1fr);max-width:720px}}
+.grid figure{position:relative;display:block;width:100%;height:100%;border-radius:18px;overflow:hidden;border:1px solid rgba(184,137,59,.35);background:#F1E4D6;box-shadow:0 16px 30px -18px rgba(63,10,21,.45)}
 .grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.grid button:hover img{transform:scale(1.05)}
-.grid li.ph button{display:grid;place-items:center;border-style:dashed;font:italic 400 17px var(--serif);color:var(--gold-deep);box-shadow:none}
-.lb{position:fixed;inset:0;z-index:130;background:rgba(30,6,11,.92);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:20px}
-.lb.on{display:flex}
-.lb img{max-width:min(92vw,900px);max-height:76vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.lb p{font:italic 400 20px var(--serif);color:var(--champagne)}
-.lb button{position:absolute;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(251,246,236,.12);color:var(--ivory)}
-.lb .x{top:16px;right:16px}.lb .pv{left:12px;top:50%}.lb .nx{right:12px;top:50%}
+.grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 12px;font:italic 400 16px var(--serif);color:#FBF6EC;background:linear-gradient(transparent,rgba(30,6,11,.55));text-align:center}
+html[lang=hi] .grid figcaption{font:400 15px var(--deva)}
+.arch img,.grid img{pointer-events:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.grid li.ph figure{display:grid;place-items:center;border-style:dashed;font:italic 400 17px var(--serif);color:var(--gold-deep);box-shadow:none}
 
 /* ---------- Venue ---------- */
 .vcard{position:relative;max-width:520px;margin:44px auto 0;padding:40px 26px 30px;border-radius:24px;background:linear-gradient(180deg,#FFFDF8,#FBF3E6);border:1px solid rgba(184,137,59,.45);box-shadow:0 24px 50px -30px rgba(63,10,21,.4),inset 0 0 0 6px #FFFDF8,inset 0 0 0 7px rgba(184,137,59,.2)}
@@ -494,7 +493,6 @@ html[lang=hi] .made{letter-spacing:.03em;font-size:14px;text-transform:none;font
  <button id="shareBtn" type="button" aria-label="Share invitation"><svg class="i"><use href="#i-share"/></svg></button>
  <button class="mus" id="musBtn" type="button" aria-label="Play music" hidden><svg class="i" id="musIco"><use href="#i-note"/></svg></button>
 </div>
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo"><button class="x" type="button" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button><button class="pv" type="button" aria-label="Previous"><svg class="i"><use href="#i-left"/></svg></button><img alt=""><p></p><button class="nx" type="button" aria-label="Next"><svg class="i"><use href="#i-right"/></svg></button></div>
 <div class="toast" id="toast" role="status"></div>
 <div id="fall" aria-hidden="true"></div>
 <audio id="music" preload="metadata" loop></audio>
@@ -545,7 +543,7 @@ try{var to=new URLSearchParams(location.search).get('to');if(to)to=to.trim().rep
 /* ---- language ---- */
 $$('[data-hi]').forEach(function(el){el.setAttribute('data-en',el.innerHTML)});
 function setLang(l){var hi=l==='hi';de.lang=hi?'hi':'en';
- $$('[data-hi]').forEach(function(el){el.innerHTML=hi?el.getAttribute('data-hi'):el.getAttribute('data-en')});
+ $$('[data-hi]').forEach(function(el){if(!el.hasAttribute('data-en'))el.setAttribute('data-en',el.innerHTML);el.innerHTML=hi?el.getAttribute('data-hi'):el.getAttribute('data-en')});
  $$('.glang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l)});
  $('#langFab').setAttribute('aria-label',hi?'View in English':'हिंदी में देखें');
  try{localStorage.setItem('lang',l)}catch(e){}cd(true);}
@@ -567,7 +565,7 @@ function openEnv(){if(opened)return;opened=true;seen();if(hasMusic)au.play().cat
  if(reduce){enter();return}gate.classList.add('open');setTimeout(function(){shower(30)},1100);setTimeout(enter,2900)}
 $('#openBtn').onclick=openEnv;
 $('#skipBtn').onclick=function(){opened=true;seen();enter()};
-addEventListener('keydown',function(e){if(e.key==='Escape'){if(!opened){opened=true;seen();enter()}closeDD();menu(false);lbClose()}});
+addEventListener('keydown',function(e){if(e.key==='Escape'){if(!opened){opened=true;seen();enter()}closeDD();menu(false);}});
 if(de.classList.contains('seen')){opened=true;gate.remove();d.body.classList.remove('locked');$('#fab').classList.add('show')}else{try{$('#openBtn').focus({preventScroll:true})}catch(e){}}
 
 /* ---- header, mobile menu, section highlight, back-to-top ---- */
@@ -613,21 +611,16 @@ $('#shareBtn').onclick=function(){var txt='Prateek weds Mansi — Sangeet 24, Ha
  else open('https://wa.me/?text='+encodeURIComponent(txt+'\n'+SITE),'_blank','noopener')};
 
 /* ---- photo slots: assets/photos/couple-hero.jpg, gallery-1.jpg … gallery-6.jpg (?placeholders=1 previews frames) ---- */
-var CAP=[['Forever starts here','यहीं से शुरू होता है हमेशा का साथ'],['Two hearts, one promise','दो दिल, एक वादा'],['Blessed by family','परिवार का आशीर्वाद'],['Little moments','छोटे-छोटे पल'],['Side by side','साथ-साथ'],['Our story','हमारी कहानी']];
+var CAP=[['A light for our new beginning','नई शुरुआत का एक दीया'],['Side by side','कदम से कदम मिलाकर'],['Walking into forever','हमेशा के सफ़र की ओर'],['Little moments','छोटे-छोटे पल'],['Together','साथ-साथ'],['Our story','हमारी कहानी']];
 var phMode=/[?&]placeholders=1/.test(location.search),grid=$('#grid'),gal=$('#gallery'),shots=[];
 function probe(src,ok){var im=new Image();im.onload=function(){ok(im)};im.src=src}
-probe('assets/photos/couple-hero.jpg',function(im){im.alt='Prateek and Mansi';$('#archSlot .arch-in').appendChild(im);$('#archSlot').classList.add('photo')});
+probe('assets/photos/couple-hero.jpg',function(im){im.draggable=false;im.alt='Prateek and Mansi at the ghat at sunset';$('#archSlot .arch-in').appendChild(im);$('#archSlot').classList.add('photo')});
 function showGal(){gal.hidden=false;$$('.galnav').forEach(function(x){x.hidden=false});$$('#gallery .rv').forEach(function(e){io.observe(e)})}
-for(var g=1;g<=6;g++)(function(n){var li=d.createElement('li');li.style.order=n;var b=d.createElement('button');b.type='button';li.appendChild(b);
- if(phMode){li.className='ph';b.textContent='Photo '+n;grid.appendChild(li);showGal()}
- probe('assets/photos/gallery-'+n+'.jpg',function(im){im.alt=CAP[n-1][0];im.loading='lazy';li.className='';b.textContent='';b.appendChild(im);b.setAttribute('aria-label','Open photo: '+CAP[n-1][0]);if(!li.parentNode)grid.appendChild(li);shots[n]=im.src;b.onclick=function(){lbOpen(n)};showGal()})})(g);
-var lb=$('#lb'),cur=0;
-function lbShow(){$('img',lb).src=shots[cur];$('p',lb).textContent=CAP[cur-1][de.lang==='hi'?1:0]}
-function lbOpen(n){cur=n;lbShow();lb.classList.add('on')}
-function lbClose(){lb.classList.remove('on')}
-function step(dir){var ks=Object.keys(shots).map(Number).filter(function(k){return shots[k]}).sort(function(a,b){return a-b});if(!ks.length)return;var i=ks.indexOf(cur);cur=ks[(i+dir+ks.length)%ks.length];lbShow()}
-$('.x',lb).onclick=lbClose;$('.pv',lb).onclick=function(){step(-1)};$('.nx',lb).onclick=function(){step(1)};
-lb.addEventListener('click',function(e){if(e.target===lb)lbClose()});
+for(var g=1;g<=6;g++)(function(n){var li=d.createElement('li');li.style.order=n;var f=d.createElement('figure');li.appendChild(f);
+ if(phMode){li.className='ph';f.textContent='Photo '+n;grid.appendChild(li);showGal()}
+ probe('assets/photos/gallery-'+n+'.jpg',function(im){im.alt=CAP[n-1][0];im.loading='lazy';im.draggable=false;li.className='';f.textContent='';f.appendChild(im);var fc=d.createElement('figcaption');fc.setAttribute('data-en',CAP[n-1][0]);fc.setAttribute('data-hi',CAP[n-1][1]);fc.textContent=CAP[n-1][de.lang==='hi'?1:0];f.appendChild(fc);if(!li.parentNode)grid.appendChild(li);showGal()})})(g);
+/* photos are display-only: no long-press save or right-click menu on them */
+d.addEventListener('contextmenu',function(e){if(e.target.closest('.arch,.grid'))e.preventDefault()});
 
 /* ---- restore language ---- */
 if(de.lang==='hi')setLang('hi');
