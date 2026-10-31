@@ -495,7 +495,7 @@ html[lang=hi] .made{letter-spacing:.03em;font-size:14px;text-transform:none;font
 </div>
 <div class="toast" id="toast" role="status"></div>
 <div id="fall" aria-hidden="true"></div>
-<audio id="music" preload="metadata" loop></audio>
+<audio id="music" preload="auto"></audio>
 
 <script>
 (function(){
@@ -550,23 +550,29 @@ function setLang(l){var hi=l==='hi';de.lang=hi?'hi':'en';
 $$('.glang button').forEach(function(b){b.onclick=function(){setLang(b.getAttribute('data-lang'))}});
 $('#langFab').onclick=function(){setLang(de.lang==='hi'?'en':'hi')};
 
-/* ---- music: assets/music.m4a (Ishq Hai) — button and hint appear only once it can play ---- */
-var au=$('#music'),mb=$('#musBtn'),hasMusic=false;
-au.src='assets/music.m4a';au.volume=.7;au.addEventListener('loadedmetadata',function(){if(!hasMusic){hasMusic=true;mb.hidden=false;$('#gSound').hidden=false}},{once:true});au.load();
+/* ---- music: assets/music.m4a (Ishq Hai) — on by default, skips the silent first ~1.9s, loops from there.
+   Browsers only allow sound after a tap, so it starts on the first tap/key unless the guest turned it off. ---- */
+var au=$('#music'),mb=$('#musBtn'),hasMusic=false,START=1.9,musOff=false;
+try{musOff=localStorage.getItem('music')==='off'}catch(e){}
+au.src='assets/music.m4a';au.volume=.7;au.addEventListener('loadedmetadata',function(){if(!hasMusic){hasMusic=true;mb.hidden=false;$('#gSound').hidden=false;if(au.currentTime<START)au.currentTime=START}},{once:true});au.load();
+au.addEventListener('ended',function(){au.currentTime=START;au.play().catch(function(){})});
+function startMusic(){if(musOff||!au.paused)return;if(au.currentTime<START)au.currentTime=START;au.play().catch(function(){})}
+function firstTap(){startMusic();['pointerdown','keydown','touchstart'].forEach(function(ev){removeEventListener(ev,firstTap,true)})}
+['pointerdown','keydown','touchstart'].forEach(function(ev){addEventListener(ev,firstTap,true)});
 function musUI(){var p=!au.paused;mb.classList.toggle('playing',p);$('#musIco use').setAttribute('href',p?'#i-pause':'#i-note');mb.setAttribute('aria-label',(p?'Pause music':'Play music')+' (Ishq Hai)')}
 au.addEventListener('play',musUI);au.addEventListener('pause',musUI);
-mb.onclick=function(){if(au.paused)au.play().catch(function(){});else au.pause()};
+mb.onclick=function(){musOff=!au.paused;try{localStorage.setItem('music',musOff?'off':'on')}catch(e){}if(musOff)au.pause();else startMusic()};
 
 /* ---- gate ---- */
 var gate=$('#gate'),opened=false;
 function seen(){try{sessionStorage.setItem('opened','1')}catch(e){}}
 function enter(){gate.classList.add('gone');d.body.classList.remove('locked');scrollTo(0,0);$('#fab').classList.add('show');setTimeout(function(){gate.remove()},950)}
-function openEnv(){if(opened)return;opened=true;seen();if(hasMusic)au.play().catch(function(){});
+function openEnv(){if(opened)return;opened=true;seen();startMusic();
  if(reduce){enter();return}gate.classList.add('open');setTimeout(function(){shower(30)},1100);setTimeout(enter,2900)}
 $('#openBtn').onclick=openEnv;
-$('#skipBtn').onclick=function(){opened=true;seen();enter()};
+$('#skipBtn').onclick=function(){opened=true;seen();startMusic();enter()};
 addEventListener('keydown',function(e){if(e.key==='Escape'){if(!opened){opened=true;seen();enter()}closeDD();menu(false);}});
-if(de.classList.contains('seen')){opened=true;gate.remove();d.body.classList.remove('locked');$('#fab').classList.add('show')}else{try{$('#openBtn').focus({preventScroll:true})}catch(e){}}
+if(de.classList.contains('seen')){opened=true;gate.remove();d.body.classList.remove('locked');$('#fab').classList.add('show');startMusic()}else{try{$('#openBtn').focus({preventScroll:true})}catch(e){}}
 
 /* ---- header, mobile menu, section highlight, back-to-top ---- */
 var hdr=$('#hdr'),up=$('#upBtn'),secIds=['home','countdown','events','gallery','venue'];
