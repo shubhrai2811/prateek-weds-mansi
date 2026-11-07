@@ -204,6 +204,7 @@ html[lang=hi] .cue{font:400 15px var(--deva);letter-spacing:0}
 .mono{font:italic 600 24px/1 var(--serif);color:var(--ink);white-space:nowrap;padding:4px 0}
 html[lang=hi] .mono{font:700 19px/1.35 var(--devd)}
 .mono em{font-weight:400;color:var(--sindoor)}
+html[lang=hi] .mono em{margin:0 .22em}
 .links{display:none;list-style:none;gap:2px}
 .links a{display:block;padding:10px 15px;border-radius:999px;font:500 12.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);transition:background .3s,color .3s}
 html[lang=hi] .links a{letter-spacing:0;font:400 16px var(--deva);text-transform:none}
@@ -292,6 +293,13 @@ html[lang=hi] .beat h3{font:700 clamp(1.6rem,7vw,2rem)/1.45 var(--devd);font-sty
 html[lang=hi] .beat p{font:400 18px/1.85 var(--deva)}
 @media(min-width:860px){.beat{grid-template-columns:1fr 1fr;gap:56px;text-align:left}.beat p{margin-left:0}.beat:nth-child(even) .mf{order:2}}
 
+.couple{max-width:440px;width:84%;margin:48px auto 0}
+.couple .mf{aspect-ratio:1792/2400}
+.couple .mf>.in{height:100%}
+.couple figcaption{font:italic 500 clamp(2rem,8vw,2.6rem)/1.2 var(--serif);margin-top:18px}
+.couple figcaption em{font-weight:400;color:var(--sindoor)}
+html[lang=hi] .couple figcaption{font:700 clamp(1.7rem,7vw,2.1rem)/1.45 var(--devd)}
+
 /* ============ VENUE ============ */
 .venue{background:linear-gradient(180deg,transparent,rgba(227,165,30,.1))}
 .vgrid{display:grid;gap:22px;max-width:1000px;margin:52px auto 0}
@@ -318,7 +326,7 @@ html[lang=hi] .vc .when{font:400 17px var(--deva)}
 
 /* ============ FOOTER ============ */
 .foot{position:relative;text-align:center;padding:0 0 120px}
-.foot .scene{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:1578/800;-webkit-mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
+.foot .scene{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:2752/1536;-webkit-mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
 .foot .scene img{width:100%;height:100%;object-fit:cover}
 .foot .msg{font:italic 400 21px/1.65 var(--serif);color:var(--ink-2);max-width:32ch;margin:14px auto 0;padding:0 20px}
 html[lang=hi] .foot .msg{font:400 18.5px/1.9 var(--deva)}
@@ -506,7 +514,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
    </div>
   </li>
   <li class="ev">
-   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/shaadi-720.avif 720w, assets/art/shaadi-1200.avif 1200w" sizes="(min-width:900px) 560px, 92vw"><img src="assets/art/shaadi-720.webp" srcset="assets/art/shaadi-720.webp 720w, assets/art/shaadi-1200.webp 1200w" sizes="(min-width:900px) 560px, 92vw" width="720" height="540" loading="lazy" decoding="async" alt="Madhubani painting for the wedding ceremony"></picture></div></div>
+   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/shaadi-720.avif 720w, assets/art/shaadi-1200.avif 1200w" sizes="(min-width:900px) 560px, 92vw"><img src="assets/art/shaadi-720.webp" srcset="assets/art/shaadi-720.webp 720w, assets/art/shaadi-1200.webp 1200w" sizes="(min-width:900px) 560px, 92vw" width="720" height="538" loading="lazy" decoding="async" alt="Madhubani painting of the varmala under a bamboo mandap, with the sacred fire and blessing elders"></picture></div></div>
    <div class="txt">
     <p class="day" data-hi="तीसरा दिन · गुरुवार">Day three · Thursday</p>
     <h3 data-hi="शुभ विवाह">Shaadi</h3><p class="hn only-en" lang="hi">शुभ विवाह</p>
@@ -533,17 +541,21 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
   <p class="kicker" data-hi="हमारी कहानी">Our story</p>
   <h2 class="h2" data-hi="दो राहें, एक सफ़र">Two paths, one journey</h2>
  </div>
+ <figure class="couple">
+  <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/couple-720.avif 720w, assets/art/couple-1200.avif 1200w" sizes="(min-width:600px) 440px, 84vw"><img src="assets/art/couple-720.webp" srcset="assets/art/couple-720.webp 720w, assets/art/couple-1200.webp 1200w" sizes="(min-width:600px) 440px, 84vw" width="720" height="964" loading="lazy" decoding="async" alt="Madhubani portrait of Prateek and Mansi beside a lotus pond, under the sun and moon"></picture></div></div>
+  <figcaption><span class="only-en">Prateek <em>&amp;</em> Mansi</span><span class="only-hi" lang="hi">प्रतीक संग मानसी</span></figcaption>
+ </figure>
  <ol class="beats">
   <li class="beat">
-   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-1-720.avif 720w, assets/art/story-1-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-1-720.webp" srcset="assets/art/story-1-720.webp 720w, assets/art/story-1-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="540" loading="lazy" decoding="async" alt=""></picture></div></div>
+   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-1-720.avif 720w, assets/art/story-1-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-1-720.webp" srcset="assets/art/story-1-720.webp 720w, assets/art/story-1-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="538" loading="lazy" decoding="async" alt="Madhubani painting of Prateek and Mansi on a hillside above the Ganga at Rishikesh"></picture></div></div>
    <div class="txt"><p class="no" aria-hidden="true">i.</p><h3 data-hi="पहाड़ों और नदी के बीच">Between the hills and the river</h3><p class="balance" data-hi="कहीं किसी राह पर, दो अलग सफ़र चुपचाप एक हो गए।">Somewhere along the way, two separate journeys quietly became one.</p></div>
   </li>
   <li class="beat">
-   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-2-720.avif 720w, assets/art/story-2-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-2-720.webp" srcset="assets/art/story-2-720.webp 720w, assets/art/story-2-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="540" loading="lazy" decoding="async" alt=""></picture></div></div>
+   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-2-720.avif 720w, assets/art/story-2-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-2-720.webp" srcset="assets/art/story-2-720.webp 720w, assets/art/story-2-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="538" loading="lazy" decoding="async" alt="Madhubani painting, seen from above, of the couple on a garden bench beside a path with a peacock"></picture></div></div>
    <div class="txt"><p class="no" aria-hidden="true">ii.</p><h3 data-hi="साथ-साथ">Side by side</h3><p class="balance" data-hi="लंबी सैर, शांत बेंचें, और ऐसी बातें जो कभी ख़त्म न हों।">Long walks, quiet benches, and conversations that never wanted to end.</p></div>
   </li>
   <li class="beat">
-   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-3-720.avif 720w, assets/art/story-3-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-3-720.webp" srcset="assets/art/story-3-720.webp 720w, assets/art/story-3-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="542" loading="lazy" decoding="async" alt=""></picture></div></div>
+   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-3-720.avif 720w, assets/art/story-3-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-3-720.webp" srcset="assets/art/story-3-720.webp 720w, assets/art/story-3-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="538" loading="lazy" decoding="async" alt="Madhubani painting of a home doorway with diyas, Aripan and red footprints stepping in"></picture></div></div>
    <div class="txt"><p class="no" aria-hidden="true">iii.</p><h3 data-hi="और अब, सदा के लिए">And now, forever</h3><p class="balance" data-hi="दोनों परिवारों के आशीर्वाद से, एक नए घर में दीया जलने को है।">With the blessings of both families, a new home is ready to light its first diya.</p></div>
   </li>
  </ol>
@@ -593,12 +605,12 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
 
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
- <div class="scene art"><picture><source type="image/avif" srcset="assets/art/footer-720.avif 720w, assets/art/footer-1200.avif 1200w" sizes="(min-width:1100px) 1100px, 100vw"><img src="assets/art/footer-720.webp" srcset="assets/art/footer-720.webp 720w, assets/art/footer-1200.webp 1200w" sizes="(min-width:1100px) 1100px, 100vw" width="720" height="365" loading="lazy" decoding="async" alt=""></picture></div>
+ <div class="scene art"><picture><source type="image/avif" srcset="assets/art/footer-720.avif 720w, assets/art/footer-1200.avif 1200w" sizes="(min-width:1100px) 1100px, 100vw"><img src="assets/art/footer-720.webp" srcset="assets/art/footer-720.webp 720w, assets/art/footer-1200.webp 1200w" sizes="(min-width:1100px) 1100px, 100vw" width="720" height="402" loading="lazy" decoding="async" alt=""></picture></div>
  <p class="kicker" data-hi="प्रेम एवं आभार सहित">With love &amp; gratitude</p>
  <p class="msg balance" data-hi="आपका स्नेह और आशीर्वाद ही हमारी सबसे बड़ी ख़ुशी है। सपरिवार पधारकर नव-दम्पति को अपना आशीर्वाद दें।">Your love and blessings are our greatest joy. Please come with your family and bless the couple as they begin a new life together.</p>
  <p><span class="fnames"><span class="only-en">Prateek &amp; Mansi</span><span class="only-hi" lang="hi">प्रतीक संग मानसी</span></span></p>
  <p class="fam" data-hi="राय एवं श्रीवास परिवार">The Roy &amp; Shrivas families</p>
- <p class="made" data-hi="कोहबर — मिथिला विवाह पत्रिका · 26 · 11 · 2026">Kohbar — a Mithila wedding invitation · 26 · 11 · 2026</p>
+ <p class="made" data-hi="कोहबर — मिथिला विवाह पत्रिका<br><span style=&quot;white-space:nowrap&quot;>26 · 11 · 2026</span>">Kohbar — a Mithila wedding invitation<br><span style="white-space:nowrap">26 · 11 · 2026</span></p>
 </footer>
 
 <div class="fab" id="fab">
@@ -699,7 +711,7 @@ up.onclick=function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})};
 $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=d.getElementById(a.getAttribute('href').slice(1));if(t){e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth'})}})});
 
 /* ---- reveals: only below-the-fold content is pre-hidden, with a safety timer ---- */
-var revealEls=$$('.head,.ev .txt,.beat .txt,.vc,.map,.share-box,.allwrap,.cd,.foot .kicker,.foot .msg,.fnames,.fam,.mf.wipe');
+var revealEls=$$('.couple figcaption,.head,.ev .txt,.beat .txt,.vc,.map,.share-box,.allwrap,.cd,.foot .kicker,.foot .msg,.fnames,.fam,.mf.wipe');
 if('IntersectionObserver' in window&&!reduce){
  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
  revealEls.forEach(function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');io.observe(el)}});
