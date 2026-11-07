@@ -295,6 +295,7 @@ html[lang=hi] .ev .acts .btn{font-size:16px;letter-spacing:0}
 .mf .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--ease)}
 .mf .vid.on{opacity:1}
 .beat .no{font:italic 400 36px/1 var(--serif);color:var(--haldi);opacity:.95}
+html[lang=hi] .beat .no{font:italic 400 36px/1 'Cormorant Garamond',Georgia,serif}
 .beat h3{font:italic 500 clamp(1.9rem,8vw,2.4rem)/1.15 var(--serif);margin-top:4px}
 html[lang=hi] .beat h3{font:700 clamp(1.6rem,7vw,2rem)/1.45 var(--devd);font-style:normal}
 .beat p{font:400 17.5px/1.7 var(--sans);color:var(--ink-2);max-width:34ch;margin:10px auto 0}
@@ -404,14 +405,14 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
 <header class="hdr" id="hdr">
  <a class="mono" href="#home" aria-label="Prateek and Mansi — top"><span class="only-en">Prateek <em>&amp;</em> Mansi</span><span class="only-hi" lang="hi">प्रतीक <em>संग</em> मानसी</span></a>
  <nav aria-label="Sections"><ul class="links">
-  <li><a href="#home" data-hi="मुख्य">Home</a></li><li><a href="#date" data-hi="शुभ तिथि">Date</a></li><li><a href="#events" data-hi="कार्यक्रम">Events</a></li><li><a href="#story" data-hi="कहानी">Story</a></li><li><a href="#venue" data-hi="स्थान">Venue</a></li>
+  <li><a href="#home" data-hi="मुख्य">Home</a></li><li><a href="#date" data-hi="शुभ तिथि">Date</a></li><li><a href="#events" data-hi="कार्यक्रम">Events</a></li><li><a href="#story" data-hi="प्रेम कहानी">Story</a></li><li><a href="#venue" data-hi="स्थान">Venue</a></li>
  </ul></nav>
  <div class="hact">
   <button class="hbtn" id="langFab" type="button" aria-label="हिंदी में देखें"><span class="only-en" lang="hi">हिंदी</span><span class="only-hi">EN</span></button>
   <button class="hbtn" id="shareBtn" type="button" aria-label="Share invitation"><svg class="i"><use href="#i-share"/></svg></button>
   <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
  </div>
- <div class="mnav" id="mnav"><a href="#home" data-hi="मुख्य">Home</a><a href="#date" data-hi="शुभ तिथि">Date</a><a href="#events" data-hi="कार्यक्रम">Events</a><a href="#story" data-hi="कहानी">Story</a><a href="#venue" data-hi="स्थान">Venue</a></div>
+ <div class="mnav" id="mnav"><a href="#home" data-hi="मुख्य">Home</a><a href="#date" data-hi="शुभ तिथि">Date</a><a href="#events" data-hi="कार्यक्रम">Events</a><a href="#story" data-hi="प्रेम कहानी">Story</a><a href="#venue" data-hi="स्थान">Venue</a></div>
 </header>
 
 <main id="main">
@@ -546,8 +547,9 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
 <!-- ============ STORY ============ -->
 <section class="sec story" id="story">
  <div class="head">
-  <p class="kicker" data-hi="हमारी कहानी">Our story</p>
-  <h2 class="h2" data-hi="दो राहें, एक सफ़र">Two paths, one journey</h2>
+  <p class="kicker" data-hi="एक ख़ूबसूरत शुरुआत">A beautiful beginning</p>
+  <h2 class="h2" data-hi="हमारी प्रेम कहानी">Our Love Story</h2>
+  <p class="lede balance" data-hi="कहते हैं, कुछ लोग हमारी ज़िंदगी का हिस्सा बनने के लिए ही बने होते हैं। हमें नहीं पता होता कि उनसे कब और कैसे मिलेंगे — पर क़िस्मत अपना रास्ता ढूँढ ही लेती है।">They say some people are destined to be a part of our lives. We may not know when or how we will meet them — but somehow, destiny always finds its way.</p>
  </div>
  <figure class="couple">
   <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/couple-720.avif 720w, assets/art/couple-1200.avif 1200w" sizes="(min-width:600px) 440px, 84vw"><img src="assets/art/couple-720.webp" srcset="assets/art/couple-720.webp 720w, assets/art/couple-1200.webp 1200w" sizes="(min-width:600px) 440px, 84vw" width="720" height="993" loading="lazy" decoding="async" alt="Watercolour portrait of Prateek and Mansi in wedding clothes under marigold garlands"></picture></div></div>
@@ -556,15 +558,15 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
  <ol class="beats">
   <li class="beat">
    <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-1-720.avif 720w, assets/art/story-1-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-1-720.webp" srcset="assets/art/story-1-720.webp 720w, assets/art/story-1-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="522" loading="lazy" decoding="async" alt="Watercolour painting of Prateek and Mansi on a hillside above the Ganga at Rishikesh"></picture></div></div>
-   <div class="txt"><p class="no" aria-hidden="true">i.</p><h3 data-hi="पहाड़ों और नदी के बीच">Between the hills and the river</h3><p class="balance" data-hi="कहीं किसी राह पर, दो अलग सफ़र चुपचाप एक हो गए।">Somewhere along the way, two separate journeys quietly became one.</p></div>
+   <div class="txt"><p class="no" aria-hidden="true">i.</p><h3 data-hi="एक सादी-सी मुलाक़ात">A simple meeting</h3><p class="balance" data-hi="हमारी कहानी एक पारिवारिक समारोह में एक सादी-सी मुलाक़ात से शुरू हुई। तब कहाँ पता था कि यही मुलाक़ात हमारी ज़िंदगी के सबसे ख़ूबसूरत अध्याय की शुरुआत बनेगी।">Our story began with a simple meeting at a family function. Little did we know that this one meeting would mark the beginning of the most beautiful chapter of our lives.</p></div>
   </li>
   <li class="beat">
    <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-2-720.avif 720w, assets/art/story-2-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-2-720.webp" srcset="assets/art/story-2-720.webp 720w, assets/art/story-2-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="522" loading="lazy" decoding="async" alt="Watercolour painting, seen from above, of the couple on a garden bench beside a path with a peacock"></picture><video class="vid" muted loop playsinline preload="none" poster="assets/video/garden-poster.jpg" data-src="assets/video/garden.mp4" aria-hidden="true"></video></div></div>
-   <div class="txt"><p class="no" aria-hidden="true">ii.</p><h3 data-hi="साथ-साथ">Side by side</h3><p class="balance" data-hi="लंबी सैर, शांत बेंचें, और ऐसी बातें जो कभी ख़त्म न हों।">Long walks, quiet benches, and conversations that never wanted to end.</p></div>
+   <div class="txt"><p class="no" aria-hidden="true">ii.</p><h3 data-hi="सबसे प्यारा इंसान">Our favourite person</h3><p class="balance" data-hi="बिना जाने ही, कोई धीरे-धीरे हमारी सबसे बड़ी ख़ुशी बन गया — एक ऐसा इंसान, जिसके बिना अब दुनिया की कल्पना भी नहीं होती। एक साधारण पल, असाधारण प्रेम कहानी बन गया।">Without either of us realising it, someone unexpected slowly became our favourite person and our greatest happiness — someone we cannot imagine our world without. What started as an ordinary moment became an extraordinary love story.</p></div>
   </li>
   <li class="beat">
    <div class="mf wipe"><div class="in art"><picture><source type="image/avif" srcset="assets/art/story-3-720.avif 720w, assets/art/story-3-1200.avif 1200w" sizes="(min-width:860px) 460px, 92vw"><img src="assets/art/story-3-720.webp" srcset="assets/art/story-3-720.webp 720w, assets/art/story-3-1200.webp 1200w" sizes="(min-width:860px) 460px, 92vw" width="720" height="522" loading="lazy" decoding="async" alt="Watercolour painting of a home doorway with diyas, rangoli and red footprints stepping in"></picture></div></div>
-   <div class="txt"><p class="no" aria-hidden="true">iii.</p><h3 data-hi="और अब, सदा के लिए">And now, forever</h3><p class="balance" data-hi="दोनों परिवारों के आशीर्वाद से, एक नए घर में दीया जलने को है।">With the blessings of both families, a new home is ready to light its first diya.</p></div>
+   <div class="txt"><p class="no" aria-hidden="true">iii.</p><h3 data-hi="और फिर… सफ़र शुरू हुआ">And then… our journey began</h3><p class="balance" data-hi="प्यार, भरोसे, अनगिनत यादों और ढेर सारी मुस्कानों का सफ़र — और हमेशा एक-दूसरे का साथ निभाने का वादा। क्योंकि कभी-कभी, एक मुलाक़ात ही दो ज़िंदगियाँ बदल देती है।">A journey of love, trust, countless memories and endless smiles — and a promise to stand by each other forever. Because sometimes, one meeting is all it takes to change two lives forever.</p></div>
   </li>
  </ol>
 </section>
