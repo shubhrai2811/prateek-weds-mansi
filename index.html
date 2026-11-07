@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFF4DC'/%3E%3Cpath d='M16 4c3 4 3.4 7 0 10-3.4-3-3-6 0-10z' fill='%23F0A812'/%3E%3Cpath d='M5 17h22c-1 6-5 9-11 9S6 23 5 17z' fill='%23C8261C'/%3E%3C/svg%3E">
-<link rel="preload" as="image" href="assets/art/cover-1200.avif" imagesrcset="assets/art/cover-720.avif 720w, assets/art/cover-1200.avif 1200w" imagesizes="(max-width:520px) 92vw, 470px" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="assets/art/cover-1200.avif" imagesrcset="assets/art/cover-720.avif 720w, assets/art/cover-1200.avif 1200w" imagesizes="75svh" type="image/avif" fetchpriority="high">
 <link rel="preload" href="assets/fonts/cormorant-var-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-var.woff2" as="font" type="font/woff2" crossorigin>
 <script>(function(h){h.className='js';var s=0,r=matchMedia('(prefers-reduced-motion: reduce)').matches;try{s=sessionStorage.getItem('lit')==='1';if(localStorage.getItem('lang')==='hi')h.lang='hi'}catch(e){}if(!s)h.className+=' dusk';if(r)h.className+=' rm'})(document.documentElement)</script>
@@ -61,7 +61,7 @@ html[lang=hi] .h2{font:700 clamp(2rem,8.5vw,2.8rem)/1.35 var(--devd);font-style:
 html[lang=hi] .lede{font:400 18px/1.8 var(--deva)}
 .band{display:block;width:100%;height:26px;filter:drop-shadow(0 3px 4px rgba(150,80,10,.25))}
 .band.thin{height:22px;opacity:.9}
-.sec{position:relative;padding:92px 20px;text-align:center}
+.sec{position:relative;padding:56px 20px;text-align:center}
 .head{max-width:640px;margin:0 auto}
 
 /* ---------- buttons ---------- */
@@ -100,31 +100,15 @@ html[lang=hi] .menu a,html[lang=hi] .menu button{font-family:var(--deva)}
 .wipe.pre.in .in{clip-path:inset(0);transition:clip-path 1.4s var(--ease-io)}
 .wipe.pre.in .in img{transform:none;transition:transform 2.2s var(--ease)}
 
-/* ============ HERO / COVER ============ */
-.hero{position:relative;min-height:100svh;padding:max(22px,env(safe-area-inset-top)) 18px 70px;text-align:center;overflow:hidden;isolation:isolate}
-.hero::before{content:'';position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse 85% 50% at 50% 34%,rgba(255,206,110,.55),rgba(255,226,160,.25) 45%,transparent 72%)}
-.night{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 120% 70% at 50% 100%,#3A1F14 0%,#22140F 45%,#120B09 100%);opacity:0;transition:opacity 2.2s var(--ease-io);pointer-events:none}
-.night::before,.night::after{content:'';position:absolute;width:2px;height:2px;border-radius:50%;background:#FFE7B0;box-shadow:12vw 8vh 0 0 #FFE7B0,28vw 16vh 0 -.5px #fff3d6,46vw 5vh 0 0 #FFE7B0,63vw 13vh 0 -.5px #fff,82vw 6vh 0 0 #FFE7B0,91vw 22vh 0 -.5px #fff3d6,7vw 30vh 0 -.5px #fff,74vw 33vh 0 -.5px #FFE7B0,38vw 26vh 0 -.6px #fff;top:0;left:0;opacity:.7}
-.night::after{transform:translate(4vw,5vh);opacity:.45}
-.dusk .night{opacity:1}
-.rm .night::before,.rm .night::after{animation:none}
-@media(prefers-reduced-motion:no-preference){.night::before{animation:tw 3.2s ease-in-out infinite alternate}.night::after{animation:tw 4.1s ease-in-out infinite alternate-reverse}}
-@keyframes tw{to{opacity:.15}}
-
-.lang{position:absolute;z-index:5;top:max(14px,env(safe-area-inset-top));right:14px;display:flex;padding:3px;border-radius:999px;border:1.5px solid rgba(42,30,23,.55);background:rgba(251,245,230,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color 1.5s,background 1.5s}
-.lang button{min-height:38px;padding:0 15px;border-radius:999px;font:500 14px var(--sans);color:var(--ink);transition:background .3s,color .3s}
-.lang button[lang=hi]{font-family:var(--deva);font-size:15px}
-.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
-.dusk .lang{border-color:rgba(244,201,90,.45);background:rgba(18,11,9,.45)}
-.dusk .lang button{color:#F3DDB0}
-.dusk .lang button[aria-pressed=true]{background:#F3DDB0;color:var(--dusk)}
-
-.shri{font:400 17px/1.4 var(--deva);color:var(--sindoor);letter-spacing:.02em;margin-top:max(30px,4svh);transition:color 1.6s}
-.dusk .shri{color:#E9C67C}
-
-.kb{position:relative;width:min(88vw,470px,calc((100svh - 330px)*.7467));min-width:min(260px,88vw);aspect-ratio:1792/2400;margin:16px auto 0;will-change:transform}
-.kb-frame{position:absolute;inset:0;padding:7px;background:linear-gradient(145deg,#6F4C12,#D5AD52 30%,#8E6418 55%,#E6C46D 80%,#7A5413);border-radius:3px;box-shadow:0 40px 70px -30px rgba(42,30,23,.75),0 0 0 1px rgba(42,30,23,.4);transition:box-shadow 2s}
-.dusk .kb-frame{box-shadow:0 30px 80px -20px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.5)}
+/* ============ HERO / COVER — the painting fills the screen ============ */
+.hero{position:relative;text-align:center;isolation:isolate}
+.cover{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#1A100C}
+.cover::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(12,7,5,.5),transparent 17%,transparent 60%,rgba(12,7,5,.82));transition:opacity 2.2s var(--ease-io)}
+html:not(.dusk) .cover::after,.lighting .cover::after{opacity:.28}
+.cover .bgblur{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);max-width:none;object-fit:cover;filter:blur(30px) saturate(1.15);opacity:0;transition:opacity 2s}
+.kb{position:absolute;left:50%;top:50%;width:max(100%,74.67svh);aspect-ratio:1792/2400;transform:translate(-50%,calc(-50% + var(--py,0px)));container-type:inline-size}
+@media(min-aspect-ratio:3/4){.kb{width:74.67svh;max-width:none;box-shadow:0 0 140px 30px rgba(20,10,5,.35)}.cover .bgblur{opacity:.85}.dusk:not(.lighting) .cover .bgblur{opacity:.18}}
+.kb-frame{position:absolute;inset:0}
 .kb-frame>div{position:relative;width:100%;height:100%;overflow:hidden;background:#20140E}
 .kb picture,.kb img.dim{position:absolute;inset:0;width:100%;height:100%}
 .kb img{width:100%;height:100%;object-fit:cover}
@@ -132,8 +116,6 @@ html[lang=hi] .menu a,html[lang=hi] .menu button{font-family:var(--deva)}
 .kb .col{clip-path:circle(150% at 50% 81%);transition:clip-path 2.4s cubic-bezier(.55,.05,.25,1)}
 .dusk .kb .col{clip-path:circle(0% at 50% 81%)}
 .dusk.lighting .kb .col{clip-path:circle(150% at 50% 81%)}
-.dusk.lighting .night{opacity:0}
-.dusk.lighting .shri{color:var(--sindoor)}
 .kb .glow{position:absolute;left:50%;top:81%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.2);border-radius:50%;background:radial-gradient(circle,rgba(255,196,92,.55),rgba(255,160,60,.18) 35%,transparent 62%);mix-blend-mode:screen;opacity:0;pointer-events:none}
 .lighting .kb .glow{animation:bloom 2.6s var(--ease) forwards}
 @keyframes bloom{30%{opacity:1}to{opacity:0;transform:translate(-50%,-50%) scale(1.1)}}
@@ -143,18 +125,30 @@ html[lang=hi] .menu a,html[lang=hi] .menu button{font-family:var(--deva)}
 @media(prefers-reduced-motion:no-preference){.flames i{animation:flick 1.8s ease-in-out infinite alternate}.flames i:nth-child(2n){animation-duration:1.3s;animation-delay:-.4s}.flames i:nth-child(3n){animation-duration:2.2s}}
 @keyframes flick{0%{transform:scale(1,1) skewX(0)}35%{transform:scale(.92,1.1) skewX(3deg)}70%{transform:scale(1.06,.94) skewX(-2deg)}100%{transform:scale(.97,1.05) skewX(1deg)}}
 .flames.paused i{animation-play-state:paused}
-.kb .ganesh-c{position:absolute;left:50%;top:46.6%;width:17%;transform:translate(-50%,-50%);color:var(--sindoor-d);opacity:.92;transition:opacity 1.6s 1s}
-.kb .ganesh-c svg{width:100%;height:auto;display:block}
-.dusk:not(.lighting) .kb .ganesh-c{opacity:0}
 
-/* cover controls (only while dusk) */
-.cover-ui{display:none}
-.dusk .cover-ui{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:22px;color:#F3DDB0;transition:opacity .6s,transform .6s var(--ease)}
+/* the couple's names live inside the marigold wreath */
+.wreath{position:absolute;left:50%;top:46.6%;width:40%;transform:translate(-50%,-50%);z-index:2;display:flex;flex-direction:column;align-items:center}
+.wreath .ganesh-c{width:22%;color:var(--sindoor-d);opacity:.9;transition:color 2s}
+.wreath .ganesh-c svg{width:100%;height:auto;display:block}
+.wreath h1{display:flex;flex-direction:column;align-items:center;margin-top:5%;font:italic 600 clamp(28px,9vw,44px)/1.02 var(--serif);font:italic 600 6.6cqw/1.02 var(--serif);color:var(--maroon);transition:color 2s,text-shadow 2s}
+.wreath h1 .amp{font:italic 400 22px/1 var(--serif);font:italic 400 4.2cqw/1.1 var(--serif);color:var(--sindoor);transition:color 2s}
+html[lang=hi] .wreath h1{font:700 clamp(24px,7.4vw,36px)/1.35 var(--devd);font:700 5.4cqw/1.35 var(--devd)}
+html[lang=hi] .wreath h1 .amp{font:400 18px/1.2 var(--devd);font:400 3.6cqw/1.2 var(--devd)}
+.wreath .wd{margin-top:6%;font:500 11px/1 var(--sans);font:500 1.85cqw/1 var(--sans);letter-spacing:.34em;color:var(--ink-2);font-variant-numeric:lining-nums;transition:color 2s}
+.dusk:not(.lighting) .wreath .ganesh-c{color:#E9C67C}
+.dusk:not(.lighting) .wreath h1,.dusk:not(.lighting) .wreath h1 .amp{color:#F6E2B4;text-shadow:0 0 22px rgba(255,190,90,.45)}
+.dusk:not(.lighting) .wreath .wd{color:rgba(246,226,180,.75)}
+
+.lang{position:absolute;z-index:5;top:max(14px,env(safe-area-inset-top));right:14px;display:flex;padding:3px;border-radius:999px;border:1.5px solid rgba(255,240,210,.55);background:rgba(20,12,8,.32);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lang button{min-height:36px;padding:0 14px;border-radius:999px;font:500 14px var(--sans);color:#FFF4DC;transition:background .3s,color .3s}
+.lang button[lang=hi]{font-family:var(--deva);font-size:15px}
+.lang button[aria-pressed=true]{background:#FFF4DC;color:var(--ink)}
+
+/* cover controls (only while dusk) sit over the bottom of the painting */
+.cover-ui{position:absolute;left:0;right:0;bottom:0;z-index:4;display:none;flex-direction:column;align-items:center;gap:8px;padding:0 16px max(22px,env(safe-area-inset-bottom));color:#F3DDB0}
+.dusk .cover-ui{display:flex;transition:opacity .6s,transform .6s var(--ease)}
 .lighting .cover-ui{opacity:0;transform:translateY(12px);pointer-events:none}
-.cover-names{font:italic 500 clamp(1.9rem,8vw,2.6rem)/1.1 var(--serif);color:#F3DDB0;letter-spacing:.01em}
-html[lang=hi] .cover-names{font:700 clamp(1.6rem,7vw,2.1rem)/1.4 var(--devd)}
-.cover-names em{font-style:italic;color:var(--haldi-l);font-weight:400}
-.light{position:relative;display:inline-flex;align-items:center;gap:14px;min-height:60px;padding:10px 30px 10px 14px;margin-top:6px;border-radius:999px;background:linear-gradient(180deg,#F6D47C,#E3A51E 55%,#B87A10);color:#2A1404;box-shadow:0 0 0 1px rgba(255,236,180,.4),0 14px 34px -10px rgba(227,165,30,.65),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .3s var(--ease)}
+.light{position:relative;display:inline-flex;align-items:center;gap:14px;min-height:60px;padding:10px 30px 10px 14px;border-radius:999px;background:linear-gradient(180deg,#F6D47C,#E3A51E 55%,#B87A10);color:#2A1404;box-shadow:0 0 0 1px rgba(255,236,180,.4),0 14px 34px -10px rgba(227,165,30,.65),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .3s var(--ease)}
 .light:hover{transform:translateY(-2px)}
 .light .lbl{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
 .light .l1{font:400 20px/1.25 var(--devd)}
@@ -165,22 +159,31 @@ html[lang=hi] .cover-names{font:700 clamp(1.6rem,7vw,2.1rem)/1.4 var(--devd)}
 .lighting .light .dz .fl{transform:scale(1)}
 @media(prefers-reduced-motion:no-preference){.dusk:not(.lighting) .light{animation:breathe 2.6s ease-in-out infinite}}
 @keyframes breathe{50%{box-shadow:0 0 0 7px rgba(244,201,90,.12),0 14px 44px -6px rgba(227,165,30,.8),inset 0 1px 0 rgba(255,255,255,.5)}}
-.cover-sub{font:400 13px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(243,221,176,.72)}
+.cover-sub{font:400 12.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(243,221,176,.8)}
 html[lang=hi] .cover-sub{font:400 15px var(--deva);letter-spacing:.02em;text-transform:none}
-.skip{min-height:44px;padding:8px 16px;font:400 14px var(--sans);color:rgba(243,221,176,.8);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(243,221,176,.35)}
+.skip{min-height:40px;padding:6px 16px;font:400 14px var(--sans);color:rgba(243,221,176,.85);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(243,221,176,.35)}
 html[lang=hi] .skip{font:400 16px var(--deva)}
 
-/* lit hero content */
-.lit-ui{max-width:560px;margin:34px auto 0}
+/* scroll cue over the painting once lit */
+.cover .cue{position:absolute;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:2px;font:500 11.5px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#FFF7E6;text-shadow:0 1px 8px rgba(0,0,0,.65)}
+html[lang=hi] .cover .cue{font:400 15px var(--deva);letter-spacing:0}
+.dusk .cover .cue{display:none}
+.cue svg{width:34px;height:18px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
+@media(prefers-reduced-motion:no-preference){.cue svg{animation:dip 2.4s var(--ease-io) infinite}}
+@keyframes dip{50%{transform:translateY(7px)}}
+
+/* invitation wording below the cover */
+.lit-ui{max-width:560px;margin:0 auto;padding:38px 20px 44px}
 .dusk .lit-ui{display:none}
-.chip{display:inline-flex;align-items:center;gap:8px;margin:0 auto 18px;padding:9px 20px;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper-3);max-width:100%;overflow-wrap:anywhere}
+.shri{font:400 17px/1.4 var(--deva);color:var(--sindoor);margin-bottom:14px}
+.chip{display:inline-flex;align-items:center;gap:8px;margin:0 auto 18px;padding:9px 20px;border:1px solid rgba(184,137,59,.7);border-radius:999px;background:var(--paper-3);max-width:100%;overflow-wrap:anywhere}
 .chip .hi{font:400 15px var(--deva);color:var(--sindoor)}
 .chip b{font:600 19px var(--serif)}
 .invite{font:italic 400 20px/1.6 var(--serif);color:var(--ink-2);max-width:31ch;margin:0 auto}
 html[lang=hi] .invite{font:400 18px/1.85 var(--deva)}
-.names{margin:20px 0 8px;display:flex;flex-direction:column;align-items:center}
-.names .n{display:block;font:italic 500 clamp(3.7rem,17vw,6rem)/1.02 var(--serif);background:var(--gold);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .14em;filter:drop-shadow(0 1px 0 rgba(255,250,235,.8)) drop-shadow(0 8px 16px rgba(122,84,19,.18))}
-html[lang=hi] .names .n{font:700 clamp(2.9rem,13vw,4.4rem)/1.4 var(--devd)}
+.names{margin:18px 0 6px;display:flex;flex-direction:column;align-items:center}
+.names .n{display:block;font:italic 500 clamp(2.9rem,14vw,4.8rem)/1.02 var(--serif);background:var(--gold);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .14em;filter:drop-shadow(0 1px 0 rgba(255,250,235,.8)) drop-shadow(0 8px 16px rgba(122,84,19,.18))}
+html[lang=hi] .names .n{font:700 clamp(2.4rem,10.5vw,3.8rem)/1.4 var(--devd)}
 .names .w{display:flex;align-items:center;gap:16px;font:400 14px var(--sans);letter-spacing:.42em;text-transform:uppercase;color:var(--sindoor);margin:6px 0 4px}
 html[lang=hi] .names .w{font:400 22px var(--devd);letter-spacing:0}
 .names .w::before,.names .w::after{content:'';width:58px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 12'%3E%3Cpath d='M0 6H44' stroke='%23B98A2C' stroke-width='1.2'/%3E%3Ccircle cx='51' cy='6' r='5' fill='%23F08A12'/%3E%3Ccircle cx='51' cy='6' r='2.2' fill='%23FFC21F'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -192,12 +195,7 @@ html[lang=hi] .names .w{font:400 22px var(--devd);letter-spacing:0}
 .date-big{font:500 clamp(1.5rem,6.5vw,1.9rem)/1.2 var(--serif);font-variant-numeric:lining-nums;letter-spacing:.24em;color:var(--ink);margin-top:10px}
 .dline{font:500 13px/1.7 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:8px}
 html[lang=hi] .dline{letter-spacing:.02em;font:400 17px/1.7 var(--deva);text-transform:none}
-.ctas{display:grid;gap:12px;max-width:340px;margin:30px auto 0}
-.cue{display:flex;flex-direction:column;align-items:center;gap:4px;margin:44px auto 0;font:500 11.5px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
-html[lang=hi] .cue{font:400 15px var(--deva);letter-spacing:0}
-.cue svg{width:34px;height:16px}
-@media(prefers-reduced-motion:no-preference){.cue svg{animation:dip 2.4s var(--ease-io) infinite}}
-@keyframes dip{50%{transform:translateY(7px) rotate(8deg)}}
+.ctas{display:grid;gap:12px;max-width:340px;margin:26px auto 0}
 
 /* ============ HEADER ============ */
 .hdr{position:fixed;z-index:60;top:max(10px,env(safe-area-inset-top));left:12px;right:12px;max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 22px;border-radius:999px;background:rgba(251,245,230,.84);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);border:1.5px solid rgba(42,30,23,.6);box-shadow:0 14px 34px -18px rgba(42,30,23,.5);transform:translateY(-140%);transition:transform .6s var(--ease)}
@@ -210,6 +208,11 @@ html[lang=hi] .mono em{margin:0 .22em}
 .links a{display:block;padding:10px 15px;border-radius:999px;font:500 12.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);transition:background .3s,color .3s}
 html[lang=hi] .links a{letter-spacing:0;font:400 16px var(--deva);text-transform:none}
 .links a.on{background:var(--ink);color:var(--paper)}
+.hact{display:flex;align-items:center;gap:6px}
+.hbtn{height:40px;min-width:40px;padding:0 11px;border-radius:999px;display:inline-grid;place-items:center;border:1px solid rgba(42,30,23,.3);color:var(--ink);font:500 15px var(--deva);transition:background .3s}
+.hbtn:hover{background:rgba(227,165,30,.14)}
+html[lang=hi] .hbtn .only-hi{font:600 13px var(--sans);letter-spacing:.06em}
+@media(max-width:380px){.mono{font-size:20px}.hbtn{min-width:36px;height:36px;padding:0 8px}.burger{width:40px!important;height:40px!important}}
 .burger{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper)}
 .mnav{position:absolute;top:calc(100% + 8px);left:0;right:0;padding:8px;border-radius:22px;background:#FFFBF0;border:1.5px solid var(--ink);box-shadow:0 22px 44px -16px rgba(42,30,23,.45);display:none}
 .hdr.menu-open .mnav{display:block;animation:pop .25s var(--ease)}
@@ -224,7 +227,7 @@ html[lang=hi] .mnav a{letter-spacing:0;font:400 18px var(--deva);text-transform:
 .aripan>*{position:relative}
 .aripan .kicker{color:var(--haldi-l)}
 .aripan .h2{color:#FFF3DE}
-.ari{width:min(84vw,400px);aspect-ratio:1;margin:34px auto 0}
+.ari{width:min(70vw,320px);aspect-ratio:1;margin:22px auto 0}
 .ari svg{width:100%;height:100%;overflow:visible}
 .ari .s{fill:none;stroke:#FFF3DE;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ari .s.h{stroke:var(--haldi-l)}
@@ -254,8 +257,8 @@ html[lang=hi] .cd-note{letter-spacing:0;font:400 17px var(--deva);text-transform
 .cd-msg{margin-top:30px;font:italic 500 26px var(--serif)}
 
 /* ============ EVENTS ============ */
-.evs{list-style:none;display:grid;gap:72px;max-width:1040px;margin:56px auto 0}
-.ev{display:grid;gap:26px;align-items:center;text-align:center}
+.evs{list-style:none;display:grid;gap:54px;max-width:1040px;margin:40px auto 0}
+.ev{display:grid;gap:20px;align-items:center;text-align:center}
 .ev .mf{aspect-ratio:4/3;max-width:560px;width:100%;margin:0 auto}
 .ev .mf>.in{height:100%}
 .ev .day{display:inline-flex;align-items:center;gap:10px;font:500 12px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--sindoor)}
@@ -266,7 +269,8 @@ html[lang=hi] .ev h3{font:700 clamp(2.1rem,9vw,2.6rem)/1.35 var(--devd);font-sty
 .ev .hn{font:400 21px/1.4 var(--devd);color:var(--sindoor);margin-top:2px}
 .ev .ds{font:italic 400 19px/1.55 var(--serif);color:var(--ink-2);margin:10px auto 0;max-width:30ch}
 html[lang=hi] .ev .ds{font:400 17.5px/1.8 var(--deva)}
-.ev dl{display:grid;gap:12px;max-width:380px;margin:20px auto 0;text-align:left;padding:18px 20px;border:1.5px solid var(--sindoor);background:rgba(255,252,243,.92);box-shadow:0 18px 36px -24px rgba(138,28,20,.45);border-radius:4px}
+.ev dl{position:relative;display:grid;gap:14px;max-width:380px;margin:24px auto 0;text-align:left;padding:20px 6px 18px;border-top:1px solid rgba(184,137,59,.6);border-bottom:1px solid rgba(184,137,59,.6)}
+.ev dl::before{content:'';position:absolute;left:50%;top:-5px;width:9px;height:9px;transform:translateX(-50%) rotate(45deg);background:var(--haldi);box-shadow:0 0 0 4px #FFF1D0}
 .ev dl div{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
 .ev dt{color:var(--sindoor);padding-top:3px}
 .ev dd{font:500 17px/1.45 var(--sans)}
@@ -278,35 +282,35 @@ html[lang=hi] .ev .home-tag{font:400 13px/1.8 var(--deva);letter-spacing:0}
 .ev .acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:380px;margin:16px auto 0}
 .ev .acts .btn{min-height:50px;padding:12px 10px;font-size:12px;letter-spacing:.12em}
 html[lang=hi] .ev .acts .btn{font-size:16px;letter-spacing:0}
-.allwrap{max-width:340px;margin:64px auto 0}
+.allwrap{max-width:340px;margin:46px auto 0}
 @media(min-width:900px){.ev{grid-template-columns:1.15fr 1fr;gap:56px;text-align:left}.ev .mf{max-width:none}.ev .ds,.ev dl,.ev .acts{margin-left:0}.ev:nth-child(even) .mf{order:2}.ev .day::before{display:none}}
 
 /* ============ STORY ============ */
 .events{background:linear-gradient(180deg,#FFF6DD,#FFE7B0 50%,#FFF3D6)}
 .story{background:linear-gradient(180deg,#F3F7E2,#E4EFC8 50%,#F4F6E0)}
-.beats{list-style:none;display:grid;gap:56px;max-width:980px;margin:56px auto 0}
-.beat{display:grid;gap:22px;align-items:center}
-.beat .mf{aspect-ratio:4/3;width:100%;max-width:460px;margin:0 auto}
+.beats{list-style:none;display:grid;gap:44px;max-width:980px;margin:40px auto 0}
+.beat{display:grid;gap:18px;align-items:center}
+.beat .mf{aspect-ratio:3/2;width:100%;max-width:460px;margin:0 auto}
 .beat .mf>.in{height:100%}
 .mf .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--ease)}
 .mf .vid.on{opacity:1}
-.beat .no{font:italic 400 64px/1 var(--serif);color:var(--haldi);opacity:.9}
+.beat .no{font:italic 400 36px/1 var(--serif);color:var(--haldi);opacity:.95}
 .beat h3{font:italic 500 clamp(1.9rem,8vw,2.4rem)/1.15 var(--serif);margin-top:4px}
 html[lang=hi] .beat h3{font:700 clamp(1.6rem,7vw,2rem)/1.45 var(--devd);font-style:normal}
 .beat p{font:400 17.5px/1.7 var(--sans);color:var(--ink-2);max-width:34ch;margin:10px auto 0}
 html[lang=hi] .beat p{font:400 18px/1.85 var(--deva)}
 @media(min-width:860px){.beat{grid-template-columns:1fr 1fr;gap:56px;text-align:left}.beat p{margin-left:0}.beat:nth-child(even) .mf{order:2}}
 
-.couple{max-width:440px;width:84%;margin:48px auto 0}
+.couple{max-width:420px;width:80%;margin:36px auto 0}
 .couple .mf{aspect-ratio:1602/2210}
 .couple .mf>.in{height:100%}
-.couple figcaption{font:italic 500 clamp(2rem,8vw,2.6rem)/1.2 var(--serif);margin-top:18px}
+.couple figcaption{font:italic 500 clamp(1.8rem,7vw,2.4rem)/1.2 var(--serif);margin-top:12px}
 .couple figcaption em{font-weight:400;color:var(--sindoor)}
 html[lang=hi] .couple figcaption{font:700 clamp(1.7rem,7vw,2.1rem)/1.45 var(--devd)}
 
 /* ============ VENUE ============ */
 .venue{background:linear-gradient(180deg,#FFF1E6,#FFE0CF 60%,#FFF4EA)}
-.vgrid{display:grid;gap:22px;max-width:1000px;margin:52px auto 0}
+.vgrid{display:grid;gap:20px;max-width:1000px;margin:36px auto 0}
 @media(min-width:860px){.vgrid{grid-template-columns:1.25fr 1fr;align-items:start}}
 .vc{position:relative;padding:34px 24px 28px;border-radius:14px;border:1px solid rgba(184,137,59,.65);background:linear-gradient(160deg,#FFFDF7,#FFF3DA);box-shadow:0 30px 60px -36px rgba(122,60,20,.5)}
 .vc::before{content:'';position:absolute;inset:6px;border-radius:10px;border:1px solid rgba(184,137,59,.35);pointer-events:none}
@@ -329,7 +333,7 @@ html[lang=hi] .vc .when{font:400 17px var(--deva)}
 .btn.wa{background:linear-gradient(160deg,#2F8E4E,#1F6E3A);color:#F5FFF5;box-shadow:0 14px 28px -14px rgba(31,110,58,.8)}
 
 /* ============ FOOTER ============ */
-.foot{position:relative;text-align:center;padding:0 0 120px}
+.foot{position:relative;text-align:center;padding:0 0 96px}
 .foot .scene{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:2562/1346;-webkit-mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
 .foot .scene img{width:100%;height:100%;object-fit:cover}
 .foot .msg{font:italic 400 21px/1.65 var(--serif);color:var(--ink-2);max-width:32ch;margin:14px auto 0;padding:0 20px}
@@ -350,7 +354,9 @@ html[lang=hi] .made{letter-spacing:0;font:400 15px var(--deva)}
 .fab .up{opacity:0;pointer-events:none;padding:0}
 @media(max-width:700px){.fab{gap:8px}.fab .up{display:none}.fab button{height:42px;min-width:42px;padding:0 11px}}
 .fab .up.on{opacity:1;pointer-events:auto}
-.fab .mus{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fab .up{display:none!important}
+.fab .mus{width:48px;height:48px;padding:0;border-radius:50%;background:rgba(42,20,12,.88);color:#FFF4DC;border:1px solid rgba(255,236,190,.35)}
+.fab .mus .eq{display:none}.fab .mus.playing .eq{display:flex}.fab .mus.playing .note{display:none}
 .fab .mus .t{font:500 12px var(--sans);letter-spacing:.14em;text-transform:uppercase}
 html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-transform:none}
 .eq{display:flex;align-items:flex-end;gap:2px;width:16px;height:14px}
@@ -391,6 +397,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol>
   <symbol id="i-off" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path d="M3 3l18 18"/></symbol>
  </defs>
 </svg>
@@ -403,41 +410,50 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
  <nav aria-label="Sections"><ul class="links">
   <li><a href="#home" data-hi="मुख्य">Home</a></li><li><a href="#date" data-hi="शुभ तिथि">Date</a></li><li><a href="#events" data-hi="कार्यक्रम">Events</a></li><li><a href="#story" data-hi="कहानी">Story</a></li><li><a href="#venue" data-hi="स्थान">Venue</a></li>
  </ul></nav>
- <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
+ <div class="hact">
+  <button class="hbtn" id="langFab" type="button" aria-label="हिंदी में देखें"><span class="only-en" lang="hi">हिंदी</span><span class="only-hi">EN</span></button>
+  <button class="hbtn" id="shareBtn" type="button" aria-label="Share invitation"><svg class="i"><use href="#i-share"/></svg></button>
+  <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
+ </div>
  <div class="mnav" id="mnav"><a href="#home" data-hi="मुख्य">Home</a><a href="#date" data-hi="शुभ तिथि">Date</a><a href="#events" data-hi="कार्यक्रम">Events</a><a href="#story" data-hi="कहानी">Story</a><a href="#venue" data-hi="स्थान">Venue</a></div>
 </header>
 
 <main id="main">
 <!-- ============ HERO — the painted cover; at dusk until the guest lights the diya ============ -->
 <section class="hero" id="home" aria-labelledby="heroTitle">
- <div class="night" aria-hidden="true"></div>
- <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">English</button><button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिंदी</button></div>
- <p class="shri" lang="hi">॥ श्री गणेशाय नमः ॥</p>
- <div class="kb" id="kb">
-  <div class="kb-frame"><div class="art">
-   <img class="dim" src="assets/art/cover-720.webp" alt="" width="720" height="964" aria-hidden="true">
-   <picture class="col"><source type="image/avif" srcset="assets/art/cover-720.avif 720w, assets/art/cover-1200.avif 1200w" sizes="(max-width:520px) 92vw, 470px"><img src="assets/art/cover-720.webp" srcset="assets/art/cover-720.webp 720w, assets/art/cover-1200.webp 1200w" sizes="(max-width:520px) 92vw, 470px" width="720" height="964" alt="Watercolour painting: a marigold and rose wreath, peacocks, brass kalash, a lotus pond and five lit diyas" fetchpriority="high"></picture>
-   <div class="ganesh-c" aria-hidden="true"><!-- Ganesha mark: CC0/Public Domain — "Lord Ganesha" by gsagri04 (traced from his wedding card), openclipart.org/detail/173898 via freesvg.org/ganesh1 -->
+ <div class="cover">
+  <img class="bgblur" src="assets/art/cover-720.webp" alt="" aria-hidden="true">
+  <div class="kb" id="kb">
+   <div class="kb-frame"><div class="art">
+    <img class="dim" src="assets/art/cover-720.webp" alt="" width="720" height="964" aria-hidden="true">
+    <picture class="col"><source type="image/avif" srcset="assets/art/cover-720.avif 720w, assets/art/cover-1200.avif 1200w" sizes="(max-aspect-ratio:3/4) 75svh, 75svh"><img src="assets/art/cover-720.webp" srcset="assets/art/cover-720.webp 720w, assets/art/cover-1200.webp 1200w" sizes="75svh" width="720" height="964" alt="Watercolour painting: a marigold and rose wreath, peacocks, brass kalash, a lotus pond and five lit diyas" fetchpriority="high"></picture>
+    <div class="flames" id="flames" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="glow" aria-hidden="true"></div>
+   </div></div>
+   <div class="wreath">
+    <div class="ganesh-c" aria-hidden="true"><!-- Ganesha mark: CC0/Public Domain — "Lord Ganesha" by gsagri04 (traced from his wedding card), openclipart.org/detail/173898 via freesvg.org/ganesh1 -->
  <svg class="ganesh" viewBox="-233.94 -25.83 912.52 912.52" aria-hidden="true"><g fill="currentColor" transform="translate(-94.853 -67.642)"><rect x="213.81" y="174.37" width="208.27" height="25.02" ry="8.7124"/><rect x="248.29" y="139.52" width="139.33" height="25.02" ry="8.7124"/><rect x="267.62" y="106.85" width="100.65" height="20.664" ry="7.1955"/><rect x="302.1" y="67.642" width="31.705" height="29.376" ry="10.229"/><rect x="307.98" y="217.39" width="19.934" height="53.336" ry="18.572"/><path d="m94.9 252.3c27.3-16.3 56.2-35.3 92.8-35.8 22.3-1 44.6-0.9 66.9 17.5 21.2 20.3 25.8 53.1 31.8 84.9 0 0 6.5 49.6 15.6 71.4 13.6 32.5 56.4 84.1 56.4 84.1 25 37.6 32.8 60.4 31.5 107.7-1.8 48.8-39.7 60.1-69.9 82.8-29.6 19.8-48 38-51.8 57.8-6.8 37.6 46.8 82.2 40.1 89.7-45.1-13.4-78.6-43.9-66.3-103.4 14.9-68.3 128.8-72.8 126.5-129.9-1.4-26.1-14.4-57.8-31-82.5-19.6-27.7-32.7-49.1-51.6-79.8-2.9-4.7-25 13.7-41.4 11.1 3.9-14.3 25.9-31 24.9-38.9-9.7-42.9-15.8-95-30.1-111.1-30.4-32.7-47.6-24.8-86-14.9 11.4 34.5 39.1 75 31.9 104.7z"/><path d="m532.8 285.7c31.1-17.9-55-68.8-91.7-69.4-22.3-1-44 2.9-66.3 21.8-32.6 37.9-53.4 99.1-42.7 154 11.8 60.7 83.5 113.2 83 172 2.8 87.2-143.6 105.7-132.1 175.6 7.4 51.5 44.5 44.6 55.5 23.7 6.6-12.6-0.5-48.4-32.7-34.2 4.3-20.6 32-36 66.2-55.9 27.2-18.5 71.4-63.7 72.9-101.4 5.9-63.4-52.6-115.3-69.2-154.1-2.5-5.9 12.2-2.4 21.2-8.6-9-16.8-37.6-27.3-38.2-31.3-4.2-42.6 9.6-85.6 24.9-101.6 12.9-13 37.4-27.6 61.2-27.6 17.8 5.1 26 9.4 45.3 28.3-52.5 61.2-74.3 86.6-65.4 120.1 8.9 33.5 30.2-66.4 108.1-111.1z"/><rect x="248.29" y="-863.17" width="139.33" height="25.02" ry="8.7124" transform="scale(1,-1)"/><rect x="267.62" y="-892.57" width="100.65" height="20.664" ry="7.1955" transform="scale(1,-1)"/><rect x="302.1" y="-928.51" width="31.705" height="29.376" ry="10.229" transform="scale(1,-1)"/></g><circle cx="222.3" cy="235" r="14" fill="#E8890C"/></svg></div>
-   <div class="flames" id="flames" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-   <div class="glow" aria-hidden="true"></div>
-  </div></div>
+    <h1 id="heroTitle"><span class="only-en">Prateek</span><span class="only-en amp">&amp;</span><span class="only-en">Mansi</span><span class="only-hi" lang="hi">प्रतीक</span><span class="only-hi amp" lang="hi">संग</span><span class="only-hi" lang="hi">मानसी</span></h1>
+    <p class="wd">26 · 11 · 2026</p>
+   </div>
+  </div>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">English</button><button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिंदी</button></div>
+  <div class="cover-ui">
+   <button class="light" id="lightBtn" type="button">
+    <svg class="dz" viewBox="0 0 40 40" aria-hidden="true"><path class="fl" d="M20 6c4 5 4.6 9.2 0 14-4.6-4.8-4-9 0-14z" fill="#B3261E"/><path d="M5 23h30c-1.4 7-7 10.5-15 10.5S6.4 30 5 23z" fill="#8E3B12" stroke="#2A1404" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 26h22" stroke="#F4C95A" stroke-width="1.2" stroke-dasharray="2 2"/></svg>
+    <span class="lbl"><span class="l1" lang="hi">दीया जलाएँ</span><span class="l2" data-hi="निमंत्रण खोलें">Light the diya</span></span>
+   </button>
+   <p class="cover-sub" data-hi="संगीत के साथ · 24–26 नवंबर, भोपाल">With music · 24–26 November, Bhopal</p>
+   <button class="skip" id="skipBtn" type="button" data-hi="सीधे निमंत्रण देखें">Skip to the invitation</button>
+  </div>
+  <a class="cue" href="#invite"><span data-hi="नीचे देखें">Scroll</span><svg aria-hidden="true"><use href="#fishcue"/></svg></a>
  </div>
 
- <div class="cover-ui">
-  <p class="cover-names" id="heroTitle"><span class="only-en">Prateek <em>weds</em> Mansi</span><span class="only-hi" lang="hi">प्रतीक संग मानसी</span></p>
-  <button class="light" id="lightBtn" type="button">
-   <svg class="dz" viewBox="0 0 40 40" aria-hidden="true"><path class="fl" d="M20 6c4 5 4.6 9.2 0 14-4.6-4.8-4-9 0-14z" fill="#B3261E"/><path d="M5 23h30c-1.4 7-7 10.5-15 10.5S6.4 30 5 23z" fill="#8E3B12" stroke="#2A1404" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 26h22" stroke="#F4C95A" stroke-width="1.2" stroke-dasharray="2 2"/></svg>
-   <span class="lbl"><span class="l1" lang="hi">दीया जलाएँ</span><span class="l2" data-hi="निमंत्रण खोलें">Light the diya</span></span>
-  </button>
-  <p class="cover-sub" data-hi="संगीत के साथ · 26 नवंबर 2026, भोपाल">With music · 26 November 2026, Bhopal</p>
-  <button class="skip" id="skipBtn" type="button" data-hi="सीधे निमंत्रण देखें">Skip to the invitation</button>
- </div>
-
- <div class="lit-ui">
+ <div class="lit-ui" id="invite">
+  <p class="shri rise" lang="hi">॥ श्री गणेशाय नमः ॥</p>
   <div class="chip rise" id="chip" hidden><span class="hi" lang="hi">सादर आमंत्रण</span><b id="chipName"></b></div>
   <p class="invite balance rise" style="--d:.1s" data-hi="ईश्वर की कृपा और बड़ों के आशीर्वाद से, राय एवं श्रीवास परिवार आपको सादर आमंत्रित करते हैं">With the blessings of God and our elders, the Roy &amp; Shrivas families joyfully invite you to the wedding of</p>
-  <h1 class="names"><span class="n rise" style="--d:.3s" data-hi="प्रतीक">Prateek</span><span class="w rise" style="--d:.5s" data-hi="संग">weds</span><span class="n rise" style="--d:.65s" data-hi="मानसी">Mansi</span></h1>
+  <p class="names"><span class="n rise" style="--d:.3s" data-hi="प्रतीक">Prateek</span><span class="w rise" style="--d:.5s" data-hi="संग">weds</span><span class="n rise" style="--d:.65s" data-hi="मानसी">Mansi</span></p>
   <p class="date-big rise" style="--d:.9s">26 · 11 · 2026</p>
   <p class="dline rise" style="--d:1s" data-hi="उत्सव 24 – 26 नवंबर · भोपाल">Celebrations 24 – 26 November · Bhopal</p>
   <div class="ctas rise" style="--d:1.15s">
@@ -445,7 +461,6 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
    <div class="dd"><button class="btn line" type="button" aria-expanded="false"><svg class="i"><use href="#i-calplus"/></svg><span data-hi="कैलेंडर में जोड़ें">Add to calendar</span><svg class="i chev"><use href="#i-chev"/></svg></button>
     <div class="menu"><a data-gcal="all" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg><span data-hi="गूगल कैलेंडर">Google Calendar</span></a><button type="button" data-ics="all"><svg class="i"><use href="#i-dl"/></svg><span data-hi="iPhone / Outlook (.ics)">iPhone / Outlook (.ics)</span></button></div></div>
   </div>
-  <a class="cue rise" style="--d:1.4s" href="#date"><span data-hi="नीचे देखें">Scroll</span><svg aria-hidden="true"><use href="#fishcue"/></svg></a>
  </div>
 </section>
 
@@ -491,7 +506,6 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
     <p class="ds balance" data-hi="ढोलक की थाप, गीत और नाच — उमंग भरी एक शाम।">An evening of dholak, songs and dancing.</p>
     <dl>
      <div><dt><svg class="i"><use href="#i-cal"/></svg><span class="sr">Date</span></dt><dd data-hi="मंगलवार, 24 नवंबर 2026">Tuesday, 24 November 2026</dd></div>
-     <div><dt><svg class="i"><use href="#i-clock"/></svg><span class="sr">Time</span></dt><dd data-hi="समय शीघ्र सूचित किया जाएगा">Timings to follow</dd></div>
      <div><dt><svg class="i"><use href="#i-pin"/></svg><span class="sr">Venue</span></dt><dd data-hi="होटल यशोदा प्रिविलेज<small>नरेला शंकरी, अयोध्या बाईपास रोड, भोपाल</small>">Hotel Yashoda Privilege<small>Narela Shankri, Ayodhya Bypass Road, Bhopal</small></dd></div>
     </dl>
     <div class="acts"><a class="btn line" data-map="venue" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Yashoda+Privilege+Bhopal" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg><span data-hi="नक्शा">Map</span></a>
@@ -506,7 +520,6 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
     <p class="ds balance" data-hi="घर के आँगन में हल्दी का रंग और मेहंदी की ख़ुशबू।">Turmeric and henna, in the courtyard at home.</p>
     <dl>
      <div><dt><svg class="i"><use href="#i-cal"/></svg><span class="sr">Date</span></dt><dd data-hi="बुधवार, 25 नवंबर 2026">Wednesday, 25 November 2026</dd></div>
-     <div><dt><svg class="i"><use href="#i-clock"/></svg><span class="sr">Time</span></dt><dd data-hi="समय शीघ्र सूचित किया जाएगा">Timings to follow</dd></div>
      <div><dt><svg class="i"><use href="#i-home"/></svg><span class="sr">Venue</span></dt><dd data-hi="निज निवास <span class=&quot;home-tag&quot;>घर पर</span><small>131 कर्मवीर नगर, शिव मंदिर, भोपाल</small>">At home <span class="home-tag">Home</span><small>131 Karmaveer Nagar, Shiv Mandir, Bhopal</small></dd></div>
     </dl>
     <div class="acts"><a class="btn line" data-map="home" href="https://maps.app.goo.gl/M5ro4vu4jzPZ3Bd49" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg><span data-hi="नक्शा">Map</span></a>
@@ -521,7 +534,6 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
     <p class="ds balance" data-hi="अग्नि के साक्षी में सात फेरे, और दो परिवारों का मिलन।">Seven rounds around the sacred fire, and two families become one.</p>
     <dl>
      <div><dt><svg class="i"><use href="#i-cal"/></svg><span class="sr">Date</span></dt><dd data-hi="गुरुवार, 26 नवंबर 2026">Thursday, 26 November 2026</dd></div>
-     <div><dt><svg class="i"><use href="#i-clock"/></svg><span class="sr">Time</span></dt><dd data-hi="समय शीघ्र सूचित किया जाएगा">Timings to follow</dd></div>
      <div><dt><svg class="i"><use href="#i-pin"/></svg><span class="sr">Venue</span></dt><dd data-hi="होटल यशोदा प्रिविलेज<small>नरेला शंकरी, अयोध्या बाईपास रोड, भोपाल</small>">Hotel Yashoda Privilege<small>Narela Shankri, Ayodhya Bypass Road, Bhopal</small></dd></div>
     </dl>
     <div class="acts"><a class="btn line" data-map="venue" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Yashoda+Privilege+Bhopal" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg><span data-hi="नक्शा">Map</span></a>
@@ -615,9 +627,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
 
 <div class="fab" id="fab">
  <button class="up" id="upBtn" type="button" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
- <button id="langFab" type="button" aria-label="हिंदी में देखें"><span class="only-en lg" lang="hi">हिंदी</span><span class="only-hi">English</span></button>
- <button id="shareBtn" type="button" aria-label="Share invitation"><svg class="i"><use href="#i-share"/></svg></button>
- <button class="mus" id="musBtn" type="button" aria-label="Music: Ishq Hai"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="t" data-hi="संगीत">Music</span></button>
+ <button class="mus" id="musBtn" type="button" aria-label="Music: Ishq Hai"><svg class="i note" aria-hidden="true"><use href="#i-note"/></svg><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span></button>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div id="fall" aria-hidden="true"></div>
@@ -702,7 +712,7 @@ function menu(o){hdr.classList.toggle('menu-open',o);$('#burger').setAttribute('
 $('#burger').onclick=function(e){e.stopPropagation();menu(!hdr.classList.contains('menu-open'))};
 $$('.mnav a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
 function onScroll(){ticking=false;var y=scrollY,h=innerHeight;hdr.classList.toggle('show',y>h*.6);fab.classList.toggle('show',lit&&y>h*.45);up.classList.toggle('on',y>h);
- if(!reduce&&y<h*1.2)kb.style.transform='translate3d(0,'+(-y*.06).toFixed(1)+'px,0) scale('+(1-Math.min(y/h,1)*.03).toFixed(4)+')';
+ if(!reduce&&y<h*1.2)kb.style.setProperty('--py',(y*.28).toFixed(1)+'px');
  var k='home';secIds.forEach(function(id){var s=d.getElementById(id);if(s&&s.offsetTop<=y+h*.35)k=id});
  $$('.links a,.mnav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+k)});
  ari()}
