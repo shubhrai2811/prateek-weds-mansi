@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Prateek weds Mansi — Wedding Invitation</title>
-<meta name="description" content="The Roy &amp; Shrivas families invite you to celebrate the wedding of Prateek &amp; Mansi — Sangeet 24, Haldi &amp; Mehndi 25 (at home) and Shaadi 26 November 2026, Bhopal.">
+<meta name="description" content="Together with both families, we invite you to celebrate the wedding of Prateek &amp; Mansi — Sangeet 24, Haldi &amp; Mehndi 25 (at home) and Shaadi 26 November 2026, Bhopal.">
 <meta name="theme-color" content="#1B1210">
 <meta property="og:title" content="Prateek weds Mansi — Wedding Invitation">
 <meta property="og:description" content="Sangeet 24 · Haldi &amp; Mehndi 25 (at home) · Shaadi 26 November 2026 — Bhopal.">
@@ -449,7 +449,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
  <div class="lit-ui" id="invite">
   <p class="shri rise" lang="hi">॥ श्री गणेशाय नमः ॥</p>
   <div class="chip rise" id="chip" hidden><span class="hi" lang="hi">सादर आमंत्रण</span><b id="chipName"></b></div>
-  <p class="invite balance rise" style="--d:.1s" data-hi="ईश्वर की कृपा और बड़ों के आशीर्वाद से, राय एवं श्रीवास परिवार आपको सादर आमंत्रित करते हैं">With the blessings of God and our elders, the Roy &amp; Shrivas families joyfully invite you to the wedding of</p>
+  <p class="invite balance rise" style="--d:.1s" data-hi="ईश्वर की कृपा और बड़ों के आशीर्वाद से, दोनों परिवार आपको सादर आमंत्रित करते हैं">With the blessings of God and our elders, both our families joyfully invite you to the wedding of</p>
   <p class="names"><span class="n rise" style="--d:.3s" data-hi="प्रतीक">Prateek</span><span class="w rise" style="--d:.5s" data-hi="संग">weds</span><span class="n rise" style="--d:.65s" data-hi="मानसी">Mansi</span></p>
   <p class="date-big rise" style="--d:.9s">26 · 11 · 2026</p>
   <p class="dline rise" style="--d:1s" data-hi="उत्सव 24 – 26 नवंबर · भोपाल">Celebrations 24 – 26 November · Bhopal</p>
@@ -608,7 +608,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
  <p class="kicker" data-hi="प्रेम एवं आभार सहित">With love &amp; gratitude</p>
  <p class="msg balance" data-hi="आपका स्नेह और आशीर्वाद ही हमारी सबसे बड़ी ख़ुशी है। सपरिवार पधारकर नव-दम्पति को अपना आशीर्वाद दें।">Your love and blessings are our greatest joy. Please come with your family and bless the couple as they begin a new life together.</p>
  <p><span class="fnames"><span class="only-en">Prateek &amp; Mansi</span><span class="only-hi" lang="hi">प्रतीक संग मानसी</span></span></p>
- <p class="fam" data-hi="राय एवं श्रीवास परिवार">The Roy &amp; Shrivas families</p>
+ <p class="fam" data-hi="दोनों परिवारों की ओर से">From both our families</p>
  <p class="made" data-hi="हमारे परिवार और मित्रों के लिए प्रेम सहित<br><span style=&quot;white-space:nowrap&quot;>26 · 11 · 2026</span>">Made with love for our families &amp; friends<br><span style="white-space:nowrap">26 · 11 · 2026</span></p>
 </footer>
 
@@ -639,7 +639,7 @@ var EV={
 var ALL={t:'Wedding Celebrations (Sangeet 24 · Haldi & Mehndi 25 at home · Shaadi 26 Nov)',s:'20261124',e:'20261127'};
 function gcal(k){var e=k==='all'?ALL:EV[k],p=PLACE[e.p||'venue'];return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(e.t+' — Prateek weds Mansi')+'&dates='+e.s+'/'+e.e+'&location='+encodeURIComponent(p.name+', '+p.addr)+'&details='+encodeURIComponent('Timings to follow.\n'+SITE)}
 function esc(s){return s.replace(/([,;\\])/g,'\\$1').replace(/\n/g,'\\n')}
-function ics(keys){var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Roy Family//Prateek weds Mansi//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH'],now=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+function ics(keys){var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Prateek weds Mansi//Wedding Invitation//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH'],now=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
  keys.forEach(function(k){var e=EV[k],p=PLACE[e.p||'venue'];L.push('BEGIN:VEVENT','UID:'+k+'-2026@prateek-weds-mansi.netlify.app','DTSTAMP:'+now,'DTSTART;VALUE=DATE:'+e.s,'DTEND;VALUE=DATE:'+e.e,'SUMMARY:'+esc(e.t+' — Prateek weds Mansi'),'LOCATION:'+esc(p.name+', '+p.addr),'DESCRIPTION:'+esc('Timings to follow.\n'+SITE),'TRANSP:TRANSPARENT','END:VEVENT')});
  L.push('END:VCALENDAR');return L.join('\r\n')}
 $$('[data-gcal]').forEach(function(a){a.href=gcal(a.getAttribute('data-gcal'))});
@@ -747,7 +747,7 @@ function shower(n){if(reduce)return;var c=['#E8890C','#F4C95A','#B3261E','#E3A51
 
 /* ---- share ---- */
 var toast=$('#toast');function say(t){toast.textContent=t;toast.classList.add('on');setTimeout(function(){toast.classList.remove('on')},2200)}
-function shareText(){return hi()?'प्रतीक संग मानसी — संगीत 24, हल्दी एवं मेहंदी 25 (घर पर), शुभ विवाह 26 नवंबर 2026, भोपाल। सप्रेम, राय एवं श्रीवास परिवार।':'Prateek weds Mansi — Sangeet 24, Haldi & Mehndi 25 (at home), Shaadi 26 November 2026, Bhopal. With love, the Roy & Shrivas families.'}
+function shareText(){return hi()?'प्रतीक संग मानसी — संगीत 24, हल्दी एवं मेहंदी 25 (घर पर), शुभ विवाह 26 नवंबर 2026, भोपाल। दोनों परिवारों की ओर से सप्रेम।':'Prateek weds Mansi — Sangeet 24, Haldi & Mehndi 25 (at home), Shaadi 26 November 2026, Bhopal. With love, from both families.'}
 function waUrl(){return 'https://wa.me/?text='+encodeURIComponent(shareText()+'\n'+SITE)}
 $('#shareBtn').onclick=function(){if(navigator.share){navigator.share({title:'Prateek weds Mansi',text:shareText(),url:SITE}).catch(function(){});return}open(waUrl(),'_blank','noopener')};
 
