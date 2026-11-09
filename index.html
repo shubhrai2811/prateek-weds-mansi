@@ -165,11 +165,14 @@ html[lang=hi] .cover-sub{font:400 15px var(--deva);letter-spacing:.02em;text-tra
 html[lang=hi] .skip{font:400 16px var(--deva)}
 
 /* scroll cue over the painting once lit */
-.cover .cue{position:absolute;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:2px;font:500 11.5px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#FFF7E6;text-shadow:0 1px 8px rgba(0,0,0,.65)}
-html[lang=hi] .cover .cue{font:400 15px var(--deva);letter-spacing:0}
+.cover .cue{position:absolute;left:50%;bottom:calc(max(18px,env(safe-area-inset-bottom)) + 6px);transform:translateX(-50%);z-index:4;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 20px 10px 26px;border-radius:999px;white-space:nowrap;background:linear-gradient(180deg,#F8DA86,#E3A51E 55%,#B87A10);color:#2A1404;font:600 13.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;box-shadow:0 14px 34px -10px rgba(0,0,0,.6),0 0 0 1px rgba(255,236,180,.55),inset 0 1px 0 rgba(255,255,255,.5);transition:opacity .5s,transform .5s var(--ease)}
+.cover .cue .i{width:22px;height:22px;stroke-width:2.2}
+.scrolled .cover .cue{opacity:0;pointer-events:none;transform:translate(-50%,10px)}
+@media(prefers-reduced-motion:no-preference){.cover .cue{animation:cueGlow 2.4s ease-in-out infinite}.cover .cue .i{animation:cueBob 1.6s var(--ease-io) infinite}}
+@keyframes cueGlow{50%{box-shadow:0 0 0 8px rgba(244,201,90,.22),0 14px 40px -6px rgba(227,165,30,.85),inset 0 1px 0 rgba(255,255,255,.5)}}
+@keyframes cueBob{50%{transform:translateY(4px)}}
+html[lang=hi] .cover .cue{font:500 18px var(--deva);letter-spacing:0;text-transform:none}
 .dusk .cover .cue{display:none}
-.cue svg{width:34px;height:18px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
-@media(prefers-reduced-motion:no-preference){.cue svg{animation:dip 2.4s var(--ease-io) infinite}}
 @keyframes dip{50%{transform:translateY(7px)}}
 
 /* invitation wording below the cover */
@@ -443,7 +446,7 @@ html[lang=hi] .fab .mus .t{font:400 15px var(--deva);letter-spacing:0;text-trans
    <p class="cover-sub" data-hi="संगीत के साथ · 24–26 नवंबर, भोपाल">With music · 24–26 November, Bhopal</p>
    <button class="skip" id="skipBtn" type="button" data-hi="सीधे निमंत्रण देखें">Skip to the invitation</button>
   </div>
-  <a class="cue" href="#invite"><span data-hi="नीचे देखें">Scroll</span><svg aria-hidden="true"><use href="#fishcue"/></svg></a>
+  <a class="cue" href="#invite"><span data-hi="निमंत्रण देखें">View invitation</span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a>
  </div>
 
  <div class="lit-ui" id="invite">
@@ -680,7 +683,11 @@ mb.onclick=function(){musOff=!au.paused;try{localStorage.setItem('music',musOff?
 /* ---- the diya: dusk → light blooms from the lamps → invitation ---- */
 var lit=!de.classList.contains('dusk'),fab=$('#fab');
 function markLit(){try{sessionStorage.setItem('lit','1')}catch(e){}}
-function finish(){de.classList.remove('dusk','lighting');de.classList.add('justlit');
+function nudge(){if(reduce)return;var stopped=false,ev=['wheel','touchstart','keydown','pointerdown'];
+ function stop(){stopped=true;ev.forEach(function(x){removeEventListener(x,stop,true)})}
+ ev.forEach(function(x){addEventListener(x,stop,true)});
+ setTimeout(function(){if(!stopped&&scrollY<30){var el=d.getElementById('invite');if(el)el.scrollIntoView({behavior:'smooth'})}stop()},5500)}
+function finish(){de.classList.remove('dusk','lighting');de.classList.add('justlit');nudge();
  setTimeout(function(){de.classList.remove('justlit')},2600);try{$('#heroTitle').blur()}catch(e){}}
 function lightDiya(fast){if(lit)return;lit=true;markLit();startMusic();
  if(fast||reduce){finish();return}
@@ -698,7 +705,7 @@ var hdr=$('#hdr'),up=$('#upBtn'),kb=$('#kb'),secIds=['home','date','events','sto
 function menu(o){hdr.classList.toggle('menu-open',o);$('#burger').setAttribute('aria-expanded',o);$('#burger use').setAttribute('href',o?'#i-x':'#i-menu');$('#burger').setAttribute('aria-label',o?'Close menu':'Open menu')}
 $('#burger').onclick=function(e){e.stopPropagation();menu(!hdr.classList.contains('menu-open'))};
 $$('.mnav a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
-function onScroll(){ticking=false;var y=scrollY,h=innerHeight;hdr.classList.toggle('show',y>h*.6);fab.classList.toggle('show',lit&&y>h*.45);up.classList.toggle('on',y>h);
+function onScroll(){ticking=false;var y=scrollY,h=innerHeight;de.classList.toggle('scrolled',y>40);hdr.classList.toggle('show',y>h*.6);fab.classList.toggle('show',lit&&y>h*.45);up.classList.toggle('on',y>h);
  if(!reduce&&y<h*1.2)kb.style.setProperty('--py',(y*.28).toFixed(1)+'px');
  var k='home';secIds.forEach(function(id){var s=d.getElementById(id);if(s&&s.offsetTop<=y+h*.35)k=id});
  $$('.links a,.mnav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+k)});
